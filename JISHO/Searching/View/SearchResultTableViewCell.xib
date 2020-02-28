@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MPLUSRounded1c-Medium.ttf">
+            <string>RoundedMplus1c-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="235" id="KGk-i7-Jjw" customClass="SearchResultTableViewCell" customModule="JISHO" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-AF-WUy">
+                        <rect key="frame" x="16" y="8" width="288" height="219"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wid-4i-sgc">
+                        <rect key="frame" x="16" y="131" width="288" height="88"/>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かな" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Qel-Ph-ljG" customClass="InsetLabel" customModule="JISHO" customModuleProvider="target">
+                        <rect key="frame" x="18" y="16" width="40" height="28"/>
+                        <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="ain-rO-U27" userLabel="Word">
+                        <rect key="frame" x="16" y="48" width="288" height="67"/>
+                        <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="48"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVR-4W-Juk">
+                        <rect key="frame" x="16" y="234" width="304" height="1"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="29Y-1k-BJ3"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="romaji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="P0l-yN-9zo" customClass="InsetLabel" customModule="JISHO" customModuleProvider="target">
+                        <rect key="frame" x="66" y="20" width="44" height="20.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ain-rO-U27" firstAttribute="top" secondItem="Qel-Ph-ljG" secondAttribute="bottom" constant="4" id="31t-JE-LGU"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="16" id="3b5-Il-hNV"/>
+                    <constraint firstAttribute="trailing" secondItem="ain-rO-U27" secondAttribute="trailing" constant="16" id="Dwl-X6-pca"/>
+                    <constraint firstItem="wid-4i-sgc" firstAttribute="top" secondItem="ain-rO-U27" secondAttribute="bottom" constant="16" id="Kpy-hP-Hg6"/>
+                    <constraint firstAttribute="bottom" secondItem="YVR-4W-Juk" secondAttribute="bottom" id="LHd-4O-5rt"/>
+                    <constraint firstItem="4lg-AF-WUy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NRj-ZC-EL6"/>
+                    <constraint firstAttribute="bottom" secondItem="wid-4i-sgc" secondAttribute="bottom" constant="16" id="RHG-i7-Iet"/>
+                    <constraint firstItem="P0l-yN-9zo" firstAttribute="centerY" secondItem="Qel-Ph-ljG" secondAttribute="centerY" id="Rd8-GF-ykG"/>
+                    <constraint firstAttribute="trailing" secondItem="4lg-AF-WUy" secondAttribute="trailing" constant="16" id="Xb5-DQ-Yb2"/>
+                    <constraint firstItem="P0l-yN-9zo" firstAttribute="leading" secondItem="Qel-Ph-ljG" secondAttribute="trailing" constant="8" id="gqR-nv-xTb"/>
+                    <constraint firstItem="Qel-Ph-ljG" firstAttribute="leading" secondItem="ain-rO-U27" secondAttribute="leading" constant="2" id="jT1-H6-yz5"/>
+                    <constraint firstItem="wid-4i-sgc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kSW-sn-Lp0"/>
+                    <constraint firstItem="4lg-AF-WUy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="mOe-N8-Kdh"/>
+                    <constraint firstItem="YVR-4W-Juk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="oBX-bp-mDZ"/>
+                    <constraint firstAttribute="trailing" secondItem="wid-4i-sgc" secondAttribute="trailing" constant="16" id="uzd-JG-LPC"/>
+                    <constraint firstItem="Qel-Ph-ljG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="vsw-8V-FvF"/>
+                    <constraint firstAttribute="trailing" secondItem="YVR-4W-Juk" secondAttribute="trailing" id="x29-bT-I2T"/>
+                    <constraint firstItem="ain-rO-U27" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xrW-TC-XRl"/>
+                    <constraint firstAttribute="bottom" secondItem="4lg-AF-WUy" secondAttribute="bottom" constant="8" id="zCo-hF-1SW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="4lg-AF-WUy" id="nQ3-TY-4GP"/>
+                <outlet property="definitionsStackView" destination="wid-4i-sgc" id="zpW-mP-s5O"/>
+                <outlet property="readingLabel" destination="Qel-Ph-ljG" id="ic0-fF-6Ye"/>
+                <outlet property="romajiLabel" destination="P0l-yN-9zo" id="RgC-WN-ksG"/>
+                <outlet property="wordLabel" destination="ain-rO-U27" id="fQa-NC-Z58"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="193.86160714285714"/>
+        </tableViewCell>
+    </objects>
+</document>
