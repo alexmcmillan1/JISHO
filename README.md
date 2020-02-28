@@ -2,4 +2,4 @@
 
 Uses the beta [jisho.org](https://www.jisho.org/) API (and Wikipedia, and [kanjiapi](https://kanjiapi.dev/) to let you search in English or Japanese and find word definitions.
 
-![screenshots](https://raw.githubusercontent.com/alexmcmillan1/JISHO/master/jisho-light-together-crop.png)
+![screenshots](https://github.com/alexmcmillan1/JISHO/blob/master/jisho-light-together-crop.png)
