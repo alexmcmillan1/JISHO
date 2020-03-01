@@ -22,14 +22,25 @@ class KanjiViewController: UIViewController, KanjiViewInput, UITableViewDataSour
     }
     
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(200)
+        return .contentHeight(240)
     }
 
     var longFormHeight: PanModalHeight {
-        return .contentHeight(200)
+        return .contentHeight(240)
+    }
+    
+    var showDragIndicator: Bool {
+        return false
     }
     
     // MARK: Ends
+    
+    @IBOutlet private weak var dragIndicator: UIView! {
+        didSet {
+            dragIndicator.layer.cornerRadius = 2
+            dragIndicator.layer.masksToBounds = true
+        }
+    }
     
     var output: KanjiViewOutput!
     

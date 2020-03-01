@@ -18,7 +18,7 @@ struct KanjiResponseItem: Decodable {
     let name_readings: [String]
     let jlpt: Int?
     let unicode: String
-    let heisig_en: String
+    let heisig_en: String?
 }
 
 //{
