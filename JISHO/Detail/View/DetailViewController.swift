@@ -147,6 +147,13 @@ extension DetailViewController: UITableViewDelegate {
             let safari = SFSafariViewController(url: displayItem.link)
             safari.delegate = self
             navigationController?.pushViewController(safari, animated: true)
+        } else if case let DetailDisplayItem.kanji(displayItem) = data[indexPath.row] {
+            if case DetailKanjiDisplayItem.character(let c) = displayItem {
+                let interactor = KanjiInteractor(character: c.character)
+                let kanjiDetail = KanjiViewController(output: interactor)
+                interactor.viewInput = kanjiDetail
+                presentPanModal(kanjiDetail)
+            }
         }
     }
 }

@@ -23,6 +23,8 @@
 		FA250E4C2406B17700788A1F /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA250E452406B17700788A1F /* MPLUSRounded1c-Black.ttf */; };
 		FA250E4D2406B17700788A1F /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA250E462406B17700788A1F /* MPLUSRounded1c-Bold.ttf */; };
 		FA250E4E2406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA250E472406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf */; };
+		FA342811240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34280F240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift */; };
+		FA342812240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA342810240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib */; };
 		FA63CD242403169100F45A5F /* KanjiAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63CD232403169100F45A5F /* KanjiAPIResponse.swift */; };
 		FA63CD272403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63CD252403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift */; };
 		FA63CD282403181C00F45A5F /* DetailKanjiCharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA63CD262403181C00F45A5F /* DetailKanjiCharacterTableViewCell.xib */; };
@@ -56,6 +58,15 @@
 		FAF5B79223F493DF008C3C81 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5B79123F493DF008C3C81 /* String.swift */; };
 		FAF68CA4240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF68CA2240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift */; };
 		FAF68CA5240716710067B7A5 /* KanjiSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF68CA3240716710067B7A5 /* KanjiSectionHeaderTableViewCell.xib */; };
+		FAFE5C05240AA599004DF70F /* KanjiResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C04240AA599004DF70F /* KanjiResponseItem.swift */; };
+		FAFE5C08240AA7F7004DF70F /* KanjiDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C07240AA7F7004DF70F /* KanjiDisplayItem.swift */; };
+		FAFE5C0A240AAAC3004DF70F /* KanjiInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C09240AAAC3004DF70F /* KanjiInteractor.swift */; };
+		FAFE5C0C240AACE6004DF70F /* KanjiPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C0B240AACE6004DF70F /* KanjiPresenter.swift */; };
+		FAFE5C0E240AB06C004DF70F /* KanjiPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C0D240AB06C004DF70F /* KanjiPresenterTests.swift */; };
+		FAFE5C11240AB7B1004DF70F /* KanjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C0F240AB7B1004DF70F /* KanjiViewController.swift */; };
+		FAFE5C12240AB7B1004DF70F /* KanjiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFE5C10240AB7B1004DF70F /* KanjiViewController.xib */; };
+		FAFE5C16240AEAE3004DF70F /* KanjiAspectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C14240AEAE3004DF70F /* KanjiAspectTableViewCell.swift */; };
+		FAFE5C17240AEAE3004DF70F /* KanjiAspectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFE5C15240AEAE3004DF70F /* KanjiAspectTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +98,8 @@
 		FA250E452406B17700788A1F /* MPLUSRounded1c-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Black.ttf"; sourceTree = "<group>"; };
 		FA250E462406B17700788A1F /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; };
 		FA250E472406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FA34280F240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		FA342810240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KanjiSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		FA63CD232403169100F45A5F /* KanjiAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiAPIResponse.swift; sourceTree = "<group>"; };
 		FA63CD252403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailKanjiCharacterTableViewCell.swift; sourceTree = "<group>"; };
 		FA63CD262403181C00F45A5F /* DetailKanjiCharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailKanjiCharacterTableViewCell.xib; sourceTree = "<group>"; };
@@ -124,6 +137,15 @@
 		FAF5B79123F493DF008C3C81 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FAF68CA2240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		FAF68CA3240716710067B7A5 /* KanjiSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KanjiSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		FAFE5C04240AA599004DF70F /* KanjiResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiResponseItem.swift; sourceTree = "<group>"; };
+		FAFE5C07240AA7F7004DF70F /* KanjiDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDisplayItem.swift; sourceTree = "<group>"; };
+		FAFE5C09240AAAC3004DF70F /* KanjiInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiInteractor.swift; sourceTree = "<group>"; };
+		FAFE5C0B240AACE6004DF70F /* KanjiPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiPresenter.swift; sourceTree = "<group>"; };
+		FAFE5C0D240AB06C004DF70F /* KanjiPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiPresenterTests.swift; sourceTree = "<group>"; };
+		FAFE5C0F240AB7B1004DF70F /* KanjiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiViewController.swift; sourceTree = "<group>"; };
+		FAFE5C10240AB7B1004DF70F /* KanjiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KanjiViewController.xib; sourceTree = "<group>"; };
+		FAFE5C14240AEAE3004DF70F /* KanjiAspectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiAspectTableViewCell.swift; sourceTree = "<group>"; };
+		FAFE5C15240AEAE3004DF70F /* KanjiAspectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KanjiAspectTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +251,7 @@
 			children = (
 				FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */,
 				FA63CD292403199200F45A5F /* DetailPresenterTests.swift */,
+				FAFE5C0D240AB06C004DF70F /* KanjiPresenterTests.swift */,
 				FAC97BB02402990300D8AF8F /* StringTests.swift */,
 				FACA4ED323EEB68C004E0A3C /* Info.plist */,
 			);
@@ -317,6 +340,7 @@
 				FAF3BD3723E776ED00B3D707 /* Info.plist */,
 				FAE6FDDA23EEB46300CDB5F7 /* Searching */,
 				FAD61DDC23F8A1BD00C37E37 /* Detail */,
+				FAFE5C02240AA457004DF70F /* Kanji */,
 				FAF5B79023F493CD008C3C81 /* Extensions */,
 				FA250E402406B15A00788A1F /* Fonts */,
 				FAB37EE923FB40F100077F79 /* Language.swift */,
@@ -332,6 +356,47 @@
 				FAAF85EE24047EA4001A8D05 /* UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAFE5C02240AA457004DF70F /* Kanji */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE5C06240AA7AE004DF70F /* Interactor */,
+				FAFE5C03240AA578004DF70F /* Presentation */,
+				FAFE5C13240AEACF004DF70F /* View */,
+			);
+			path = Kanji;
+			sourceTree = "<group>";
+		};
+		FAFE5C03240AA578004DF70F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE5C07240AA7F7004DF70F /* KanjiDisplayItem.swift */,
+				FAFE5C0B240AACE6004DF70F /* KanjiPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FAFE5C06240AA7AE004DF70F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE5C04240AA599004DF70F /* KanjiResponseItem.swift */,
+				FAFE5C09240AAAC3004DF70F /* KanjiInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FAFE5C13240AEACF004DF70F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE5C0F240AB7B1004DF70F /* KanjiViewController.swift */,
+				FAFE5C10240AB7B1004DF70F /* KanjiViewController.xib */,
+				FAFE5C14240AEAE3004DF70F /* KanjiAspectTableViewCell.swift */,
+				FAFE5C15240AEAE3004DF70F /* KanjiAspectTableViewCell.xib */,
+				FA34280F240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift */,
+				FA342810240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA342812240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib in Resources */,
 				FA250E4B2406B17700788A1F /* MPLUSRounded1c-Medium.ttf in Resources */,
 				FA250E4D2406B17700788A1F /* MPLUSRounded1c-Bold.ttf in Resources */,
 				FA250E4E2406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
@@ -432,6 +498,7 @@
 				FA169AFA23EA19E1002DC84F /* SearchResultTableViewCell.xib in Resources */,
 				FA250E4C2406B17700788A1F /* MPLUSRounded1c-Black.ttf in Resources */,
 				FADD305A2401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib in Resources */,
+				FAFE5C17240AEAE3004DF70F /* KanjiAspectTableViewCell.xib in Resources */,
 				FAB37EE423F9E40800077F79 /* DetailDefinitionTableViewCell.xib in Resources */,
 				FAF68CA5240716710067B7A5 /* KanjiSectionHeaderTableViewCell.xib in Resources */,
 				FAB37EE823F9F5A300077F79 /* DetailLinkTableViewCell.xib in Resources */,
@@ -440,6 +507,7 @@
 				FA250E492406B17700788A1F /* MPLUSRounded1c-Regular.ttf in Resources */,
 				FA63CD282403181C00F45A5F /* DetailKanjiCharacterTableViewCell.xib in Resources */,
 				FA759F3523F9BD480033641D /* DetailSummaryTableViewCell.xib in Resources */,
+				FAFE5C12240AB7B1004DF70F /* KanjiViewController.xib in Resources */,
 				FAF3BD4023E777F600B3D707 /* SearchViewController.xib in Resources */,
 				FAF3BD3123E776ED00B3D707 /* Main.storyboard in Resources */,
 				FA250E482406B17700788A1F /* MPLUSRounded1c-Light.ttf in Resources */,
@@ -495,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFE5C0E240AB06C004DF70F /* KanjiPresenterTests.swift in Sources */,
 				FA63CD2A2403199200F45A5F /* DetailPresenterTests.swift in Sources */,
 				FAC97BB12402990300D8AF8F /* StringTests.swift in Sources */,
 				FACA4ED223EEB68C004E0A3C /* SearchPresenterTests.swift in Sources */,
@@ -511,14 +580,20 @@
 				FA169AFC23EB6EEC002DC84F /* EntryDisplayItem.swift in Sources */,
 				FADD30592401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift in Sources */,
 				FA11E68F2406DF0E00D60B1D /* Kana.swift in Sources */,
+				FAFE5C05240AA599004DF70F /* KanjiResponseItem.swift in Sources */,
 				FAF3BD3F23E777F600B3D707 /* SearchViewController.swift in Sources */,
 				FA09BA3E23E78163005488DB /* SearchResponse.swift in Sources */,
+				FAFE5C16240AEAE3004DF70F /* KanjiAspectTableViewCell.swift in Sources */,
 				FA169AF923EA19E1002DC84F /* SearchResultTableViewCell.swift in Sources */,
+				FAFE5C0C240AACE6004DF70F /* KanjiPresenter.swift in Sources */,
 				FAF3BD2A23E776ED00B3D707 /* AppDelegate.swift in Sources */,
 				FAF5B79223F493DF008C3C81 /* String.swift in Sources */,
 				FAB37EE723F9F5A300077F79 /* DetailLinkTableViewCell.swift in Sources */,
 				FA09BA3C23E77F12005488DB /* SearchInteractor.swift in Sources */,
+				FAFE5C0A240AAAC3004DF70F /* KanjiInteractor.swift in Sources */,
+				FAFE5C11240AB7B1004DF70F /* KanjiViewController.swift in Sources */,
 				FA169B0023EB7447002DC84F /* DefinitionView.swift in Sources */,
+				FAFE5C08240AA7F7004DF70F /* KanjiDisplayItem.swift in Sources */,
 				FAAF85EF24047EA4001A8D05 /* UIColor.swift in Sources */,
 				FADD305C2401DA7E00ADAF99 /* WikipediaExtractResponse.swift in Sources */,
 				FAF68CA4240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift in Sources */,
@@ -526,6 +601,7 @@
 				FAB37EE323F9E40800077F79 /* DetailDefinitionTableViewCell.swift in Sources */,
 				FA169AFE23EB6FCD002DC84F /* SearchPresenter.swift in Sources */,
 				FAEBE07223ECDA56005CF1C5 /* InsetLabel.swift in Sources */,
+				FA342811240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift in Sources */,
 				FAB37EDB23F9BEB600077F79 /* DetailDisplayItem.swift in Sources */,
 				FA63CD272403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift in Sources */,
 				FAF3BD2C23E776ED00B3D707 /* SceneDelegate.swift in Sources */,

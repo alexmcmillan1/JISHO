@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="MPLUSRounded1c-Medium.ttf">
-            <string>RoundedMplus1c-Medium</string>
+        <array key="MPLUSRounded1c-Regular.ttf">
+            <string>RoundedMplus1c-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -30,7 +30,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="PKU-Oh-IW9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="44"/>
+                                <fontDescription key="fontDescription" name="RoundedMplus1c-Regular" family="Rounded Mplus 1c" pointSize="44"/>
                                 <color key="textColor" name="KanjiDetailText"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -71,7 +71,7 @@
     </objects>
     <resources>
         <namedColor name="KanjiDetailBackground">
-            <color red="0.93000000000000005" green="0.93000000000000005" blue="0.93000000000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93000000715255737" green="0.93000000715255737" blue="0.93000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="KanjiDetailText">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

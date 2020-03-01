@@ -10,6 +10,9 @@
         <array key="MPLUSRounded1c-Medium.ttf">
             <string>RoundedMplus1c-Medium</string>
         </array>
+        <array key="MPLUSRounded1c-Regular.ttf">
+            <string>RoundedMplus1c-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -23,7 +26,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="日本" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="PSE-zj-2PJ">
                         <rect key="frame" x="16" y="24" width="288" height="214"/>
-                        <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="72"/>
+                        <fontDescription key="fontDescription" name="RoundedMplus1c-Regular" family="Rounded Mplus 1c" pointSize="72"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

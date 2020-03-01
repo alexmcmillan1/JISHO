@@ -10,4 +10,5 @@ target 'JISHO' do
   pod 'SwiftyJSON', '~> 4.0'
   pod "PromiseKit", "~> 6.8"
   pod 'NVActivityIndicatorView'
+  pod 'PanModal'
 end
