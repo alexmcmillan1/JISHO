@@ -11,7 +11,6 @@
             <connections>
                 <outlet property="activityIndicator" destination="6v2-89-LsS" id="I2j-5K-5a3"/>
                 <outlet property="emptyView" destination="2Dl-Yu-Iov" id="5SD-Yq-iZg"/>
-                <outlet property="languageInputButton" destination="J8o-NT-CAo" id="JXL-25-Oqa"/>
                 <outlet property="loadingView" destination="irm-cn-hqb" id="9Qb-in-Nqz"/>
                 <outlet property="searchPromptView" destination="p3X-o4-cgn" id="cnO-eD-3W1"/>
                 <outlet property="tableView" destination="1fL-H3-ia3" id="XBN-Sq-w5a"/>
@@ -25,22 +24,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="river, 川, かわ..." textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hhV-MS-Key">
-                    <rect key="frame" x="90" y="60" width="308" height="36"/>
+                    <rect key="frame" x="16" y="60" width="382" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="36" id="JBV-cU-Vi0"/>
+                        <constraint firstAttribute="height" constant="40" id="JBV-cU-Vi0"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                 </textField>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fL-H3-ia3">
-                    <rect key="frame" x="0.0" y="112" width="414" height="750"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1fL-H3-ia3">
+                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnS-IG-jhZ">
+                    <rect key="frame" x="0.0" y="862" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="eyp-0b-b9o"/>
+                    </constraints>
+                </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irm-cn-hqb" userLabel="Loading View">
-                    <rect key="frame" x="0.0" y="112" width="414" height="750"/>
+                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="88" translatesAutoresizingMaskIntoConstraints="NO" id="6v2-89-LsS" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                            <rect key="frame" x="185" y="331" width="44" height="88"/>
+                            <rect key="frame" x="185" y="329" width="44" height="88"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="J7s-Ts-2zB"/>
@@ -54,7 +60,7 @@
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Dl-Yu-Iov">
-                    <rect key="frame" x="0.0" y="112" width="414" height="750"/>
+                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0L-7u-Fzn">
                             <rect key="frame" x="172.5" y="200" width="69" height="20.5"/>
@@ -70,7 +76,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3X-o4-cgn">
-                    <rect key="frame" x="0.0" y="112" width="414" height="750"/>
+                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start searching above" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6J-oc-vr8">
                             <rect key="frame" x="133" y="200" width="148" height="20.5"/>
@@ -85,17 +91,6 @@
                         <constraint firstItem="e6J-oc-vr8" firstAttribute="top" secondItem="p3X-o4-cgn" secondAttribute="top" constant="200" id="XoV-Et-X9O"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8o-NT-CAo">
-                    <rect key="frame" x="16" y="60" width="58" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="58" id="dDi-L3-Wgl"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
-                    <state key="normal" title="EN"/>
-                    <connections>
-                        <action selector="tappedLanguageButton:" destination="-1" eventType="touchUpInside" id="h3Y-l6-166"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -103,14 +98,14 @@
                 <constraint firstItem="irm-cn-hqb" firstAttribute="trailing" secondItem="1fL-H3-ia3" secondAttribute="trailing" id="4C7-na-paH"/>
                 <constraint firstItem="irm-cn-hqb" firstAttribute="leading" secondItem="1fL-H3-ia3" secondAttribute="leading" id="4qU-di-3ZU"/>
                 <constraint firstItem="2Dl-Yu-Iov" firstAttribute="bottom" secondItem="1fL-H3-ia3" secondAttribute="bottom" id="635-2c-vhQ"/>
-                <constraint firstItem="J8o-NT-CAo" firstAttribute="centerY" secondItem="hhV-MS-Key" secondAttribute="centerY" id="9Dx-Be-jaV"/>
-                <constraint firstItem="J8o-NT-CAo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9s0-bt-QQe"/>
+                <constraint firstItem="hhV-MS-Key" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="8bW-90-4O6"/>
                 <constraint firstItem="1fL-H3-ia3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dsq-tn-Yu1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hhV-MS-Key" secondAttribute="trailing" constant="16" id="E65-Mf-Vu7"/>
-                <constraint firstItem="J8o-NT-CAo" firstAttribute="height" secondItem="hhV-MS-Key" secondAttribute="height" id="Jum-pN-NEg"/>
+                <constraint firstItem="NnS-IG-jhZ" firstAttribute="leading" secondItem="1fL-H3-ia3" secondAttribute="leading" id="HFA-VM-uAm"/>
                 <constraint firstItem="2Dl-Yu-Iov" firstAttribute="leading" secondItem="1fL-H3-ia3" secondAttribute="leading" id="JzV-Qx-Ri9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1fL-H3-ia3" secondAttribute="bottom" id="NND-ta-LvJ"/>
                 <constraint firstItem="1fL-H3-ia3" firstAttribute="top" secondItem="hhV-MS-Key" secondAttribute="bottom" constant="16" id="OEk-In-O21"/>
+                <constraint firstItem="NnS-IG-jhZ" firstAttribute="trailing" secondItem="1fL-H3-ia3" secondAttribute="trailing" id="Viz-SP-Oj0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1fL-H3-ia3" secondAttribute="trailing" id="WMO-X2-XGz"/>
                 <constraint firstItem="irm-cn-hqb" firstAttribute="bottom" secondItem="1fL-H3-ia3" secondAttribute="bottom" id="YMa-ex-NH6"/>
                 <constraint firstItem="p3X-o4-cgn" firstAttribute="bottom" secondItem="1fL-H3-ia3" secondAttribute="bottom" id="Ytn-Bx-gfg"/>
@@ -119,7 +114,7 @@
                 <constraint firstItem="hhV-MS-Key" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="gps-AH-N47"/>
                 <constraint firstItem="p3X-o4-cgn" firstAttribute="trailing" secondItem="1fL-H3-ia3" secondAttribute="trailing" id="hWT-2R-z9F"/>
                 <constraint firstItem="p3X-o4-cgn" firstAttribute="leading" secondItem="1fL-H3-ia3" secondAttribute="leading" id="kPV-eY-22q"/>
-                <constraint firstItem="hhV-MS-Key" firstAttribute="leading" secondItem="J8o-NT-CAo" secondAttribute="trailing" constant="16" id="lD3-qe-xnL"/>
+                <constraint firstItem="NnS-IG-jhZ" firstAttribute="top" secondItem="1fL-H3-ia3" secondAttribute="bottom" id="kaA-dV-t9t"/>
                 <constraint firstItem="p3X-o4-cgn" firstAttribute="top" secondItem="1fL-H3-ia3" secondAttribute="top" id="r5t-JU-q1G"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

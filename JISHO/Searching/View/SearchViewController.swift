@@ -24,16 +24,7 @@ class SearchViewController: UIViewController, SearchViewInput {
     }
     
     private var activeSearchTerm: String?
-    private var inputLanguage: Language = .english {
-        didSet {
-            textField.placeholder = inputLanguage.searchPlaceholder
-            languageInputButton.setTitle(inputLanguage.rawValue, for: .normal)
-            languageInputButton.setTitleColor(inputLanguage.buttonTitleColor, for: .normal)
-            languageInputButton.backgroundColor = inputLanguage.buttonBackgroundColor
-        }
-    }
     
-    @IBOutlet private weak var languageInputButton: UIButton!
     @IBOutlet private weak var loadingView: UIView!
     @IBOutlet private weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet private weak var emptyView: UIView!
@@ -56,10 +47,8 @@ class SearchViewController: UIViewController, SearchViewInput {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "ViewBackground")
         navigationController?.navigationBar.isHidden = true
-        inputLanguage = .english
         textField.delegate = self
         setUpTableView()
-        styleLanguageButton()
         styleActivityIndicator()
     }
     
@@ -72,20 +61,10 @@ class SearchViewController: UIViewController, SearchViewInput {
         tableView.backgroundColor = UIColor(named: "ViewBackground")
     }
     
-    private func styleLanguageButton() {
-        languageInputButton.layer.cornerRadius = 4
-        languageInputButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        languageInputButton.titleLabel?.minimumScaleFactor = 0.5
-    }
-    
     private func styleActivityIndicator() {
         activityIndicator.color = .japanButtonBackground
         activityIndicator.type = .ballPulse
         activityIndicator.startAnimating()
-    }
-    
-    @IBAction private func tappedLanguageButton(_ sender: Any) {
-        inputLanguage = (inputLanguage == .english) ? .japanese : .english
     }
     
     private func showLoadingState() {

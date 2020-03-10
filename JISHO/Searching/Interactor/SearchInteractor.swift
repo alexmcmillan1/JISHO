@@ -11,7 +11,6 @@ import PromiseKit
 
 protocol SearchViewOutput {
     func request(keyword: String)
-    func request(keyword: String, language: Language)
 }
 
 class SearchInteractor: SearchViewOutput {
@@ -90,35 +89,6 @@ class SearchInteractor: SearchViewOutput {
                     }
                 }
             }
-        }
-    }
-    
-    func request(keyword: String, language: Language) {
-        guard let fullUrl: String = createUrlString(from: keyword, language: language) else { return }
-                
-        AF.request(fullUrl).response { [weak self] response in
-            guard let self = self else { return }
-            
-            switch response.result {
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .success(let data):
-                if let data = data {
-                    self.handleDataResponse(data)
-                }
-            }
-        }
-    }
-    
-    private func handleDataResponse(_ data: Data) {
-        do {
-            let decoded = try self.decoder.decode(SearchResponse.self, from: data)
-            let sanitised: [EntryDisplayItem] = decoded.data.compactMap { slug -> EntryDisplayItem? in
-                presenter.makeDisplayItem(from: slug)
-            }
-            viewInput?.data = sanitised
-        } catch {
-            print("Decoding error")
         }
     }
     
