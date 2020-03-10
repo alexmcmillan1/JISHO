@@ -100,7 +100,7 @@ extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
             showLoadingState()
-            output.request(keyword: text, language: inputLanguage)
+            output.request(keyword: text)
             activeSearchTerm = textField.text
             textField.resignFirstResponder()
             tableView.setContentOffset(.zero, animated: false)

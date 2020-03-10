@@ -10,6 +10,7 @@ import Foundation
 
 protocol SearchPresenting: class {
     func makeDisplayItem(from responseItem: Datum) -> EntryDisplayItem?
+    func deduplicate(displayItems: [EntryDisplayItem]) -> [EntryDisplayItem]
 }
 
 class SearchPresenter: SearchPresenting {
@@ -59,6 +60,20 @@ class SearchPresenter: SearchPresenting {
         for sense in senses {
             for link in sense.links {
                 result.append(ExternalLink(description: link.text, addressString: link.url))
+            }
+        }
+        
+        return result
+    }
+    
+    func deduplicate(displayItems: [EntryDisplayItem]) -> [EntryDisplayItem] {
+        var result = [EntryDisplayItem]()
+        
+        for item in displayItems {
+            if !result.contains(where: { (existing) -> Bool in
+                return item.mainForm == existing.mainForm
+            }) {
+                result.append(item)
             }
         }
         

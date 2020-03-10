@@ -15,7 +15,7 @@ struct EntryDisplayItem {
     let kanji: [String]
 }
 
-struct Form {
+struct Form: Equatable {
     let word: String
     let reading: String
 }

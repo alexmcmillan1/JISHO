@@ -116,4 +116,12 @@ class SearchPresenterTests: XCTestCase {
         
         XCTAssertEqual(0, displayItem.definitionsNotSurfaced)
     }
+    
+    func test_deduplicate_removesDuplicateDisplayItems() {
+        let inputItems: [EntryDisplayItem] = [EntryDisplayItem(mainForm: Form(word: "日本", reading: "にほん"), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: []), EntryDisplayItem(mainForm: Form(word: "日本", reading: "にほん"), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])]
+        
+        let deduplicated = sut.deduplicate(displayItems: inputItems)
+        
+        XCTAssertEqual(1, deduplicated.count)
+    }
 }

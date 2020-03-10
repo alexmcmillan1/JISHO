@@ -7,8 +7,10 @@
 //
 
 import Alamofire
+import PromiseKit
 
 protocol SearchViewOutput {
+    func request(keyword: String)
     func request(keyword: String, language: Language)
 }
 
@@ -22,6 +24,73 @@ class SearchInteractor: SearchViewOutput {
     
     init(presenter: SearchPresenting = SearchPresenter()) {
         self.presenter = presenter
+    }
+    
+    func request(keyword: String) {
+        guard let englishUrl = createUrlString(from: keyword, language: .english), let japaneseUrl = createUrlString(from: keyword, language: .japanese) else { return }
+        
+        let promises: [Promise<SearchResponse?>] = [promiseForRequest(to: englishUrl), promiseForRequest(to: japaneseUrl)]
+        
+        when(fulfilled: promises).done { [weak self] (responses) in
+            guard let self = self, let firstResponse = responses[0], let secondResponse = responses[1] else { return }
+            // interleave response data and make display items
+            var allResponseData: [Datum] = []
+            
+            if firstResponse.data.count < secondResponse.data.count {
+                for i in 0 ..< firstResponse.data.count {
+                    allResponseData.append(firstResponse.data[i])
+                    allResponseData.append(secondResponse.data[i])
+                }
+                // then add the rest of the longer one
+                for i in firstResponse.data.count ..< secondResponse.data.count {
+                    allResponseData.append(secondResponse.data[i])
+                }
+            } else {
+                for i in 0 ..< secondResponse.data.count {
+                    allResponseData.append(secondResponse.data[i])
+                    allResponseData.append(firstResponse.data[i])
+                }
+                // then add the rest of the longer one
+                for i in secondResponse.data.count ..< firstResponse.data.count {
+                    allResponseData.append(firstResponse.data[i])
+                }
+            }
+            
+            let sanitised: [EntryDisplayItem] = allResponseData.compactMap { slug -> EntryDisplayItem? in
+                self.presenter.makeDisplayItem(from: slug)
+            }
+                        
+            self.viewInput?.data = self.presenter.deduplicate(displayItems: sanitised)
+        }.catch { error in
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func promiseForRequest(to url: String) -> Promise<SearchResponse?> {
+        return Promise { seal in
+            AF.request(url).response { [weak self] response in
+                guard let self = self else {
+                    seal.fulfill(nil)
+                    return
+                }
+                
+                switch response.result {
+                case .failure:
+                    seal.fulfill(nil)
+                case .success(let data):
+                    guard let data = data else {
+                        seal.fulfill(nil)
+                        return
+                    }
+                    do {
+                        let decoded = try self.decoder.decode(SearchResponse.self, from: data)
+                        seal.fulfill(decoded)
+                    } catch {
+                        seal.fulfill(nil)
+                    }
+                }
+            }
+        }
     }
     
     func request(keyword: String, language: Language) {

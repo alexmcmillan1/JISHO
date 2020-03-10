@@ -25,19 +25,23 @@ class KanjiPresenterTests: XCTestCase {
                                              unicode: "5",
                                              heisig_en: "sun")
         
-        let displayItem = sut.makeDisplayItem(from: responseItem)
+        let kanjiDetail = sut.makeDisplayItems(from: responseItem)
         
-        XCTAssertEqual("日", displayItem.character)
-        XCTAssertEqual("Grade 5", displayItem.gradeDescription)
-        XCTAssertEqual("5 strokes", displayItem.strokeCountDescription)
-        XCTAssertEqual("sun; day", displayItem.meanings)
-        XCTAssertEqual(ReadingType.kun, displayItem.readings[0].type)
-        XCTAssertEqual("ka, ki", displayItem.readings[0].values)
-        XCTAssertEqual(ReadingType.on, displayItem.readings[1].type)
-        XCTAssertEqual("ku, ke", displayItem.readings[1].values)
-        XCTAssertEqual(ReadingType.name, displayItem.readings[2].type)
-        XCTAssertEqual("ko, sa", displayItem.readings[2].values)
-        XCTAssertEqual("JLPT N5", displayItem.jlptDescription)
-        
+        for detail in kanjiDetail {
+            switch detail {
+            case .summary(let summary):
+                XCTAssertEqual("日", summary.character)
+                XCTAssertEqual("Grade 5", summary.gradeDescription)
+                XCTAssertEqual("5 strokes", summary.strokeCountDescription)
+                XCTAssertEqual("sun; day", summary.meanings)
+                XCTAssertEqual("JLPT N5", summary.jlptDescription)
+            case .reading(let reading):
+                switch reading.type {
+                case .kun: XCTAssertEqual("ka, ki", reading.values)
+                case .on: XCTAssertEqual("ku, ke", reading.values)
+                case .name: XCTAssertEqual("ko, sa", reading.values)
+                }
+            }
+        }
     }
 }
