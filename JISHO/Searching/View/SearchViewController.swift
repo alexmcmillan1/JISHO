@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     var data: [EntryDisplayItem] = [] {
         didSet {
+            tableView.contentOffset = CGPoint(x: 0, y: -64)
             tableView.reloadData()
             emptyView.isHidden = !data.isEmpty
             loadingView.isHidden = true
@@ -98,6 +99,7 @@ class SearchViewController: UIViewController, SearchViewInput {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = UIColor(named: "ViewBackground")
+        tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
     }
     
     private func styleActivityIndicator() {

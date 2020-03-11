@@ -13,8 +13,8 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 8
-            containerView.backgroundColor = .clear
-            containerView.layer.borderWidth = 2
+            containerView.backgroundColor = UIColor(named: "SearchResultContainerView")
+            containerView.layer.borderWidth = 1
             containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
         }
     }
@@ -46,6 +46,11 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     @IBOutlet private weak var definitionsStackView: UIStackView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = .clear
+    }
 
     func setUp(displayItem: EntryDisplayItem) {
         setText(from: displayItem)
