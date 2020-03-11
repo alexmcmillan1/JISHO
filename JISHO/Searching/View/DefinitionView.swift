@@ -49,7 +49,8 @@ class DefinitionView: UIView {
     }
     
     private func stylePartOfSpeechLabel() {
-        partOfSpeechLabel.numberOfLines = 0
+        partOfSpeechLabel.minimumScaleFactor = 0.5
+        partOfSpeechLabel.adjustsFontSizeToFitWidth = true
         partOfSpeechLabel.layer.cornerRadius = 4
         partOfSpeechLabel.layer.masksToBounds = true
         partOfSpeechLabel.textColor = UIColor(named: "PartOfSpeechText")
@@ -71,7 +72,8 @@ class DefinitionView: UIView {
         labelsGapConstraint = descriptionLabel.topAnchor.constraint(equalTo: partOfSpeechLabel.bottomAnchor, constant: 8)
 
         NSLayoutConstraint.activate([partOfSpeechLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     partOfSpeechLabel.topAnchor.constraint(equalTo: topAnchor)])
+                                     partOfSpeechLabel.topAnchor.constraint(equalTo: topAnchor),
+        partOfSpeechLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor)])
         
         NSLayoutConstraint.activate([descriptionLabel.leadingAnchor.constraint(equalTo: partOfSpeechLabel.leadingAnchor),
                                      descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
