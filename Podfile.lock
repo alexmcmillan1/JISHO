@@ -13,6 +13,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
+  - SwiftyGif (5.2.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - PanModal
   - PromiseKit (~> 6.8)
+  - SwiftyGif
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - PanModal
     - PromiseKit
+    - SwiftyGif
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -35,8 +38,9 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   PanModal: 7c5af3ad4fe22b91508040965bebffb89fb607ae
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  SwiftyGif: b85c6b33a9411859d9e1db998b6a8214aea942df
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 9320352bbd38a9510115f421f826ed25db67b137
+PODFILE CHECKSUM: c67f76007e40448d2f7e5e0d9ad8fed8e6dfce2c
 
 COCOAPODS: 1.8.4

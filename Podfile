@@ -11,4 +11,5 @@ target 'JISHO' do
   pod "PromiseKit", "~> 6.8"
   pod 'NVActivityIndicatorView'
   pod 'PanModal'
+  pod 'SwiftyGif'
 end

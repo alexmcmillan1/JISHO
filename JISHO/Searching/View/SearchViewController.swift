@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import SwiftyGif
 
 protocol SearchViewInput: class {
     var data: [EntryDisplayItem] { get set }
@@ -22,13 +23,42 @@ class SearchViewController: UIViewController, SearchViewInput {
             loadingView.isHidden = true
         }
     }
+    @IBOutlet weak var gifImageView: UIImageView!
+    
+    @IBOutlet weak var gif2ImageView: UIImageView! {
+        didSet {
+            gif2ImageView.transform = CGAffineTransform(rotationAngle: 0.6)
+        }
+    }
+    
+    @IBOutlet weak var gif3ImageView: UIImageView! {
+        didSet {
+            gif3ImageView.transform = CGAffineTransform(rotationAngle: -0.6)
+        }
+    }
     
     private var activeSearchTerm: String?
     
-    @IBOutlet private weak var loadingView: UIView!
+    @IBOutlet private weak var loadingView: UIView! {
+        didSet {
+            loadingView.backgroundColor = UIColor(named: "ViewBackground")
+        }
+    }
+    
     @IBOutlet private weak var activityIndicator: NVActivityIndicatorView!
-    @IBOutlet private weak var emptyView: UIView!
-    @IBOutlet private weak var searchPromptView: UIView!
+    
+    @IBOutlet private weak var emptyView: UIView! {
+        didSet {
+            emptyView.backgroundColor = UIColor(named: "ViewBackground")
+        }
+    }
+    
+    @IBOutlet private weak var searchPromptView: UIView! {
+        didSet {
+            searchPromptView.backgroundColor = UIColor(named: "ViewBackground")
+        }
+    }
+    
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var textField: UITextField!
     
@@ -50,6 +80,15 @@ class SearchViewController: UIViewController, SearchViewInput {
         textField.delegate = self
         setUpTableView()
         styleActivityIndicator()
+        
+        do {
+            try gifImageView.setGifImage(UIImage(gifName: "movingline3.gif"))
+            try gif2ImageView.setGifImage(UIImage(gifName: "movingline3.gif"))
+            try gif3ImageView.setGifImage(UIImage(gifName: "movingline3.gif"))
+        } catch {
+            
+        }
+        
     }
     
     private func setUpTableView() {
@@ -94,7 +133,7 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
         cell.setUp(displayItem: data[indexPath.row])

@@ -13,6 +13,9 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 8
+            containerView.backgroundColor = .clear
+            containerView.layer.borderWidth = 2
+            containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
         }
     }
     

@@ -31,6 +31,7 @@
 		FA63CD2A2403199200F45A5F /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63CD292403199200F45A5F /* DetailPresenterTests.swift */; };
 		FA759F3423F9BD480033641D /* DetailSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA759F3223F9BD480033641D /* DetailSummaryTableViewCell.swift */; };
 		FA759F3523F9BD480033641D /* DetailSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA759F3323F9BD480033641D /* DetailSummaryTableViewCell.xib */; };
+		FA88643E24191B5B0058B918 /* movingline3.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA88643D24191B5B0058B918 /* movingline3.gif */; };
 		FAAF85EF24047EA4001A8D05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF85EE24047EA4001A8D05 /* UIColor.swift */; };
 		FAB37EDB23F9BEB600077F79 /* DetailDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDA23F9BEB600077F79 /* DetailDisplayItem.swift */; };
 		FAB37EDD23F9CFB000077F79 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDC23F9CFB000077F79 /* DetailInteractor.swift */; };
@@ -106,6 +107,7 @@
 		FA63CD292403199200F45A5F /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		FA759F3223F9BD480033641D /* DetailSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		FA759F3323F9BD480033641D /* DetailSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		FA88643D24191B5B0058B918 /* movingline3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = movingline3.gif; sourceTree = "<group>"; };
 		FAAF85EE24047EA4001A8D05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FAB37EDA23F9BEB600077F79 /* DetailDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDisplayItem.swift; sourceTree = "<group>"; };
 		FAB37EDC23F9CFB000077F79 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				FAF3BD3223E776ED00B3D707 /* Assets.xcassets */,
 				FAF3BD3423E776ED00B3D707 /* LaunchScreen.storyboard */,
 				FAF3BD3723E776ED00B3D707 /* Info.plist */,
+				FA88643D24191B5B0058B918 /* movingline3.gif */,
 				FAE6FDDA23EEB46300CDB5F7 /* Searching */,
 				FAD61DDC23F8A1BD00C37E37 /* Detail */,
 				FAFE5C02240AA457004DF70F /* Kanji */,
@@ -496,6 +499,7 @@
 				FAF3BD3623E776ED00B3D707 /* LaunchScreen.storyboard in Resources */,
 				FAD61DE023F8A1FB00C37E37 /* DetailViewController.xib in Resources */,
 				FA169AFA23EA19E1002DC84F /* SearchResultTableViewCell.xib in Resources */,
+				FA88643E24191B5B0058B918 /* movingline3.gif in Resources */,
 				FA250E4C2406B17700788A1F /* MPLUSRounded1c-Black.ttf in Resources */,
 				FADD305A2401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib in Resources */,
 				FAFE5C17240AEAE3004DF70F /* KanjiAspectTableViewCell.xib in Resources */,
