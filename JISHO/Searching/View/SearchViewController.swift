@@ -16,6 +16,11 @@ protocol SearchViewInput: class {
 
 class SearchViewController: UIViewController, SearchViewInput {
     
+    private var previousScrollDown = true
+    private var scrollAccumulator: CGFloat = 0
+    private var previousYScrollOffset: CGFloat = 0
+    private var searchBarIsHidden = false
+    
     var data: [EntryDisplayItem] = [] {
         didSet {
             tableView.contentOffset = CGPoint(x: 0, y: -64)
@@ -113,6 +118,18 @@ class SearchViewController: UIViewController, SearchViewInput {
         searchPromptView.isHidden = true
         emptyView.isHidden = true
     }
+    
+    private func hideSearchBar() {
+        UIViewPropertyAnimator(duration: 0.4, curve: .easeOut) {
+            self.textField.transform = CGAffineTransform(translationX: 0, y: -100)
+        }.startAnimation()
+    }
+    
+    private func showSearchBar() {
+        UIViewPropertyAnimator(duration: 0.4, curve: .easeIn) {
+            self.textField.transform = .identity
+        }.startAnimation()
+    }
 }
 
 extension SearchViewController: UITextFieldDelegate {
@@ -153,5 +170,55 @@ extension SearchViewController: UITableViewDelegate {
         detailInteractor.viewInput = detailViewController
         
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
+        
+        // if the previous was 0 and current < 0, skip
+        if scrollView.contentOffset.y == -64 && previousYScrollOffset == 0 {
+            return
+        }
+        
+        if scrollView.contentOffset.y < 0 {
+            return
+        }
+        
+        let directionIsDown = scrollView.contentOffset.y > previousYScrollOffset
+        
+        if !previousScrollDown && directionIsDown {
+            // we started going down, reset the accumulator
+            print("started going down")
+            scrollAccumulator = 0
+        } else if previousScrollDown && !directionIsDown {
+            // we started going up, reset the accumulator
+            print("started going up")
+            scrollAccumulator = 0
+        }
+        
+        if directionIsDown {
+            scrollAccumulator += scrollView.contentOffset.y - previousYScrollOffset
+            print("accumulator: \(scrollAccumulator)")
+            if scrollAccumulator > 44 && !searchBarIsHidden {
+                print("hide search bar")
+                searchBarIsHidden = true
+                UIView.animate(withDuration: 0.4) {
+                    self.textField.transform = CGAffineTransform(translationX: 0, y: -100)
+                }
+            }
+        } else {
+            scrollAccumulator += previousYScrollOffset - scrollView.contentOffset.y
+            print("accumulator: \(scrollAccumulator)")
+            if scrollAccumulator > 44 && searchBarIsHidden {
+                print("show search bar")
+                searchBarIsHidden = false
+                UIView.animate(withDuration: 0.4) {
+                    self.textField.transform = .identity
+                }
+            }
+        }
+        
+        previousYScrollOffset = scrollView.contentOffset.y
+        previousScrollDown = directionIsDown
     }
 }
