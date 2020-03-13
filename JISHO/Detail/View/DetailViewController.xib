@@ -21,19 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbI-3E-uJv">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
-                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ON5-UE-48s">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryV-bq-hXZ" userLabel="Loading View">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="88" translatesAutoresizingMaskIntoConstraints="NO" id="DVd-Xw-KnZ" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                            <rect key="frame" x="185" y="343" width="44" height="88"/>
+                            <rect key="frame" x="185" y="365" width="44" height="88"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="woI-lG-DZf"/>
@@ -47,12 +43,13 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyU-cD-9TX">
-                    <rect key="frame" x="4" y="44" width="70" height="44"/>
+                    <rect key="frame" x="8" y="44" width="44" height="44"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="44" id="0cH-Af-6Ht"/>
                         <constraint firstAttribute="height" constant="44" id="VoY-wD-h6d"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="Button" image="BackArrow">
+                    <state key="normal" image="BackArrow">
                         <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -63,19 +60,15 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ON5-UE-48s" secondAttribute="bottom" id="2or-LA-8Mk"/>
-                <constraint firstItem="ON5-UE-48s" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="4EM-gH-bwN"/>
+                <constraint firstItem="ON5-UE-48s" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4EM-gH-bwN"/>
                 <constraint firstItem="oyU-cD-9TX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6ul-Xe-t7F"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="top" secondItem="ON5-UE-48s" secondAttribute="top" id="DfP-gp-bTi"/>
                 <constraint firstItem="ON5-UE-48s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FXQ-qu-swt"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="bottom" secondItem="ON5-UE-48s" secondAttribute="bottom" id="GHe-k6-62L"/>
-                <constraint firstItem="ON5-UE-48s" firstAttribute="top" secondItem="RbI-3E-uJv" secondAttribute="bottom" id="GhP-v0-Sit"/>
-                <constraint firstItem="oyU-cD-9TX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="LGb-xu-lG1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="RbI-3E-uJv" secondAttribute="top" constant="44" id="PXq-JY-eNV"/>
+                <constraint firstItem="oyU-cD-9TX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="LGb-xu-lG1"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="trailing" secondItem="ON5-UE-48s" secondAttribute="trailing" id="T9X-2X-8lI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RbI-3E-uJv" secondAttribute="trailing" id="WIG-Px-ky6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ON5-UE-48s" secondAttribute="trailing" id="XkU-hX-p22"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="leading" secondItem="ON5-UE-48s" secondAttribute="leading" id="fIE-25-vUn"/>
-                <constraint firstItem="RbI-3E-uJv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pRD-c8-Huu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>

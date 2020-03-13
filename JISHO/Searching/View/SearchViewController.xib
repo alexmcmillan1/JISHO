@@ -15,6 +15,7 @@
                 <outlet property="promptGifViewA" destination="rLy-vt-T1z" id="6Ge-3C-e95"/>
                 <outlet property="promptGifViewB" destination="kWh-9E-ma2" id="WdN-mC-phh"/>
                 <outlet property="promptGifViewC" destination="IzH-KZ-UpD" id="Ro8-8T-ero"/>
+                <outlet property="safeAreaTintView" destination="zZM-OH-fVI" id="ge9-TG-Wnv"/>
                 <outlet property="searchPromptView" destination="p3X-o4-cgn" id="cnO-eD-3W1"/>
                 <outlet property="tableView" destination="1fL-H3-ia3" id="XBN-Sq-w5a"/>
                 <outlet property="textField" destination="hhV-MS-Key" id="RnR-cA-5Cn"/>

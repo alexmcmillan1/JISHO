@@ -29,6 +29,12 @@ class SearchViewController: UIViewController, SearchViewInput {
     @IBOutlet private weak var promptGifViewB: UIImageView!
     @IBOutlet private weak var promptGifViewC: UIImageView!
     
+    @IBOutlet private weak var safeAreaTintView: UIView! {
+        didSet {
+            safeAreaTintView.backgroundColor = UIColor(named: "ViewBackground")
+        }
+    }
+    
     private var activeSearchTerm: String?
     
     @IBOutlet private weak var loadingView: UIView! {
@@ -91,7 +97,7 @@ class SearchViewController: UIViewController, SearchViewInput {
     }
     
     private func styleActivityIndicator() {
-        activityIndicator.color = UIColor(named: "ActivityIndicator")!
+        activityIndicator.color = UIColor(named: "SearchResultOutline")!
         activityIndicator.type = .ballPulse
         activityIndicator.startAnimating()
     }

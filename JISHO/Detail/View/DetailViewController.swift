@@ -47,7 +47,6 @@ class DetailViewController: UIViewController, DetailViewInput {
         view.backgroundColor = UIColor(named: "ViewBackground")
         setUpTableView()
         styleBackButton()
-        setBackButtonTitle()
         styleActivityIndicator()
         
         output.viewIsReady()
@@ -59,13 +58,14 @@ class DetailViewController: UIViewController, DetailViewInput {
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
+        tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
     }
     
     private func styleBackButton() {
         backButton.setTitleColor(UIColor(named: "Link"), for: .normal)
-        backButton.setTitleColor(UIColor(named: "LinkHighlighted"), for: .highlighted)
-        backButton.setImage(UIImage(named: "BackArrow")?.withTintColor(.link), for: .normal)
-        backButton.setImage(UIImage(named: "BackArrow")?.withTintColor(UIColor(named: "LinkHighlighted")!), for: .highlighted)
+        backButton.setImage(UIImage(named: "BackArrow")?.withTintColor(UIColor(named: "BackButton")!), for: .normal)
+        backButton.backgroundColor = UIColor(named: "BackButtonBackground")
+        backButton.layer.cornerRadius = 22
     }
     
     private func setBackButtonTitle() {
@@ -74,7 +74,7 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     private func styleActivityIndicator() {
-        activityIndicator.color = UIColor(named: "ActivityIndicator")!
+        activityIndicator.color = UIColor(named: "SearchResultOutline")!
         activityIndicator.type = .ballPulse
         activityIndicator.startAnimating()
     }
