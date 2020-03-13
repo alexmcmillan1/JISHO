@@ -24,7 +24,6 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="茶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQt-T0-mlN">
                         <rect key="frame" x="16" y="16" width="64" height="64"/>
-                        <color key="backgroundColor" name="KanjiDetailBackground"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="64" id="Qze-iP-24t"/>
                             <constraint firstAttribute="width" constant="64" id="irb-aI-y8b"/>
@@ -59,9 +58,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="KanjiDetailBackground">
-            <color red="0.93000000715255737" green="0.93000000715255737" blue="0.93000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="KanjiDetailText">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

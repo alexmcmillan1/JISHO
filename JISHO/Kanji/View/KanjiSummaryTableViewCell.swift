@@ -14,6 +14,8 @@ class KanjiSummaryTableViewCell: UITableViewCell {
         didSet {
             charLabel.layer.cornerRadius = 8
             charLabel.layer.masksToBounds = true
+            charLabel.layer.borderWidth = 1
+            charLabel.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
         }
     }
     
