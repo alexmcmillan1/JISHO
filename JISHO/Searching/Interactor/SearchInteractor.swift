@@ -26,7 +26,7 @@ class SearchInteractor: SearchViewOutput {
     }
     
     func request(keyword: String) {
-        guard let englishUrl = createUrlString(from: keyword, language: .english), let japaneseUrl = createUrlString(from: keyword, language: .japanese) else { return }
+        guard let englishUrl = createUrlString(from: keyword, wrapped: true), let japaneseUrl = createUrlString(from: keyword, wrapped: false) else { return }
         
         let promises: [Promise<SearchResponse?>] = [promiseForRequest(to: englishUrl), promiseForRequest(to: japaneseUrl)]
         
@@ -92,10 +92,10 @@ class SearchInteractor: SearchViewOutput {
         }
     }
     
-    private func createUrlString(from input: String, language: Language) -> String? {
+    private func createUrlString(from input: String, wrapped: Bool) -> String? {
         guard var escaped = input.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
         
-        if language == .english { escaped = wrapForEnglish(escaped) }
+        if wrapped { escaped = wrapForEnglish(escaped) }
         
         return "\(baseUrl)\(escaped)"
     }

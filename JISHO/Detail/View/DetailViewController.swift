@@ -62,10 +62,10 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     private func styleBackButton() {
-        backButton.setTitleColor(.link, for: .normal)
-        backButton.setTitleColor(.linkHighlighted, for: .highlighted)
+        backButton.setTitleColor(UIColor(named: "Link"), for: .normal)
+        backButton.setTitleColor(UIColor(named: "LinkHighlighted"), for: .highlighted)
         backButton.setImage(UIImage(named: "BackArrow")?.withTintColor(.link), for: .normal)
-        backButton.setImage(UIImage(named: "BackArrow")?.withTintColor(.linkHighlighted), for: .highlighted)
+        backButton.setImage(UIImage(named: "BackArrow")?.withTintColor(UIColor(named: "LinkHighlighted")!), for: .highlighted)
     }
     
     private func setBackButtonTitle() {
@@ -74,7 +74,7 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     private func styleActivityIndicator() {
-        activityIndicator.color = .japanButtonBackground
+        activityIndicator.color = UIColor(named: "ActivityIndicator")!
         activityIndicator.type = .ballPulse
         activityIndicator.startAnimating()
     }

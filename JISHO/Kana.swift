@@ -30,7 +30,7 @@ enum Kana: String {
     case se = "せ"
     case so = "そ"
     case za = "ざ"
-    case zi = "じ"
+    case ji = "じ"
     case zu = "ず"
     case ze = "ぜ"
     case zo = "ぞ"
@@ -142,8 +142,8 @@ enum Kana: String {
             return "so"
         case .za:
             return "za"
-        case .zi:
-            return "zi"
+        case .ji:
+            return "ji"
         case .zu:
             return "zu"
         case .ze:

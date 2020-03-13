@@ -21,6 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbI-3E-uJv">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ON5-UE-48s">
                     <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -64,13 +68,17 @@
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="top" secondItem="ON5-UE-48s" secondAttribute="top" id="DfP-gp-bTi"/>
                 <constraint firstItem="ON5-UE-48s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FXQ-qu-swt"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="bottom" secondItem="ON5-UE-48s" secondAttribute="bottom" id="GHe-k6-62L"/>
+                <constraint firstItem="ON5-UE-48s" firstAttribute="top" secondItem="RbI-3E-uJv" secondAttribute="bottom" id="GhP-v0-Sit"/>
                 <constraint firstItem="oyU-cD-9TX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="LGb-xu-lG1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="RbI-3E-uJv" secondAttribute="top" constant="44" id="PXq-JY-eNV"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="trailing" secondItem="ON5-UE-48s" secondAttribute="trailing" id="T9X-2X-8lI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RbI-3E-uJv" secondAttribute="trailing" id="WIG-Px-ky6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ON5-UE-48s" secondAttribute="trailing" id="XkU-hX-p22"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="leading" secondItem="ON5-UE-48s" secondAttribute="leading" id="fIE-25-vUn"/>
+                <constraint firstItem="RbI-3E-uJv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pRD-c8-Huu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </view>
     </objects>
     <resources>

@@ -24,19 +24,10 @@ class SearchViewController: UIViewController, SearchViewInput {
             loadingView.isHidden = true
         }
     }
-    @IBOutlet weak var gifImageView: UIImageView!
     
-    @IBOutlet weak var gif2ImageView: UIImageView! {
-        didSet {
-            gif2ImageView.transform = CGAffineTransform(rotationAngle: 0.6)
-        }
-    }
-    
-    @IBOutlet weak var gif3ImageView: UIImageView! {
-        didSet {
-            gif3ImageView.transform = CGAffineTransform(rotationAngle: -0.6)
-        }
-    }
+    @IBOutlet private weak var promptGifViewA: UIImageView!
+    @IBOutlet private weak var promptGifViewB: UIImageView!
+    @IBOutlet private weak var promptGifViewC: UIImageView!
     
     private var activeSearchTerm: String?
     
@@ -86,15 +77,7 @@ class SearchViewController: UIViewController, SearchViewInput {
         textField.delegate = self
         setUpTableView()
         styleActivityIndicator()
-        
-        do {
-            try gifImageView.setGifImage(UIImage(gifName: "movingline3.gif"))
-            try gif2ImageView.setGifImage(UIImage(gifName: "movingline3.gif"))
-            try gif3ImageView.setGifImage(UIImage(gifName: "movingline3.gif"))
-        } catch {
-            
-        }
-        
+        stylePromptViewComponents()
     }
     
     private func setUpTableView() {
@@ -108,9 +91,21 @@ class SearchViewController: UIViewController, SearchViewInput {
     }
     
     private func styleActivityIndicator() {
-        activityIndicator.color = .japanButtonBackground
+        activityIndicator.color = UIColor(named: "ActivityIndicator")!
         activityIndicator.type = .ballPulse
         activityIndicator.startAnimating()
+    }
+    
+    private func stylePromptViewComponents() {
+        do {
+            try promptGifViewA.setGifImage(UIImage(gifName: "promptanimation.gif"))
+            try promptGifViewB.setGifImage(UIImage(gifName: "promptanimation.gif"))
+            try promptGifViewC.setGifImage(UIImage(gifName: "promptanimation.gif"))
+        } catch {
+            print("Couldn't load gif")
+        }
+        promptGifViewB.transform = CGAffineTransform(rotationAngle: 0.6)
+        promptGifViewC.transform = CGAffineTransform(rotationAngle: -0.6)
     }
     
     private func showLoadingState() {
@@ -120,13 +115,13 @@ class SearchViewController: UIViewController, SearchViewInput {
     }
     
     private func hideSearchBar() {
-        UIViewPropertyAnimator(duration: 0.4, curve: .easeOut) {
+        UIViewPropertyAnimator(duration: 0.4, curve: .linear) {
             self.textField.transform = CGAffineTransform(translationX: 0, y: -100)
         }.startAnimation()
     }
     
     private func showSearchBar() {
-        UIViewPropertyAnimator(duration: 0.4, curve: .easeIn) {
+        UIViewPropertyAnimator(duration: 0.4, curve: .easeOut) {
             self.textField.transform = .identity
         }.startAnimation()
     }

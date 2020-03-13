@@ -38,9 +38,9 @@ class KanjiPresenter: KanjiPresenting {
     }
     
     private func readings(from responseItem: KanjiResponseItem) -> [KanjiReadingDisplayItem] {
-        let kunReadings = KanjiReadingDisplayItem(type: .kun, values: responseItem.kun_readings.joined(separator: ", "))
-        let onReadings = KanjiReadingDisplayItem(type: .on, values: responseItem.on_readings.joined(separator: ", "))
-        let nameReadings = KanjiReadingDisplayItem(type: .name, values: responseItem.name_readings.joined(separator: ", "))
+        let kunReadings = KanjiReadingDisplayItem(type: .kun, values: responseItem.kun_readings.joined(separator: " · "))
+        let onReadings = KanjiReadingDisplayItem(type: .on, values: responseItem.on_readings.joined(separator: " · "))
+        let nameReadings = KanjiReadingDisplayItem(type: .name, values: responseItem.name_readings.joined(separator: " · "))
         
         return [kunReadings, onReadings, nameReadings]
     }
