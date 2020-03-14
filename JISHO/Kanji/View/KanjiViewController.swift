@@ -72,6 +72,7 @@ class KanjiViewController: UIViewController, KanjiViewInput, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
+        view.backgroundColor = UIColor(named: "ViewBackground")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

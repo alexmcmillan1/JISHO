@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import JISHO
+@testable import Ji_kun
 
 class KanjiPresenterTests: XCTestCase {
 
@@ -37,9 +37,9 @@ class KanjiPresenterTests: XCTestCase {
                 XCTAssertEqual("JLPT N5", summary.jlptDescription)
             case .reading(let reading):
                 switch reading.type {
-                case .kun: XCTAssertEqual("ka, ki", reading.values)
-                case .on: XCTAssertEqual("ku, ke", reading.values)
-                case .name: XCTAssertEqual("ko, sa", reading.values)
+                case .kun: XCTAssertEqual("ka · ki", reading.values)
+                case .on: XCTAssertEqual("ku · ke", reading.values)
+                case .name: XCTAssertEqual("ko · sa", reading.values)
                 }
             }
         }
