@@ -45,7 +45,7 @@ extension String {
         // Double consonants
         
         for i in 0 ..< chars.count {
-            if chars[i] == Kana.doubleNextConsonant.rawValue {
+            if chars[i] == Kana.doubleNextConsonant.rawValue || chars[i] == Kana.katadoubleNextConsonant.rawValue {
                 result.append(chars[i+1])
             } else {
                 result.append(chars[i])

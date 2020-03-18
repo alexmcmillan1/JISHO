@@ -9,6 +9,7 @@
 import Foundation
 
 enum Kana: String {
+    
     case a = "あ"
     case i = "い"
     case u = "う"
@@ -84,9 +85,84 @@ enum Kana: String {
     case smallYa = "ゃ"
     case smallYu = "ゅ"
     case smallYo = "ょ"
+    case kataa = "ア"
+    case katai = "イ"
+    case katau = "ウ"
+    case katae = "エ"
+    case katao = "オ"
+    case kataka = "カ"
+    case kataki = "キ"
+    case kataku = "ク"
+    case katake = "ケ"
+    case katako = "コ"
+    case kataga = "ガ"
+    case katagi = "ギ"
+    case katagu = "グ"
+    case katage = "ゲ"
+    case katago = "ゴ"
+    case katasa = "サ"
+    case katashi = "シ"
+    case katasu = "ス"
+    case katase = "セ"
+    case kataso = "ソ"
+    case kataza = "ザ"
+    case kataji = "ジ"
+    case katazu = "ズ"
+    case kataze = "ゼ"
+    case katazo = "ゾ"
+    case katata = "タ"
+    case katachi = "チ"
+    case katatsu = "ツ"
+    case katate = "テ"
+    case katato = "ト"
+    case katada = "ダ"
+    case katadi = "ヂ"
+    case katadu = "ヅ"
+    case katade = "デ"
+    case katado = "ド"
+    case katana = "ナ"
+    case katani = "ニ"
+    case katanu = "ヌ"
+    case katane = "ネ"
+    case katano = "ノ"
+    case kataha = "ハ"
+    case katahi = "ヒ"
+    case katafu = "フ"
+    case katahe = "ヘ"
+    case kataho = "ホ"
+    case kataba = "バ"
+    case katabi = "ビ"
+    case katabu = "ブ"
+    case katabe = "ベ"
+    case katabo = "ボ"
+    case katapa = "パ"
+    case katapi = "ピ"
+    case katapu = "プ"
+    case katape = "ペ"
+    case katapo = "ポ"
+    case katama = "マ"
+    case katami = "ミ"
+    case katamu = "ム"
+    case katame = "メ"
+    case katamo = "モ"
+    case kataya = "ヤ"
+    case katayu = "ユ"
+    case katayo = "ヨ"
+    case katara = "ラ"
+    case katari = "リ"
+    case kataru = "ル"
+    case katare = "レ"
+    case kataro = "ロ"
+    case katawa = "ワ"
+    case katawo = "ヲ"
+    case katan = "ン"
+    case katadoubleNextConsonant = "ッ"
+    case katasmallYa = "ャ"
+    case katasmallYu = "ュ"
+    case katasmallYo = "ョ"
     
     var isSmallModifier: Bool {
-        return [Kana.smallYa, Kana.smallYu, Kana.smallYo].contains(self)
+        return [Kana.smallYa, Kana.smallYu, Kana.smallYo, Kana.katasmallYa, Kana.katasmallYo, Kana.katasmallYo].contains(self)
     }
     
     var smallModifierRomaji: String {
@@ -94,6 +170,9 @@ enum Kana: String {
         case .smallYa: return Kana.ya.romaji
         case .smallYu: return Kana.yu.romaji
         case .smallYo: return Kana.yo.romaji
+        case .katasmallYa: return Kana.kataya.romaji
+        case .katasmallYu: return Kana.katayu.romaji
+        case .katasmallYo: return Kana.katayo.romaji
         default: return romaji
         }
     }
@@ -241,6 +320,148 @@ enum Kana: String {
         case .wo:
             return "wo"
         case .n:
+            return "n"
+        case .kataa:
+            return "a"
+        case .katai:
+            return "i"
+        case .katau:
+            return "u"
+        case .katae:
+            return "e"
+        case .katao:
+            return "o"
+        case .kataka:
+            return "ka"
+        case .kataki:
+            return "ki"
+        case .kataku:
+            return "ku"
+        case .katake:
+            return "ke"
+        case .katako:
+            return "ko"
+        case .kataga:
+            return "ga"
+        case .katagi:
+            return "gi"
+        case .katagu:
+            return "gu"
+        case .katage:
+            return "ge"
+        case .katago:
+            return "go"
+        case .katasa:
+            return "sa"
+        case .katashi:
+            return "shi"
+        case .katasu:
+            return "su"
+        case .katase:
+            return "se"
+        case .kataso:
+            return "so"
+        case .kataza:
+            return "za"
+        case .kataji:
+            return "ji"
+        case .katazu:
+            return "zu"
+        case .kataze:
+            return "ze"
+        case .katazo:
+            return "zo"
+        case .katata:
+            return "ta"
+        case .katachi:
+            return "chi"
+        case .katatsu:
+            return "tsu"
+        case .katate:
+            return "te"
+        case .katato:
+            return "to"
+        case .katada:
+            return "da"
+        case .katadi:
+            return "di"
+        case .katadu:
+            return "do"
+        case .katade:
+            return "de"
+        case .katado:
+            return "do"
+        case .katana:
+            return "na"
+        case .katani:
+            return "ni"
+        case .katanu:
+            return "nu"
+        case .katane:
+            return "ne"
+        case .katano:
+            return "no"
+        case .kataha:
+            return "ha"
+        case .katahi:
+            return "hi"
+        case .katafu:
+            return "fu"
+        case .katahe:
+            return "he"
+        case .kataho:
+            return "ho"
+        case .kataba:
+            return "ba"
+        case .katabi:
+            return "bi"
+        case .katabu:
+            return "bu"
+        case .katabe:
+            return "be"
+        case .katabo:
+            return "bo"
+        case .katapa:
+            return "pa"
+        case .katapi:
+            return "pi"
+        case .katapu:
+            return "pu"
+        case .katape:
+            return "pe"
+        case .katapo:
+            return "po"
+        case .katama:
+            return "ma"
+        case .katami:
+            return "mi"
+        case .katamu:
+            return "mu"
+        case .katame:
+            return "me"
+        case .katamo:
+            return "mo"
+        case .kataya:
+            return "ya"
+        case .katayu:
+            return "yu"
+        case .katayo:
+            return "yo"
+        case .katara:
+            return "ra"
+        case .katari:
+            return "ri"
+        case .kataru:
+            return "ru"
+        case .katare:
+            return "re"
+        case .kataro:
+            return "ro"
+        case .katawa:
+            return "wa"
+        case .katawo:
+            return "wo"
+        case .katan:
             return "n"
         default:
             return rawValue

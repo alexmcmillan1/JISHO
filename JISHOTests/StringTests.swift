@@ -47,8 +47,8 @@ class StringTests: XCTestCase {
         XCTAssertEqual("nihon", "にほん".romaji())
     }
     
-    func test_romaji_withKatakana_returnsEmpty() {
-        XCTAssertEqual("", "".romaji())
+    func test_romaji_katakana_returnsExpected() {
+        XCTAssertEqual("aiueokakikukekommanpoddokyasuto", "アイウエオカキクケコッマンポッドキャスト".romaji())
     }
     
     func test_romaji_withDoubleConsonants_returnsExpected() {
@@ -56,7 +56,7 @@ class StringTests: XCTestCase {
     }
     
     func test_romaji_withLongVowels_returnsExpected() {
-        XCTAssertEqual("dou", "どう".romaji())
+        XCTAssertEqual("dō", "どう".romaji())
     }
     
     func test_romaji_withModifiedIEndings_returnsExpected() {
