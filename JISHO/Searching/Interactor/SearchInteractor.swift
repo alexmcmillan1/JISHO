@@ -31,7 +31,11 @@ class SearchInteractor: SearchViewOutput {
         let promises: [Promise<SearchResponse?>] = [promiseForRequest(to: englishUrl), promiseForRequest(to: japaneseUrl)]
         
         when(fulfilled: promises).done { [weak self] (responses) in
-            guard let self = self, let firstResponse = responses[0], let secondResponse = responses[1] else { return }
+            guard let firstResponse = responses[0], let secondResponse = responses[1] else {
+                self?.viewInput?.showErrorState(true)
+                return
+            }
+                        
             // interleave response data and make display items
             var allResponseData: [Datum] = []
             
@@ -56,15 +60,20 @@ class SearchInteractor: SearchViewOutput {
             }
             
             let sanitised: [EntryDisplayItem] = allResponseData.compactMap { slug -> EntryDisplayItem? in
-                self.presenter.makeDisplayItem(from: slug)
+                self?.presenter.makeDisplayItem(from: slug)
             }
-                        
-            self.viewInput?.data = self.presenter.deduplicate(displayItems: sanitised)
+            
+            if let data = self?.presenter.deduplicate(displayItems: sanitised) {
+                self?.viewInput?.data = data
+            } else {
+                self?.viewInput?.showErrorState(true)
+            }
         }.catch { error in
             print(error.localizedDescription)
+            self.viewInput?.showErrorState(true)
         }
     }
-    
+        
     private func promiseForRequest(to url: String) -> Promise<SearchResponse?> {
         return Promise { seal in
             AF.request(url).response { [weak self] response in

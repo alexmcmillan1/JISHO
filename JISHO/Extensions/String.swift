@@ -82,6 +82,7 @@ extension String {
             .replacingOccurrences(of: "jya", with: "ja")
             .replacingOccurrences(of: "jyu", with: "ju")
             .replacingOccurrences(of: "jyo", with: "jo")
+            .replacingOccurrences(of: "ou", with: "ō")
             .replacingOccurrences(of: "oo", with: "ō")
     }
 }

@@ -12,6 +12,7 @@ import SwiftyGif
 
 protocol SearchViewInput: class {
     var data: [EntryDisplayItem] { get set }
+    func showErrorState(_ show: Bool)
 }
 
 class SearchViewController: UIViewController, SearchViewInput {
@@ -20,8 +21,8 @@ class SearchViewController: UIViewController, SearchViewInput {
         didSet {
             tableView.contentOffset = CGPoint(x: 0, y: -64)
             tableView.reloadData()
-            emptyView.isHidden = !data.isEmpty
-            loadingView.isHidden = true
+            showEmptyState(data.isEmpty)
+            showLoadingState(false)
         }
     }
     
@@ -37,19 +38,11 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     private var activeSearchTerm: String?
     
-    @IBOutlet private weak var loadingView: UIView! {
-        didSet {
-            loadingView.backgroundColor = UIColor(named: "ViewBackground")
-        }
-    }
-    
     @IBOutlet private weak var activityIndicator: NVActivityIndicatorView!
     
-    @IBOutlet private weak var emptyView: UIView! {
-        didSet {
-            emptyView.backgroundColor = UIColor(named: "ViewBackground")
-        }
-    }
+    @IBOutlet private weak var loadingView: UIView!
+    @IBOutlet private weak var errorView: UIView!
+    @IBOutlet private weak var emptyView: UIView!
     
     @IBOutlet private weak var searchPromptView: UIView! {
         didSet {
@@ -114,10 +107,17 @@ class SearchViewController: UIViewController, SearchViewInput {
         promptGifViewC.transform = CGAffineTransform(rotationAngle: -0.6)
     }
     
-    private func showLoadingState() {
-        loadingView.isHidden = false
-        searchPromptView.isHidden = true
-        emptyView.isHidden = true
+    private func showLoadingState(_ show: Bool) {
+        loadingView.isHidden = !show
+    }
+    
+    private func showEmptyState(_ show: Bool) {
+        emptyView.isHidden = !show
+    }
+    
+    func showErrorState(_ show: Bool) {
+        showLoadingState(false)
+        errorView.isHidden = !show
     }
     
     private func hideSearchBar() {
@@ -137,7 +137,10 @@ extension SearchViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
-            showLoadingState()
+            searchPromptView.isHidden = true
+            showEmptyState(false)
+            showErrorState(false)
+            showLoadingState(true)
             output.request(keyword: text)
             activeSearchTerm = textField.text
             textField.resignFirstResponder()
