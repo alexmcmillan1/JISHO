@@ -27,12 +27,6 @@ class SearchPresenterTests: XCTestCase {
         XCTAssertEqual("にほん", displayItem?.mainForm.reading)
     }
     
-    func test_makeDisplayItem_noFirstWord_shouldNotIncludeMainReading_becauseSlugIsEnough() {
-        let slug = Datum(slug: "日本", japanese: [Japanese(word: nil, reading: "にほん")], senses: [])
-        let displayItem = sut.makeDisplayItem(from: slug)
-        XCTAssertEqual("", displayItem?.mainForm.reading)
-    }
-    
     // Make sure any -(num) is stripped from the slug
     func test_ifHyphenNumberOnSlug_removesIt() {
         let slug1 = Datum(slug: "日本", japanese: [Japanese(word: nil, reading: "にほん")], senses: [])

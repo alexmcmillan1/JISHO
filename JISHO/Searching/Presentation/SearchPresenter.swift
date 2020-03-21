@@ -34,8 +34,7 @@ class SearchPresenter: SearchPresenting {
     
     private func mainForm(from slug: String, firstForm: Japanese) -> Form {
         let slugTrimmed = String(slug.prefix { $0 != "-" })
-        // If the main form word is nil, the reading is the slug. So omit the reading.
-        let reading: String = firstForm.word == nil ? "" : firstForm.reading ?? ""
+        let reading: String = firstForm.reading ?? ""
         return Form(word: slugTrimmed, reading: reading)
     }
     
