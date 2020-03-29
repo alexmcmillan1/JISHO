@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol FavouritingInteractorInput: class {
     func storeSearchResultEntry(representing displayItem: EntryDisplayItem)
+    func deleteSearchResultEntry(representing displayItem: EntryDisplayItem)
 }
 
 class FavouritingInteractor: FavouritingInteractorInput {
@@ -21,7 +22,18 @@ class FavouritingInteractor: FavouritingInteractorInput {
             let realm = try Realm()
             realm.add(storableObject)
         } catch {
-            fatalError("Realm error")
+            fatalError("Realm write error")
+        }
+    }
+    
+    func deleteSearchResultEntry(representing displayItem: EntryDisplayItem) {
+        let storableObject = FavouriteEntry(fromDisplayItem: displayItem)
+        
+        do {
+            let realm = try Realm()
+            realm.delete(storableObject)
+        } catch {
+            fatalError("Realm delete error")
         }
     }
 }

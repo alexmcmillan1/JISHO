@@ -59,8 +59,10 @@ class SearchViewController: UIViewController, SearchViewInput {
     private var isSearchBarHidden = false
     
     var output: SearchViewOutput!
+    var favouritingOutput: FavouritingInteractorInput!
     
-    init(output: SearchViewOutput) {
+    init(output: SearchViewOutput = SearchInteractor(),
+         favouritingOutput: FavouritingInteractorInput = FavouritingInteractor()) {
         super.init(nibName: "SearchViewController", bundle: Bundle.main)
         self.output = output
     }
@@ -211,10 +213,10 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: SearchResultCellOutput {
     
     func tappedSaveToFavourites(atRow index: Int) {
-        //
+        favouritingOutput.storeSearchResultEntry(representing: data[index])
     }
     
     func tappedDeleteFromFavourites(atRow index: Int) {
-        //
+        favouritingOutput.storeSearchResultEntry(representing: data[index])
     }
 }
