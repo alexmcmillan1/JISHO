@@ -9,13 +9,15 @@
 import UIKit
 
 protocol SearchResultCellOutput: class {
-    func tappedFavouriteButton(atRow index: Int)
+    func tappedSaveToFavourites(atRow index: Int)
+    func tappedDeleteFromFavourites(atRow index: Int)
 }
 
 class SearchResultTableViewCell: UITableViewCell {
     
     private weak var delegate: SearchResultCellOutput?
     private var rowIndex: Int?
+    private var isInFavouritedState = false
     
     @IBOutlet private weak var containerView: UIView! {
         didSet {
@@ -111,6 +113,11 @@ class SearchResultTableViewCell: UITableViewCell {
         guard let rowIndex = rowIndex else {
             fatalError("Row index not set")
         }
-        delegate?.tappedFavouriteButton(atRow: rowIndex)
+        
+        isInFavouritedState = !isInFavouritedState
+        
+        isInFavouritedState
+            ? delegate?.tappedSaveToFavourites(atRow: rowIndex)
+            : delegate?.tappedDeleteFromFavourites(atRow: rowIndex)
     }
 }

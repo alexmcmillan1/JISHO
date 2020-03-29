@@ -210,7 +210,11 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: SearchResultCellOutput {
     
-    func tappedFavouriteButton(atRow index: Int) {
-        
+    func tappedSaveToFavourites(atRow index: Int) {
+        //
+    }
+    
+    func tappedDeleteFromFavourites(atRow index: Int) {
+        //
     }
 }

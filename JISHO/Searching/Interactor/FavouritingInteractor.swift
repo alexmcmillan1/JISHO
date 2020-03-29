@@ -15,7 +15,6 @@ protocol FavouritingInteractorInput: class {
 
 class FavouritingInteractor: FavouritingInteractorInput {
     func storeSearchResultEntry(representing displayItem: EntryDisplayItem) {
-        
         let storableObject = FavouriteEntry(fromDisplayItem: displayItem)
         
         do {
