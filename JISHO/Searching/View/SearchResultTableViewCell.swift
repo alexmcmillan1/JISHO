@@ -15,9 +15,28 @@ protocol SearchResultCellOutput: class {
 
 class SearchResultTableViewCell: UITableViewCell {
     
+    enum FavouritedState {
+        case on
+        case off
+        
+        var description: String {
+            switch self {
+            case .on: return "Favourited"
+            case .off: return "Not favourited"
+            }
+        }
+    }
+    
     private weak var delegate: SearchResultCellOutput?
     private var rowIndex: Int?
-    private var isInFavouritedState = false
+    
+    private var favouritedState = FavouritedState.off {
+        didSet {
+            favouriteButton.setTitle(favouritedState.description, for: .normal)
+        }
+    }
+    
+    @IBOutlet private weak var favouriteButton: UIButton!
     
     @IBOutlet private weak var containerView: UIView! {
         didSet {
@@ -64,6 +83,8 @@ class SearchResultTableViewCell: UITableViewCell {
     func setUp(displayItem: EntryDisplayItem, rowIndex: Int, delegate: SearchResultCellOutput) {
         self.delegate = delegate
         self.rowIndex = rowIndex
+        
+        favouritedState = displayItem.isFavourite ? .on : .off
         
         setText(from: displayItem)
         let toShow = displayItem.definitions.count - displayItem.definitionsNotSurfaced
@@ -114,9 +135,14 @@ class SearchResultTableViewCell: UITableViewCell {
             fatalError("Row index not set")
         }
         
-        isInFavouritedState = !isInFavouritedState
+        switch favouritedState {
+        case .on:
+            favouritedState = .off
+        case .off:
+            favouritedState = .on
+        }
         
-        isInFavouritedState
+        favouritedState == .on
             ? delegate?.tappedSaveToFavourites(atRow: rowIndex)
             : delegate?.tappedDeleteFromFavourites(atRow: rowIndex)
     }

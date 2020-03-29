@@ -85,6 +85,7 @@
             <connections>
                 <outlet property="containerView" destination="4lg-AF-WUy" id="nQ3-TY-4GP"/>
                 <outlet property="definitionsStackView" destination="wid-4i-sgc" id="zpW-mP-s5O"/>
+                <outlet property="favouriteButton" destination="EAF-sV-sNw" id="1a9-Qv-RDZ"/>
                 <outlet property="readingLabel" destination="Qel-Ph-ljG" id="ic0-fF-6Ye"/>
                 <outlet property="romajiLabel" destination="P0l-yN-9zo" id="RgC-WN-ksG"/>
                 <outlet property="wordLabel" destination="ain-rO-U27" id="fQa-NC-Z58"/>
