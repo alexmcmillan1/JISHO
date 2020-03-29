@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,6 +45,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wid-4i-sgc">
                                 <rect key="frame" x="16" y="127" width="256" height="76"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAF-sV-sNw">
+                                <rect key="frame" x="226" y="16" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="favouriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oyW-0b-Tsh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -53,14 +60,16 @@
                             <constraint firstItem="P0l-yN-9zo" firstAttribute="leading" secondItem="Qel-Ph-ljG" secondAttribute="trailing" constant="8" id="Fdq-3m-Pnh"/>
                             <constraint firstItem="P0l-yN-9zo" firstAttribute="centerY" secondItem="Qel-Ph-ljG" secondAttribute="centerY" id="NfJ-b8-UDc"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="16" id="P5R-uS-yU8"/>
+                            <constraint firstItem="EAF-sV-sNw" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="16" id="SRM-6C-qK6"/>
                             <constraint firstItem="wid-4i-sgc" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="U7t-PF-YKl"/>
                             <constraint firstItem="ain-rO-U27" firstAttribute="top" secondItem="Qel-Ph-ljG" secondAttribute="bottom" constant="8" id="Xeg-sT-zWY"/>
                             <constraint firstItem="ain-rO-U27" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="YRP-Q6-Yay"/>
                             <constraint firstItem="wid-4i-sgc" firstAttribute="top" secondItem="ain-rO-U27" secondAttribute="bottom" constant="8" id="bIW-pT-bwy"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="16" id="jyO-Rv-6Te"/>
+                            <constraint firstItem="EAF-sV-sNw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="16" id="iDl-NT-FbD"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.6" id="n6l-sR-WFE"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="oMC-9D-QIJ"/>
                             <constraint firstItem="P0l-yN-9zo" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.4" id="omi-SG-gKi"/>
+                            <constraint firstAttribute="trailing" secondItem="EAF-sV-sNw" secondAttribute="trailing" constant="16" id="sKN-Sy-dZ8"/>
                             <constraint firstAttribute="trailing" secondItem="wid-4i-sgc" secondAttribute="trailing" constant="16" id="yAt-cU-gTU"/>
                         </constraints>
                     </view>

@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol SearchResultCellOutput: class {
+    func tappedFavouriteButton(atRow index: Int)
+}
+
 class SearchResultTableViewCell: UITableViewCell {
+    
+    private weak var delegate: SearchResultCellOutput?
+    private var rowIndex: Int?
     
     @IBOutlet private weak var containerView: UIView! {
         didSet {
@@ -52,7 +59,10 @@ class SearchResultTableViewCell: UITableViewCell {
         backgroundColor = .clear
     }
 
-    func setUp(displayItem: EntryDisplayItem) {
+    func setUp(displayItem: EntryDisplayItem, rowIndex: Int, delegate: SearchResultCellOutput) {
+        self.delegate = delegate
+        self.rowIndex = rowIndex
+        
         setText(from: displayItem)
         let toShow = displayItem.definitions.count - displayItem.definitionsNotSurfaced
         
@@ -95,5 +105,12 @@ class SearchResultTableViewCell: UITableViewCell {
             definitionsStackView.removeArrangedSubview(subview)
             subview.removeFromSuperview()
         }
+    }
+    
+    @IBAction func favouriteButtonTapped(_ sender: Any) {
+        guard let rowIndex = rowIndex else {
+            fatalError("Row index not set")
+        }
+        delegate?.tappedFavouriteButton(atRow: rowIndex)
     }
 }
