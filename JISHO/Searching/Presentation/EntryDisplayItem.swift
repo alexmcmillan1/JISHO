@@ -13,6 +13,7 @@ struct EntryDisplayItem {
     let definitionsNotSurfaced: Int
     let links: [ExternalLink]
     let kanji: [String]
+    let isFavourite: Bool = false
 }
 
 struct Form: Equatable {
