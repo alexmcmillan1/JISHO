@@ -23,6 +23,12 @@ class DetailViewController: UIViewController, DetailViewInput {
         }
     }
     
+    private var favouriteState: FavouriteButtonState = .unfavourited {
+        didSet {
+            favouriteButton.setImage(favouriteState.image, for: .normal)
+        }
+    }
+    
     @IBOutlet private weak var backButton: UIButton!
     @IBOutlet private weak var favouriteButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
@@ -180,5 +186,9 @@ enum FavouriteButtonState {
         case .favourited:
             return UIImage(systemName: "heart.fill", withConfiguration: imageConfiguration)!
         }
+    }
+    
+    static func fromFavouriteState(_ favourited: Bool) -> FavouriteButtonState {
+        return favourited ? self.favourited : self.unfavourited
     }
 }

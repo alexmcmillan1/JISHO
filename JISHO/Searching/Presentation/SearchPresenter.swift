@@ -24,12 +24,13 @@ class SearchPresenter: SearchPresenting {
         let links = self.links(from: responseItem.senses)
         let notSurfaced = definitions.count - 2
                 
-        return EntryDisplayItem(mainForm: mainForm,
-                               otherForms: otherForms,
-                               definitions: definitions,
-                               definitionsNotSurfaced: notSurfaced > 0 ? notSurfaced : 0,
-                               links: links,
-                               kanji: mainForm.word.kanji())
+        return EntryDisplayItem(isFavourite: false,
+                                mainForm: mainForm,
+                                otherForms: otherForms,
+                                definitions: definitions,
+                                definitionsNotSurfaced: notSurfaced > 0 ? notSurfaced : 0,
+                                links: links,
+                                kanji: mainForm.word.kanji())
     }
     
     private func mainForm(from slug: String, firstForm: Japanese) -> Form {

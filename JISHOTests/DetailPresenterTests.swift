@@ -15,9 +15,9 @@ class DetailPresenterTests: XCTestCase {
 
     func test_makeDisplayItems_withKanji_createsExpectedItem() {
         let kanjiResponse = KanjiAPIResponse(kanji: "四", meanings: ["meaning", "other meaning"])
-        let displayItems = sut.makeDisplayItems(from: createDisplayItem(), wikiExtract: nil, kanji: [kanjiResponse])
-        for vm in displayItems {
-            if case let DetailDisplayItem.kanji(DetailKanjiDisplayItem.character(displayItem)) = vm {
+        let viewModel = sut.makeViewModel(from: createDisplayItem(), wikiExtract: nil, kanji: [kanjiResponse])
+        for item in viewModel.displayItems {
+            if case let DetailDisplayItem.kanji(DetailKanjiDisplayItem.character(displayItem)) = item {
                 XCTAssertEqual("四", displayItem.character)
                 XCTAssertEqual("meaning; other meaning", displayItem.meaning)
             }
@@ -27,16 +27,16 @@ class DetailPresenterTests: XCTestCase {
     func test_makeDisplayItems_withLinks_trimsAnyOldIds() {
         let data = createDisplayItem(links: [ExternalLink(description: "Link", addressString: "http://en.wikipedia.org/wiki/Chinese_language?oldid=494871625")])
         
-        let displayItems = sut.makeDisplayItems(from: data, wikiExtract: nil, kanji: [])
+        let viewModel = sut.makeViewModel(from: data, wikiExtract: nil, kanji: [])
         
-        for vm in displayItems {
-            if case let DetailDisplayItem.link(displayItem) = vm {
+        for item in viewModel.displayItems {
+            if case let DetailDisplayItem.link(displayItem) = item {
                 XCTAssertEqual("http://en.wikipedia.org/wiki/Chinese_language", displayItem.link.absoluteString)
             }
         }
     }
     
     private func createDisplayItem(links: [ExternalLink] = []) -> EntryDisplayItem {
-        return EntryDisplayItem(mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: links, kanji: [])
+        return EntryDisplayItem(isFavourite: false, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: links, kanji: [])
     }
 }

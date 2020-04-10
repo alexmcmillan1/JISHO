@@ -9,7 +9,7 @@
 import Foundation
 
 struct DetailViewModel {
-    let isFavourited: Bool
+    let favouriteButtonState: FavouriteButtonState
     let displayItems: [DetailDisplayItem]
 }
 

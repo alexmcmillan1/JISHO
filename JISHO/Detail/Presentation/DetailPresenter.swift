@@ -9,39 +9,41 @@
 import Foundation
 
 protocol DetailPresenting: class {
-    func makeDisplayItems(from searchDisplayItem: EntryDisplayItem, wikiExtract: String?, kanji: [KanjiAPIResponse]) -> [DetailDisplayItem]
+    func makeViewModel(from searchDisplayItem: EntryDisplayItem, wikiExtract: String?, kanji: [KanjiAPIResponse]) -> DetailViewModel
 }
 
 class DetailPresenter: DetailPresenting {
     
-    func makeDisplayItems(from searchDisplayItem: EntryDisplayItem, wikiExtract: String?, kanji: [KanjiAPIResponse]) -> [DetailDisplayItem] {
-        var result: [DetailDisplayItem] = []
+    func makeViewModel(from searchDisplayItem: EntryDisplayItem, wikiExtract: String?, kanji: [KanjiAPIResponse]) -> DetailViewModel {
+        let favouriteButtonState = FavouriteButtonState.fromFavouriteState(searchDisplayItem.isFavourite)
+        var displayItems: [DetailDisplayItem] = []
         
         let summaryItem = DetailDisplayItem.summary(DetailSummaryDisplayItem(kanji: searchDisplayItem.mainForm.word,
                                                                              kana: searchDisplayItem.mainForm.reading,
                                                                              romaji: searchDisplayItem.mainForm.reading.romaji()))
         
-        result.append(summaryItem)
+        displayItems.append(summaryItem)
         
         for def in searchDisplayItem.definitions {
-            result.append(DetailDisplayItem.definition(DetailDefinitionDisplayItem(definition: def)))
+            displayItems.append(DetailDisplayItem.definition(DetailDefinitionDisplayItem(definition: def)))
         }
         
         for character in kanji {
-            result.append(DetailDisplayItem.kanji(DetailKanjiDisplayItem
+            displayItems.append(DetailDisplayItem.kanji(DetailKanjiDisplayItem
                 .character(DetailKanjiCharacterDisplayItem(character: character.kanji,
                                                            meaning: character.meanings.joined(separator: "; ")))))
         }
         
         if let extract = wikiExtract {
-            result.append(DetailDisplayItem.wikiExtract(DetailWikiExtractDisplayItem(extract: extract)))
+            displayItems.append(DetailDisplayItem.wikiExtract(DetailWikiExtractDisplayItem(extract: extract)))
         }
         
         searchDisplayItem.links
             .compactMap { makeLinkItem(from: $0) }
-            .forEach { result.append(DetailDisplayItem.link($0)) }
+            .forEach { displayItems.append(DetailDisplayItem.link($0)) }
         
-        return result
+        
+        return DetailViewModel(favouriteButtonState: favouriteButtonState, displayItems: displayItems)
     }
     
     private func makeLinkItem(from link: ExternalLink) -> DetailLinkDisplayItem? {

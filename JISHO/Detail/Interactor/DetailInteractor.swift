@@ -48,8 +48,7 @@ class DetailInteractor: DetailViewOutput {
                 }
             }
             
-            let displayItems: [DetailDisplayItem] = self.presenter.makeDisplayItems(from: self.data, wikiExtract: wikiExtract, kanji: kanji.compactMap { $0 })
-            let viewModel = DetailViewModel(isFavourited: false, displayItems: displayItems)
+            let viewModel = self.presenter.makeViewModel(from: self.data, wikiExtract: wikiExtract, kanji: kanji.compactMap { $0 })
             self.viewInput?.viewModel = viewModel
         }.catch { error in
             print(error.localizedDescription)
