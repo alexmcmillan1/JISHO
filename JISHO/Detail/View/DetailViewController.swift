@@ -26,7 +26,7 @@ class DetailViewController: UIViewController, DetailViewInput {
     
     private var favouriteState: FavouriteButtonState = .unfavourited {
         didSet {
-            favouriteButton.setImage(favouriteState.image, for: .normal)
+            styleFavouriteButton(state: favouriteState)
         }
     }
     
@@ -101,6 +101,15 @@ class DetailViewController: UIViewController, DetailViewInput {
     
     @IBAction private func tappedBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction private func tappedFavourite(_ sender: Any) {
+        favouriteState = favouriteState.oppositeState
+    }
+    
+    private func styleFavouriteButton(state: FavouriteButtonState) {
+        favouriteButton.setImage(favouriteState.image, for: .normal)
+        favouriteButton.imageView?.tintColor = favouriteState.color
     }
 }
 
@@ -189,7 +198,21 @@ enum FavouriteButtonState {
         }
     }
     
+    var color: UIColor {
+        switch self {
+        case .unfavourited: return UIColor(named: "DetailUnfavourited")!
+        case .favourited: return UIColor(named: "DetailFavourited")!
+        }
+    }
+    
+    var oppositeState: FavouriteButtonState {
+        switch self {
+        case .unfavourited: return .favourited
+        case .favourited: return .unfavourited
+        }
+    }
+    
     static func fromFavouriteState(_ favourited: Bool) -> FavouriteButtonState {
-        return favourited ? self.favourited : self.unfavourited
+        return favourited ? .favourited : .unfavourited
     }
 }
