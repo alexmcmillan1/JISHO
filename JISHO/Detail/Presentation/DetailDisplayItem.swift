@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct DetailViewModel {
+    let isFavourited: Bool
+    let displayItems: [DetailDisplayItem]
+}
+
 enum DetailDisplayItem {
     case summary(DetailSummaryDisplayItem)
     case definition(DetailDefinitionDisplayItem)

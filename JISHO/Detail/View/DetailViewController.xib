@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="DVd-Xw-KnZ" id="vxz-n9-Pgz"/>
                 <outlet property="backButton" destination="oyU-cD-9TX" id="Ggm-Uu-6a2"/>
+                <outlet property="favouriteButton" destination="vF5-vI-use" id="9KR-yM-Bvg"/>
                 <outlet property="loadingView" destination="ryV-bq-hXZ" id="5eZ-sI-4Q7"/>
                 <outlet property="tableView" destination="ON5-UE-48s" id="w5c-Dy-3f4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,6 +60,14 @@
                         <action selector="tappedBack:" destination="-1" eventType="touchUpInside" id="ptg-Ro-fOc"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF5-vI-use" userLabel="Favourite Button">
+                    <rect key="frame" x="354" y="44" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="MzU-4x-smE"/>
+                        <constraint firstAttribute="height" constant="44" id="QVL-HI-FKm"/>
+                    </constraints>
+                    <state key="normal" image="heart" catalog="system"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -71,7 +80,9 @@
                 <constraint firstItem="oyU-cD-9TX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="LGb-xu-lG1"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="trailing" secondItem="ON5-UE-48s" secondAttribute="trailing" id="T9X-2X-8lI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ON5-UE-48s" secondAttribute="trailing" id="XkU-hX-p22"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vF5-vI-use" secondAttribute="trailing" constant="16" id="csl-za-S5Y"/>
                 <constraint firstItem="ryV-bq-hXZ" firstAttribute="leading" secondItem="ON5-UE-48s" secondAttribute="leading" id="fIE-25-vUn"/>
+                <constraint firstItem="vF5-vI-use" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="p3Z-d5-y4w"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
@@ -79,6 +90,7 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <namedColor name="BackButtonBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

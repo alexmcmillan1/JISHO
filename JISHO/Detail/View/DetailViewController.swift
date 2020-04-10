@@ -11,12 +11,12 @@ import SafariServices
 import NVActivityIndicatorView
 
 protocol DetailViewInput: class {
-    var data: [DetailDisplayItem] { get set }
+    var viewModel: DetailViewModel? { get set }
 }
 
 class DetailViewController: UIViewController, DetailViewInput {
     
-    var data: [DetailDisplayItem] = [] {
+    var viewModel: DetailViewModel? = nil {
         didSet {
             tableView.reloadData()
             loadingView.isHidden = true
@@ -24,6 +24,7 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var favouriteButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingView: UIView!
     @IBOutlet private weak var activityIndicator: NVActivityIndicatorView!
@@ -99,11 +100,12 @@ class DetailViewController: UIViewController, DetailViewInput {
 extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return viewModel?.displayItems.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch data[indexPath.row] {
+        guard let items = viewModel?.displayItems else { fatalError() }
+        switch items[indexPath.row] {
         case .summary(let displayItem):
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailSummaryTableViewCell",
                                                      for: indexPath) as! DetailSummaryTableViewCell
@@ -139,12 +141,13 @@ extension DetailViewController: UITableViewDataSource {
 extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if case let DetailDisplayItem.link(displayItem) = data[indexPath.row] {
+        guard let item = viewModel?.displayItems[indexPath.row] else { return }
+        if case let DetailDisplayItem.link(displayItem) = item {
             tableView.deselectRow(at: indexPath, animated: true)
             let safari = SFSafariViewController(url: displayItem.link)
             safari.delegate = self
             navigationController?.pushViewController(safari, animated: true)
-        } else if case let DetailDisplayItem.kanji(displayItem) = data[indexPath.row] {
+        } else if case let DetailDisplayItem.kanji(displayItem) = item {
             if case DetailKanjiDisplayItem.character(let c) = displayItem {
                 let interactor = KanjiInteractor(character: c.character)
                 let kanjiDetail = KanjiViewController(output: interactor)
@@ -159,5 +162,23 @@ extension DetailViewController: SFSafariViewControllerDelegate {
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+enum FavouriteButtonState {
+    case unfavourited
+    case favourited
+    
+    var imageConfiguration: UIImage.SymbolConfiguration{
+        UIImage.SymbolConfiguration(pointSize: 32, weight: .regular)
+    }
+    
+    var image: UIImage {
+        switch self {
+        case .unfavourited:
+            return UIImage(systemName: "heart", withConfiguration: imageConfiguration)!
+        case .favourited:
+            return UIImage(systemName: "heart.fill", withConfiguration: imageConfiguration)!
+        }
     }
 }
