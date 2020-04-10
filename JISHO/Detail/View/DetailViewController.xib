@@ -66,7 +66,6 @@
                         <constraint firstAttribute="width" constant="44" id="MzU-4x-smE"/>
                         <constraint firstAttribute="height" constant="44" id="QVL-HI-FKm"/>
                     </constraints>
-                    <state key="normal" image="heart" catalog="system"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,7 +89,6 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <namedColor name="BackButtonBackground">
             <color red="0.94999998807907104" green="0.94999998807907104" blue="0.94999998807907104" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

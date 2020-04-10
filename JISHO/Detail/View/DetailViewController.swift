@@ -20,6 +20,7 @@ class DetailViewController: UIViewController, DetailViewInput {
         didSet {
             tableView.reloadData()
             loadingView.isHidden = true
+            favouriteState = viewModel?.favouriteButtonState ?? FavouriteButtonState.unfavourited
         }
     }
     
@@ -176,7 +177,7 @@ enum FavouriteButtonState {
     case favourited
     
     var imageConfiguration: UIImage.SymbolConfiguration{
-        UIImage.SymbolConfiguration(pointSize: 32, weight: .regular)
+        UIImage.SymbolConfiguration(pointSize: 24, weight: .regular)
     }
     
     var image: UIImage {
