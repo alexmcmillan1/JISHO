@@ -62,9 +62,6 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     private func styleBackButton() {
-        backButton.setTitleColor(UIColor(named: "Link"), for: .normal)
-        backButton.setImage(UIImage(named: "BackArrow")?.withTintColor(UIColor(named: "BackButton")!), for: .normal)
-        backButton.backgroundColor = UIColor(named: "BackButtonBackground")
         backButton.layer.cornerRadius = 22
     }
     
