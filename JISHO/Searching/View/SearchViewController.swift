@@ -169,7 +169,7 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let detailInteractor = DetailInteractor(data: data[indexPath.row])
+        let detailInteractor = DetailInteractor(realmInteractor: RealmInteractor(), data: data[indexPath.row])
         let detailViewController = DetailViewController(output: detailInteractor, searchTerm: activeSearchTerm)
         detailInteractor.viewInput = detailViewController
         

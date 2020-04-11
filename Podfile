@@ -12,4 +12,5 @@ target 'JISHO' do
   pod 'NVActivityIndicatorView'
   pod 'PanModal'
   pod 'SwiftyGif'
+  pod 'RealmSwift'
 end

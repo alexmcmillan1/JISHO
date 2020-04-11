@@ -12,6 +12,7 @@ import PromiseKit
 
 protocol DetailViewOutput: class {
     func viewIsReady()
+    func favouriteEntry(viewModel: DetailViewModel)
 }
 
 class DetailInteractor: DetailViewOutput {
@@ -22,16 +23,17 @@ class DetailInteractor: DetailViewOutput {
     private let baseKanjiApiUrl: String = "https://kanjiapi.dev/v1/kanji/%@"
     
     private let presenter: DetailPresenting
+    private let realmInteractor: RealmInterface
     private let data: EntryDisplayItem
     private let decoder = JSONDecoder()
     
-    init(presenter: DetailPresenting = DetailPresenter(), data: EntryDisplayItem) {
+    init(presenter: DetailPresenting = DetailPresenter(), realmInteractor: RealmInterface, data: EntryDisplayItem) {
         self.presenter = presenter
+        self.realmInteractor = realmInteractor
         self.data = data
     }
     
     func viewIsReady() {
-        
         when(fulfilled: createPromises(from: data)).done { (responses) in
             
             var wikiExtract: String?
@@ -55,6 +57,12 @@ class DetailInteractor: DetailViewOutput {
         }
     }
     
+    func favouriteEntry(viewModel: DetailViewModel) {
+        realmInteractor.save(viewModel: viewModel)
+    }
+}
+
+extension DetailInteractor {
     private func wikiPageTitle(from detail: EntryDisplayItem) -> String? {
         let firstEnglishWikiLink = detail.links.first { link -> Bool in
             link.description.contains("English Wikipedia")
