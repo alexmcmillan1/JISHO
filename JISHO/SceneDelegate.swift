@@ -24,7 +24,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         searchInteractor.viewInput = searchViewController
         
-        window?.rootViewController = UINavigationController(rootViewController: searchViewController)
+        let navigationController = UINavigationController(rootViewController: searchViewController)
+        
+        let favouritesInteractor = FavouritesListInteractor(realmInteractor: RealmInteractor(), presenter: FavouritesListPresenter())
+        let favourites = FavouritesListViewController(output: favouritesInteractor)
+        favouritesInteractor.viewInput = favourites
+        
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([navigationController, favourites], animated: false)
+        
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 }

@@ -28,14 +28,17 @@ class SearchResultEntryModel: Object {
         
         object.mainFormWord = item.mainForm.word
         object.mainFormReading = item.mainForm.reading
+        
         for link in item.links {
             object.linkDescriptions.append(link.description)
             object.linkAddressStrings.append(link.addressString)
         }
+        
         for definition in item.definitions {
             object.definitionDescriptions.append(definition.description)
             object.definitionPartsOfSpeeches.append(definition.partsOfSpeech)
         }
+        
         for kanji in item.kanji {
             object.kanji.append(kanji)
         }

@@ -53,6 +53,7 @@ class MockDetailPresenter: DetailPresenting {
 class MockRealmInterface: RealmInterface {
     var askedToSave = false
     var askedToDelete = false
+    var wasAskedForStoredObjects = false
     
     func save(_ viewModel: DetailViewModel) {
         askedToSave = true
@@ -60,5 +61,10 @@ class MockRealmInterface: RealmInterface {
     
     func delete(_ viewModel: DetailViewModel) {
         askedToDelete = true
+    }
+    
+    func storedObjects() -> [SearchResultEntryModel] {
+        wasAskedForStoredObjects = true
+        return []
     }
 }
