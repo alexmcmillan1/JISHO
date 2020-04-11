@@ -107,7 +107,9 @@ class DetailViewController: UIViewController, DetailViewInput {
         guard let viewModel = viewModel else { return }
         favouriteState = favouriteState.oppositeState
         if favouriteState == .favourited {
-            output.favouriteEntry(viewModel: viewModel)
+            output.favouriteEntry(viewModel)
+        } else {
+            output.unfavouriteEntry(viewModel)
         }
     }
     

@@ -12,7 +12,8 @@ import PromiseKit
 
 protocol DetailViewOutput: class {
     func viewIsReady()
-    func favouriteEntry(viewModel: DetailViewModel)
+    func favouriteEntry(_ viewModel: DetailViewModel)
+    func unfavouriteEntry(_ viewModel: DetailViewModel)
 }
 
 class DetailInteractor: DetailViewOutput {
@@ -57,8 +58,12 @@ class DetailInteractor: DetailViewOutput {
         }
     }
     
-    func favouriteEntry(viewModel: DetailViewModel) {
-        realmInteractor.save(viewModel: viewModel)
+    func favouriteEntry(_ viewModel: DetailViewModel) {
+        realmInteractor.save(viewModel)
+    }
+    
+    func unfavouriteEntry(_ viewModel: DetailViewModel) {
+        realmInteractor.delete(viewModel)
     }
 }
 
