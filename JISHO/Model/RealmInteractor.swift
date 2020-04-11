@@ -20,6 +20,5 @@ class RealmInteractor: RealmInterface {
         try! realm.write {
             realm.add(object)
         }
-        print()
     }
 }

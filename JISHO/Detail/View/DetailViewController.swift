@@ -104,7 +104,11 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     @IBAction private func tappedFavourite(_ sender: Any) {
+        guard let viewModel = viewModel else { return }
         favouriteState = favouriteState.oppositeState
+        if favouriteState == .favourited {
+            output.favouriteEntry(viewModel: viewModel)
+        }
     }
     
     private func styleFavouriteButton(state: FavouriteButtonState) {
