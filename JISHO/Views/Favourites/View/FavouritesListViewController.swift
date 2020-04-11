@@ -9,16 +9,12 @@
 import UIKit
 
 protocol FavouritesListViewInput: class {
-    var favourites: [EntryDisplayItem] { get set }
+    func update(favourites: [EntryDisplayItem])
 }
 
 class FavouritesListViewController: UIViewController, FavouritesListViewInput {
     
-    var favourites: [EntryDisplayItem] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var favourites: [EntryDisplayItem] = []
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -42,6 +38,11 @@ class FavouritesListViewController: UIViewController, FavouritesListViewInput {
         super.viewWillAppear(animated)
         output.viewIsReady()
     }
+    
+    func update(favourites: [EntryDisplayItem]) {
+        self.favourites = favourites
+        tableView.reloadData()
+    }
 
     private func setUpTableView() {
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
@@ -61,5 +62,13 @@ extension FavouritesListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteEntryTableViewCell", for: indexPath) as! FavouriteEntryTableViewCell
         cell.setUp(favourites[indexPath.row])
         return cell
+    }
+}
+
+extension FavouritesListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        favourites.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .left)
     }
 }

@@ -27,6 +27,6 @@ class FavouritesListInteractor: FavouritesListViewOutput {
     func viewIsReady() {
         let storedObjects: [SearchResultEntryModel] = realmInteractor.storedObjects()
         let displayItems: [EntryDisplayItem] = presenter.makeDisplayItems(from: storedObjects)
-        viewInput?.favourites = displayItems
+        viewInput?.update(favourites: displayItems)
     }
 }
