@@ -30,6 +30,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let favourites = FavouritesListViewController(output: favouritesInteractor)
         favouritesInteractor.viewInput = favourites
         
+        navigationController.tabBarItem.title = "Search"
+        navigationController.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        
+        favourites.tabBarItem.title = "Favourites"
+        favourites.tabBarItem.image = UIImage(systemName: "heart.fill")
+        
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([navigationController, favourites], animated: false)
         

@@ -44,6 +44,7 @@ class FavouritesListViewController: UIViewController, FavouritesListViewInput {
     }
 
     private func setUpTableView() {
+        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
         tableView.rowHeight = 80
         tableView.dataSource = self
         tableView.register(UINib(nibName: "FavouriteEntryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "FavouriteEntryTableViewCell")
