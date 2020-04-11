@@ -68,6 +68,7 @@ extension FavouritesListViewController: UITableViewDataSource {
 extension FavouritesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
+        output.delete(favourites[indexPath.row])
         favourites.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
     }

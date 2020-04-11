@@ -31,6 +31,15 @@ class FavouritesListInteractorTests: XCTestCase {
         sut.viewIsReady()
         XCTAssertTrue(mockPresenter.askedToMakeDisplayItems)
     }
+    
+    func test_whenDeleteIndicated_callsSaveOnRealmInterface() {
+        sut.delete(stubEntryDisplayItem())
+        XCTAssertTrue(mockRealmInterface.askedToDelete)
+    }
+    
+    private func stubEntryDisplayItem() -> EntryDisplayItem {
+        return EntryDisplayItem(isFavourite: true, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])
+    }
 }
 
 class MockFavouritesListPresenter: FavouritesListPresenting {

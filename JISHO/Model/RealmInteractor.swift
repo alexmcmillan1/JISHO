@@ -12,6 +12,7 @@ import RealmSwift
 protocol RealmInterface {
     func save(_ viewModel: DetailViewModel)
     func delete(_ viewModel: DetailViewModel)
+    func delete(_ displayItem: EntryDisplayItem)
     func storedObjects() -> [SearchResultEntryModel]
 }
 
@@ -27,6 +28,14 @@ class RealmInteractor: RealmInterface {
     
     func delete(_ viewModel: DetailViewModel) {
         let object = SearchResultEntryModel.fromDetailViewModel(viewModel: viewModel)
+        let objectToDelete = realm.objects(SearchResultEntryModel.self).filter("id == \"\(object.id)\"")
+        try! realm.write {
+            realm.delete(objectToDelete)
+        }
+    }
+    
+    func delete(_ displayItem: EntryDisplayItem) {
+        let object = SearchResultEntryModel.fromEntryDisplayItem(item: displayItem)
         let objectToDelete = realm.objects(SearchResultEntryModel.self).filter("id == \"\(object.id)\"")
         try! realm.write {
             realm.delete(objectToDelete)

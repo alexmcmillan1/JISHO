@@ -10,6 +10,7 @@ import Foundation
 
 protocol FavouritesListViewOutput {
     func viewIsReady()
+    func delete(_ displayItem: EntryDisplayItem)
 }
 
 class FavouritesListInteractor: FavouritesListViewOutput {
@@ -28,5 +29,9 @@ class FavouritesListInteractor: FavouritesListViewOutput {
         let storedObjects: [SearchResultEntryModel] = realmInteractor.storedObjects()
         let displayItems: [EntryDisplayItem] = presenter.makeDisplayItems(from: storedObjects)
         viewInput?.update(favourites: displayItems)
+    }
+    
+    func delete(_ displayItem: EntryDisplayItem) {
+        realmInteractor.delete(displayItem)
     }
 }

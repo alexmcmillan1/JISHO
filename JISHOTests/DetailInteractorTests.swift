@@ -63,6 +63,10 @@ class MockRealmInterface: RealmInterface {
         askedToDelete = true
     }
     
+    func delete(_ displayItem: EntryDisplayItem) {
+        askedToDelete = true
+    }
+    
     func storedObjects() -> [SearchResultEntryModel] {
         wasAskedForStoredObjects = true
         return []
