@@ -15,9 +15,10 @@ protocol RealmInterface {
 }
 
 class RealmInteractor: RealmInterface {
+    let realm = try! Realm()
+    
     func save(_ viewModel: DetailViewModel) {
         let object = SearchResultEntryModel.fromDetailViewModel(viewModel: viewModel)
-        let realm = try! Realm()
         try! realm.write {
             realm.add(object)
         }
@@ -25,9 +26,9 @@ class RealmInteractor: RealmInterface {
     
     func delete(_ viewModel: DetailViewModel) {
         let object = SearchResultEntryModel.fromDetailViewModel(viewModel: viewModel)
-        let realm = try! Realm()
+        let objectToDelete = realm.objects(SearchResultEntryModel.self).filter("id == \"\(object.id)\"")
         try! realm.write {
-            realm.delete(object)
+            realm.delete(objectToDelete)
         }
     }
 }
