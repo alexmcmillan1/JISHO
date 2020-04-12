@@ -31,6 +31,7 @@ class FavouritesListViewController: UIViewController, FavouritesListViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         setUpTableView()
     }
     
@@ -48,6 +49,7 @@ class FavouritesListViewController: UIViewController, FavouritesListViewInput {
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
         tableView.rowHeight = 80
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "FavouriteEntryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "FavouriteEntryTableViewCell")
     }
 }
@@ -71,5 +73,15 @@ extension FavouritesListViewController: UITableViewDelegate {
         output.delete(favourites[indexPath.row])
         favourites.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let detailInteractor = DetailInteractor(realmInteractor: RealmInteractor(), data: favourites[indexPath.row])
+        let detailViewController = DetailViewController(output: detailInteractor, searchTerm: nil)
+        detailInteractor.viewInput = detailViewController
+        
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
