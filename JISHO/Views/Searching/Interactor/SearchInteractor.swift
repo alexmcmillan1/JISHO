@@ -17,12 +17,14 @@ class SearchInteractor: SearchViewOutput {
     
     weak var viewInput: SearchViewInput?
     private let presenter: SearchPresenting
+    private let realmInteractor: RealmInterface
 
     private let baseUrl: String = "https://jisho.org/api/v1/search/words?keyword="
     private let decoder = JSONDecoder()
     
-    init(presenter: SearchPresenting = SearchPresenter()) {
+    init(presenter: SearchPresenting = SearchPresenter(), realmInteractor: RealmInterface = RealmInteractor()) {
         self.presenter = presenter
+        self.realmInteractor = realmInteractor
     }
     
     func request(keyword: String) {
@@ -31,6 +33,26 @@ class SearchInteractor: SearchViewOutput {
         let promises: [Promise<SearchResponse?>] = [promiseForRequest(to: englishUrl), promiseForRequest(to: japaneseUrl)]
         
         when(fulfilled: promises).done { [weak self] (responses) in
+            
+            /*
+             var apiResponses = [SearchResponse?]()
+             var realmIds = [String]
+             
+             switch on enum type of each response
+             
+             for result in responses {
+                switch result {
+                case .apiResponse(let response):
+                    apiResponses.append(response)
+                case .realmResponse(let ids):
+                    realmIds = ids
+                }
+             }
+             
+             guard let firstResponse = responses[0] ...
+             
+            */
+            
             guard let firstResponse = responses[0], let secondResponse = responses[1] else {
                 self?.viewInput?.showErrorState(true)
                 return
@@ -103,7 +125,9 @@ class SearchInteractor: SearchViewOutput {
     
     private func promiseForStoredFavouritesIds() -> Promise<[String]> {
         return Promise { seal in
-            seal.fulfill([])
+            let objects = realmInteractor.storedObjects()
+            let ids = objects.map { $0.id }
+            seal.fulfill(ids)
         }
     }
     
@@ -118,4 +142,9 @@ class SearchInteractor: SearchViewOutput {
     private func wrapForEnglish(_ input: String) -> String {
         return "%22\(input)%22"
     }
+}
+
+enum SearchInteractionResult {
+    case apiResponse(SearchResponse)
+    case realmResponse([String])
 }
