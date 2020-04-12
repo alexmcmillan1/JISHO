@@ -73,7 +73,7 @@ class SearchInteractor: SearchViewOutput {
             self.viewInput?.showErrorState(true)
         }
     }
-        
+    
     private func promiseForRequest(to url: String) -> Promise<SearchResponse?> {
         return Promise { seal in
             AF.request(url).response { [weak self] response in
@@ -98,6 +98,12 @@ class SearchInteractor: SearchViewOutput {
                     }
                 }
             }
+        }
+    }
+    
+    private func promiseForStoredFavouritesIds() -> Promise<[String]> {
+        return Promise { seal in
+            seal.fulfill([])
         }
     }
     
