@@ -109,7 +109,7 @@ class SearchPresenterTests: XCTestCase {
         
         let displayItems = sut.makeDisplayItems(from: [slug], favouritesIds: realmIds)
         
-        XCTAssertTrue(displayItems.first!.isFavourite)
+        XCTAssertTrue(displayItems.first!.favouriteButtonState)
     }
     
     func test_makeDisplayItems_whenStoredObjectsIdsArePassedWithResponseItems_ifNoFavouritesPresentInSearchResults_doesNotMarkAsAFavourite() {
@@ -122,7 +122,7 @@ class SearchPresenterTests: XCTestCase {
         
         let displayItems = sut.makeDisplayItems(from: [slug], favouritesIds: realmIds)
         
-        XCTAssertFalse(displayItems.first!.isFavourite)
+        XCTAssertFalse(displayItems.first!.favouriteButtonState)
     }
 }
 

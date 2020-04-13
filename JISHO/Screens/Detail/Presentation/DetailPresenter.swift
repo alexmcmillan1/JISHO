@@ -15,7 +15,6 @@ protocol DetailPresenting: class {
 class DetailPresenter: DetailPresenting {
     
     func makeViewModel(from searchDisplayItem: EntryDisplayItem, wikiExtract: String?, kanji: [KanjiAPIResponse]) -> DetailViewModel {
-        let favouriteButtonState = FavouriteButtonState.fromFavouriteState(searchDisplayItem.isFavourite)
         var displayItems: [DetailDisplayItem] = []
         
         let summaryItem = DetailDisplayItem.summary(DetailSummaryDisplayItem(kanji: searchDisplayItem.mainForm.word,
@@ -43,7 +42,7 @@ class DetailPresenter: DetailPresenting {
             .forEach { displayItems.append(DetailDisplayItem.link($0)) }
         
         
-        return DetailViewModel(favouriteButtonState: favouriteButtonState, displayItems: displayItems)
+        return DetailViewModel(favouriteButtonState: searchDisplayItem.favouriteButtonState, displayItems: displayItems)
     }
     
     private func makeLinkItem(from link: ExternalLink) -> DetailLinkDisplayItem? {

@@ -46,7 +46,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     @IBOutlet private weak var definitionsStackView: UIStackView!
-    @IBOutlet private weak var favouriteButton: UIButton!
+    @IBOutlet private weak var favouriteButton: FaveButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,6 +54,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
 
     func setUp(displayItem: EntryDisplayItem) {
+        favouriteButton.setState(displayItem.favouriteButtonState)
         setText(from: displayItem)
         let toShow = displayItem.definitions.count - displayItem.definitionsNotSurfaced
         

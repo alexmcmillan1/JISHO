@@ -66,6 +66,9 @@
                         <constraint firstAttribute="width" constant="44" id="MzU-4x-smE"/>
                         <constraint firstAttribute="height" constant="44" id="QVL-HI-FKm"/>
                     </constraints>
+                    <state key="normal">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="18" scale="medium" weight="regular"/>
+                    </state>
                     <connections>
                         <action selector="tappedFavourite:" destination="-1" eventType="touchUpInside" id="f7D-pg-TSQ"/>
                     </connections>

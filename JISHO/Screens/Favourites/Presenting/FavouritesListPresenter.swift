@@ -19,7 +19,7 @@ class FavouritesListPresenter: FavouritesListPresenting {
     }
     
     private func makeDisplayItem(from object: SearchResultEntryModel) -> EntryDisplayItem {
-        return EntryDisplayItem(isFavourite: true,
+        return EntryDisplayItem(favouriteButtonState: .favourited,
                                 mainForm: Form(word: object.mainFormWord, reading: object.mainFormReading),
                                 otherForms: [],
                                 definitions: definitions(from: object),

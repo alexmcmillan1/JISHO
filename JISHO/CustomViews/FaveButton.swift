@@ -36,16 +36,12 @@ enum FavouriteButtonState {
     case unfavourited
     case favourited
     
-    var imageConfiguration: UIImage.SymbolConfiguration{
-        UIImage.SymbolConfiguration(pointSize: 24, weight: .regular)
-    }
-    
-    var image: UIImage {
+    var image: UIImage? {
         switch self {
         case .unfavourited:
-            return UIImage(systemName: "heart", withConfiguration: imageConfiguration)!
+            return UIImage(systemName: "heart")
         case .favourited:
-            return UIImage(systemName: "heart.fill", withConfiguration: imageConfiguration)!
+            return UIImage(systemName: "heart.fill")
         }
     }
     
@@ -61,9 +57,5 @@ enum FavouriteButtonState {
         case .unfavourited: return .favourited
         case .favourited: return .unfavourited
         }
-    }
-    
-    static func fromFavouriteState(_ favourited: Bool) -> FavouriteButtonState {
-        return favourited ? .favourited : .unfavourited
     }
 }

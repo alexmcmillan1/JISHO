@@ -7,7 +7,7 @@
 //
 
 struct EntryDisplayItem {
-    let isFavourite: Bool
+    let favouriteButtonState: FavouriteButtonState
     let mainForm: Form
     let otherForms: [Form]
     let definitions: [Definition]

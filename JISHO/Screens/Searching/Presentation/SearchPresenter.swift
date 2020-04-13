@@ -32,7 +32,7 @@ class SearchPresenter: SearchPresenting {
             id == mainForm.word + mainForm.reading
         }
                 
-        return EntryDisplayItem(isFavourite: matchingFavouriteId != nil,
+        return EntryDisplayItem(favouriteButtonState: matchingFavouriteId != nil ? .favourited : .unfavourited,
                                 mainForm: mainForm,
                                 otherForms: otherForms,
                                 definitions: definitions,
