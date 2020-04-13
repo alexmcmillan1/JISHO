@@ -38,7 +38,7 @@ class FavouritesListInteractorTests: XCTestCase {
     }
     
     private func stubEntryDisplayItem() -> EntryDisplayItem {
-        return EntryDisplayItem(isFavourite: true, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])
+        return EntryDisplayItem(favouriteButtonState: .favourited, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])
     }
 }
 

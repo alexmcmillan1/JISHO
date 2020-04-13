@@ -16,7 +16,7 @@ class DetailInteractorTests: XCTestCase {
     var mockRealmInterface: MockRealmInterface!
     
     private func stubEntryDisplayItem() -> EntryDisplayItem {
-        return EntryDisplayItem(isFavourite: false, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])
+        return EntryDisplayItem(favouriteButtonState: .unfavourited, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])
     }
     
     private func stubDetailViewModel() -> DetailViewModel {

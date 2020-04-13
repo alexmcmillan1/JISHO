@@ -12,7 +12,7 @@ import XCTest
 class FavouritesListPresenterTests: XCTestCase {
     
     let sut = FavouritesListPresenter()
-    let entryDisplayItem = EntryDisplayItem(isFavourite: true,
+    let entryDisplayItem = EntryDisplayItem(favouriteButtonState: .favourited,
                                             mainForm: Form(word: "main", reading: "reading"),
                                             otherForms: [],
                                             definitions: [Definition(description: "d1desc", partsOfSpeech: "d1pos"),

@@ -37,6 +37,6 @@ class DetailPresenterTests: XCTestCase {
     }
     
     private func createDisplayItem(links: [ExternalLink] = []) -> EntryDisplayItem {
-        return EntryDisplayItem(isFavourite: false, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: links, kanji: [])
+        return EntryDisplayItem(favouriteButtonState: .unfavourited, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: links, kanji: [])
     }
 }

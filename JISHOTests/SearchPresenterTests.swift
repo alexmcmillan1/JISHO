@@ -92,7 +92,7 @@ class SearchPresenterTests: XCTestCase {
     }
     
     func test_deduplicate_removesDuplicateDisplayItems() {
-        let inputItems: [EntryDisplayItem] = [EntryDisplayItem(isFavourite: false, mainForm: Form(word: "日本", reading: "にほん"), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: []), EntryDisplayItem(isFavourite: false, mainForm: Form(word: "日本", reading: "にほん"), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])]
+        let inputItems: [EntryDisplayItem] = [EntryDisplayItem(favouriteButtonState: .unfavourited, mainForm: Form(word: "日本", reading: "にほん"), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: []), EntryDisplayItem(favouriteButtonState: .unfavourited, mainForm: Form(word: "日本", reading: "にほん"), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])]
         
         let deduplicated = sut.deduplicate(displayItems: inputItems)
         
@@ -109,7 +109,7 @@ class SearchPresenterTests: XCTestCase {
         
         let displayItems = sut.makeDisplayItems(from: [slug], favouritesIds: realmIds)
         
-        XCTAssertTrue(displayItems.first!.favouriteButtonState)
+        XCTAssertEqual(FavouriteButtonState.favourited, displayItems.first!.favouriteButtonState)
     }
     
     func test_makeDisplayItems_whenStoredObjectsIdsArePassedWithResponseItems_ifNoFavouritesPresentInSearchResults_doesNotMarkAsAFavourite() {
@@ -122,7 +122,7 @@ class SearchPresenterTests: XCTestCase {
         
         let displayItems = sut.makeDisplayItems(from: [slug], favouritesIds: realmIds)
         
-        XCTAssertFalse(displayItems.first!.favouriteButtonState)
+        XCTAssertEqual(FavouriteButtonState.unfavourited, displayItems.first!.favouriteButtonState)
     }
 }
 
