@@ -53,6 +53,7 @@
 		FACC807D2442294C00F3CB09 /* FavouritesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC807C2442294C00F3CB09 /* FavouritesListPresenterTests.swift */; };
 		FAD61DDF23F8A1FB00C37E37 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD61DDD23F8A1FB00C37E37 /* DetailViewController.swift */; };
 		FAD61DE023F8A1FB00C37E37 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD61DDE23F8A1FB00C37E37 /* DetailViewController.xib */; };
+		FAD7F4F22444A49C0075C481 /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7F4F12444A49C0075C481 /* FaveButton.swift */; };
 		FADD30592401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD30572401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift */; };
 		FADD305A2401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADD30582401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib */; };
 		FADD305C2401DA7E00ADAF99 /* WikipediaExtractResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD305B2401DA7E00ADAF99 /* WikipediaExtractResponse.swift */; };
@@ -140,6 +141,7 @@
 		FACC807C2442294C00F3CB09 /* FavouritesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListPresenterTests.swift; sourceTree = "<group>"; };
 		FAD61DDD23F8A1FB00C37E37 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FAD61DDE23F8A1FB00C37E37 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		FAD7F4F12444A49C0075C481 /* FaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveButton.swift; sourceTree = "<group>"; };
 		FADD30572401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWikiExtractTableViewCell.swift; sourceTree = "<group>"; };
 		FADD30582401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWikiExtractTableViewCell.xib; sourceTree = "<group>"; };
 		FADD305B2401DA7E00ADAF99 /* WikipediaExtractResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaExtractResponse.swift; sourceTree = "<group>"; };
@@ -356,6 +358,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		FAD7F4F02444A37D0075C481 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7F4F12444A49C0075C481 /* FaveButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		FAE6FDD723EEB44300CDB5F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +441,7 @@
 				FAF5B79023F493CD008C3C81 /* Extensions */,
 				FA0BF46824410AAE00245E64 /* Model */,
 				FA250E402406B15A00788A1F /* Fonts */,
+				FAD7F4F02444A37D0075C481 /* CustomViews */,
 				FA11E68E2406DF0E00D60B1D /* Kana.swift */,
 			);
 			path = JISHO;
@@ -675,6 +686,7 @@
 				FAFE5C05240AA599004DF70F /* KanjiResponseItem.swift in Sources */,
 				FAF3BD3F23E777F600B3D707 /* SearchViewController.swift in Sources */,
 				FA09BA3E23E78163005488DB /* SearchResponse.swift in Sources */,
+				FAD7F4F22444A49C0075C481 /* FaveButton.swift in Sources */,
 				FA0BF4702441F2F800245E64 /* FavouritesListViewController.swift in Sources */,
 				FAFE5C16240AEAE3004DF70F /* KanjiAspectTableViewCell.swift in Sources */,
 				FA169AF923EA19E1002DC84F /* SearchResultTableViewCell.swift in Sources */,

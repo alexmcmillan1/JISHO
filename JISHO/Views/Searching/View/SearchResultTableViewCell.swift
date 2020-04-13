@@ -46,6 +46,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     @IBOutlet private weak var definitionsStackView: UIStackView!
+    @IBOutlet private weak var favouriteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

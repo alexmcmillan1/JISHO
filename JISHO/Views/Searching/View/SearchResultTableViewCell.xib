@@ -45,6 +45,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wid-4i-sgc">
                                 <rect key="frame" x="16" y="127" width="256" height="76"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-GO-ZLV">
+                                <rect key="frame" x="244" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="vDY-zA-yIu"/>
+                                    <constraint firstAttribute="height" constant="44" id="xBb-Sm-hTS"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -57,10 +64,12 @@
                             <constraint firstItem="ain-rO-U27" firstAttribute="top" secondItem="Qel-Ph-ljG" secondAttribute="bottom" constant="8" id="Xeg-sT-zWY"/>
                             <constraint firstItem="ain-rO-U27" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="YRP-Q6-Yay"/>
                             <constraint firstItem="wid-4i-sgc" firstAttribute="top" secondItem="ain-rO-U27" secondAttribute="bottom" constant="8" id="bIW-pT-bwy"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="16" id="jyO-Rv-6Te"/>
+                            <constraint firstAttribute="trailing" secondItem="Xr5-GO-ZLV" secondAttribute="trailing" id="bw4-pF-svm"/>
+                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" id="gbf-dh-Nz9"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.6" id="n6l-sR-WFE"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="oMC-9D-QIJ"/>
                             <constraint firstItem="P0l-yN-9zo" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.4" id="omi-SG-gKi"/>
+                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="8" id="vxk-5l-UhW"/>
                             <constraint firstAttribute="trailing" secondItem="wid-4i-sgc" secondAttribute="trailing" constant="16" id="yAt-cU-gTU"/>
                         </constraints>
                     </view>
@@ -76,6 +85,7 @@
             <connections>
                 <outlet property="containerView" destination="4lg-AF-WUy" id="nQ3-TY-4GP"/>
                 <outlet property="definitionsStackView" destination="wid-4i-sgc" id="zpW-mP-s5O"/>
+                <outlet property="favouriteButton" destination="Xr5-GO-ZLV" id="BWN-Sp-5u3"/>
                 <outlet property="readingLabel" destination="Qel-Ph-ljG" id="ic0-fF-6Ye"/>
                 <outlet property="romajiLabel" destination="P0l-yN-9zo" id="RgC-WN-ksG"/>
                 <outlet property="wordLabel" destination="ain-rO-U27" id="fQa-NC-Z58"/>
