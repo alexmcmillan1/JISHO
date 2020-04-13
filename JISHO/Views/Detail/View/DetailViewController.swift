@@ -20,18 +20,12 @@ class DetailViewController: UIViewController, DetailViewInput {
         didSet {
             tableView.reloadData()
             loadingView.isHidden = true
-            favouriteState = viewModel?.favouriteButtonState ?? FavouriteButtonState.unfavourited
-        }
-    }
-    
-    private var favouriteState: FavouriteButtonState = .unfavourited {
-        didSet {
-            styleFavouriteButton(state: favouriteState)
+            favouriteButton.setState(viewModel?.favouriteButtonState ?? .unfavourited)
         }
     }
     
     @IBOutlet private weak var backButton: UIButton!
-    @IBOutlet private weak var favouriteButton: UIButton!
+    @IBOutlet private weak var favouriteButton: FaveButton!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingView: UIView!
     @IBOutlet private weak var activityIndicator: NVActivityIndicatorView!
@@ -105,17 +99,9 @@ class DetailViewController: UIViewController, DetailViewInput {
     
     @IBAction private func tappedFavourite(_ sender: Any) {
         guard let viewModel = viewModel else { return }
-        favouriteState = favouriteState.oppositeState
-        if favouriteState == .favourited {
-            output.favouriteEntry(viewModel)
-        } else {
-            output.unfavouriteEntry(viewModel)
-        }
-    }
-    
-    private func styleFavouriteButton(state: FavouriteButtonState) {
-        favouriteButton.setImage(favouriteState.image, for: .normal)
-        favouriteButton.imageView?.tintColor = favouriteState.color
+        favouriteButton.flipState() == .favourited
+            ? output.favouriteEntry(viewModel)
+            : output.unfavouriteEntry(viewModel)
     }
 }
 
