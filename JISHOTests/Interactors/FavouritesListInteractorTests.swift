@@ -13,12 +13,12 @@ class FavouritesListInteractorTests: XCTestCase {
     
     var sut: FavouritesListInteractor!
     var mockPresenter: MockFavouritesListPresenter!
-    var mockRealmInterface: MockRealmInterface!
+    var mockRealmInterface: MockRealmInteractor!
     
     override func setUp() {
         super.setUp()
         mockPresenter = MockFavouritesListPresenter()
-        mockRealmInterface = MockRealmInterface()
+        mockRealmInterface = MockRealmInteractor()
         sut = FavouritesListInteractor(realmInteractor: mockRealmInterface, presenter: mockPresenter)
     }
     

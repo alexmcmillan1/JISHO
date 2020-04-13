@@ -11,6 +11,8 @@ import PromiseKit
 
 protocol SearchViewOutput {
     func request(keyword: String)
+    func favourite(displayItem: EntryDisplayItem)
+    func unfavourite(displayItem: EntryDisplayItem)
 }
 
 class SearchInteractor: SearchViewOutput {
@@ -107,6 +109,17 @@ class SearchInteractor: SearchViewOutput {
             self.viewInput?.showErrorState(true)
         }
     }
+    
+    func favourite(displayItem: EntryDisplayItem) {
+        realmInteractor.save(displayItem)
+    }
+    
+    func unfavourite(displayItem: EntryDisplayItem) {
+        realmInteractor.delete(displayItem)
+    }
+}
+
+private extension SearchInteractor {
     
     private func promiseForRequest(to url: String) -> Promise<SearchInteractionResult> {
         return Promise { seal in

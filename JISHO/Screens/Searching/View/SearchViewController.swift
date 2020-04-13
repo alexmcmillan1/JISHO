@@ -160,6 +160,8 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
         cell.setUp(displayItem: data[indexPath.row])
+        cell.index = indexPath.row
+        cell.delegate = self
         return cell
     }
 }
@@ -205,5 +207,15 @@ extension SearchViewController: UITableViewDelegate {
         
         previousScrollContentOffset = scrollView.contentOffset.y
         wasScrollDirectionDown = isScrollDirectionDown
+    }
+}
+
+extension SearchViewController: SearchResultTableViewCellFavouriteActionDelegate {
+    func favourite(atRow index: Int) {
+        output.favourite(displayItem: data[index])
+    }
+    
+    func unfavourite(atRow index: Int) {
+        output.unfavourite(displayItem: data[index])
     }
 }

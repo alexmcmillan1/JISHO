@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol SearchResultTableViewCellFavouriteActionDelegate {
+    func favourite(atRow index: Int)
+    func unfavourite(atRow index: Int)
+}
+
 class SearchResultTableViewCell: UITableViewCell {
+    
+    var index: Int!
+    var delegate: SearchResultTableViewCellFavouriteActionDelegate?
     
     @IBOutlet private weak var containerView: UIView! {
         didSet {
@@ -96,6 +104,14 @@ class SearchResultTableViewCell: UITableViewCell {
         for subview in definitionsStackView.arrangedSubviews {
             definitionsStackView.removeArrangedSubview(subview)
             subview.removeFromSuperview()
+        }
+    }
+    
+    @IBAction func tappedFavourite(_ sender: Any) {
+        if favouriteButton.flipState() == .favourited {
+            delegate?.favourite(atRow: index)
+        } else {
+            delegate?.unfavourite(atRow: index)
         }
     }
 }

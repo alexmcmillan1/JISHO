@@ -13,7 +13,7 @@ class DetailInteractorTests: XCTestCase {
     
     var sut: DetailInteractor!
     var mockPresenter: MockDetailPresenter!
-    var mockRealmInterface: MockRealmInterface!
+    var mockRealmInterface: MockRealmInteractor!
     
     private func stubEntryDisplayItem() -> EntryDisplayItem {
         return EntryDisplayItem(favouriteButtonState: .unfavourited, mainForm: Form(word: "", reading: ""), otherForms: [], definitions: [], definitionsNotSurfaced: 0, links: [], kanji: [])
@@ -26,7 +26,7 @@ class DetailInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockPresenter = MockDetailPresenter()
-        mockRealmInterface = MockRealmInterface()
+        mockRealmInterface = MockRealmInteractor()
         sut = DetailInteractor(presenter: mockPresenter, realmInteractor: mockRealmInterface, data: stubEntryDisplayItem())
     }
     
@@ -47,28 +47,5 @@ class MockDetailPresenter: DetailPresenting {
     func makeViewModel(from searchDisplayItem: EntryDisplayItem, wikiExtract: String?, kanji: [KanjiAPIResponse]) -> DetailViewModel {
         askedToMakeViewModel = true
         return DetailViewModel(favouriteButtonState: .unfavourited, displayItems: [])
-    }
-}
-
-class MockRealmInterface: RealmInterface {
-    var askedToSave = false
-    var askedToDelete = false
-    var wasAskedForStoredObjects = false
-    
-    func save(_ viewModel: DetailViewModel) {
-        askedToSave = true
-    }
-    
-    func delete(_ viewModel: DetailViewModel) {
-        askedToDelete = true
-    }
-    
-    func delete(_ displayItem: EntryDisplayItem) {
-        askedToDelete = true
-    }
-    
-    func storedObjects() -> [SearchResultEntryModel] {
-        wasAskedForStoredObjects = true
-        return []
     }
 }
