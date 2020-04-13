@@ -26,6 +26,7 @@ class SearchResultEntryModel: Object {
     static func fromEntryDisplayItem(item: EntryDisplayItem) -> SearchResultEntryModel {
         let object = SearchResultEntryModel()
         
+        object.id = item.mainForm.word + item.mainForm.reading
         object.mainFormWord = item.mainForm.word
         object.mainFormReading = item.mainForm.reading
         

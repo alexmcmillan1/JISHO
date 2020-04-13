@@ -9,12 +9,16 @@
 import Foundation
 
 protocol SearchPresenting: class {
-    func makeDisplayItem(from responseItem: Datum) -> EntryDisplayItem?
+    func makeDisplayItems(from responseItems: [Datum], favouritesIds: [String]) -> [EntryDisplayItem]
     func deduplicate(displayItems: [EntryDisplayItem]) -> [EntryDisplayItem]
 }
 
 class SearchPresenter: SearchPresenting {
-    func makeDisplayItem(from responseItem: Datum) -> EntryDisplayItem? {
+    func makeDisplayItems(from responseItems: [Datum], favouritesIds: [String]) -> [EntryDisplayItem] {
+        return responseItems.compactMap { makeDisplayItem(from: $0, favouritesIds: favouritesIds) }
+    }
+    
+    private func makeDisplayItem(from responseItem: Datum, favouritesIds: [String]) -> EntryDisplayItem? {
         guard let firstForm = responseItem.japanese.first,
             !responseItem.slug.onlyConsistsOf(characters: String.alphanumeric) else { return nil }
 
@@ -23,8 +27,12 @@ class SearchPresenter: SearchPresenting {
         let definitions = self.definitions(from: responseItem.senses)
         let links = self.links(from: responseItem.senses)
         let notSurfaced = definitions.count - 2
+        
+        let matchingFavouriteId: String? = favouritesIds.first { id -> Bool in
+            id == mainForm.word + mainForm.reading
+        }
                 
-        return EntryDisplayItem(isFavourite: false,
+        return EntryDisplayItem(isFavourite: matchingFavouriteId != nil,
                                 mainForm: mainForm,
                                 otherForms: otherForms,
                                 definitions: definitions,

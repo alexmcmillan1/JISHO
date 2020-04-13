@@ -16,15 +16,13 @@ class SearchPresenterTests: XCTestCase {
     // Main entry uses slug as the word
     func test_makeDisplayItem_usesSlugWord_asMainWord() {
         let slug = Datum(slug: "日本", japanese: [Japanese(word: nil, reading: "にほん")], senses: [])
-        let displayItem = sut.makeDisplayItem(from: slug)
-        XCTAssertEqual("日本", displayItem?.mainForm.word)
+        XCTAssertEqual("日本", displayItems(from: [slug]).first!.mainForm.word)
     }
     
     // Main entry uses first Japanese kana (reading) as its reading
     func test_mainEntry_usesFirstReading_asReading() {
         let slug = Datum(slug: "日本", japanese: [Japanese(word: "日本", reading: "にほん")], senses: [])
-        let displayItem = sut.makeDisplayItem(from: slug)
-        XCTAssertEqual("にほん", displayItem?.mainForm.reading)
+        XCTAssertEqual("にほん", displayItems(from: [slug]).first!.mainForm.reading)
     }
     
     // Make sure any -(num) is stripped from the slug
@@ -32,49 +30,37 @@ class SearchPresenterTests: XCTestCase {
         let slug1 = Datum(slug: "日本", japanese: [Japanese(word: nil, reading: "にほん")], senses: [])
         let slug2 = Datum(slug: "日本-1", japanese: [Japanese(word: nil, reading: "にほんにほん")], senses: [])
         
-        let displayItems = [slug1, slug2].compactMap { (slug) -> EntryDisplayItem? in
-            sut.makeDisplayItem(from: slug)
-        }
-        
-        XCTAssertEqual("日本", displayItems[1].mainForm.word)
+        XCTAssertEqual("日本", displayItems(from: [slug1, slug2])[1].mainForm.word)
     }
     
     func test_ifSlugIsAlphanumeric_removesIt() {
         let slug1 = Datum(slug: "1234567890", japanese: [Japanese(word: nil, reading: "Reading")], senses: [])
         let slug2 = Datum(slug: "dcb5", japanese: [Japanese(word: nil, reading: "Reading")], senses: [])
         let slug3 = Datum(slug: "日本", japanese: [Japanese(word: nil, reading: "にっぽん")], senses: [])
-        
-        let displayItems = [slug1, slug2, slug3].compactMap { (slug) -> EntryDisplayItem? in
-            sut.makeDisplayItem(from: slug)
-        }
+        let displayItems = self.displayItems(from: [slug1, slug2, slug3])
         
         XCTAssertEqual(1, displayItems.count)
-        XCTAssertEqual("日本", displayItems.first?.mainForm.word)
+        XCTAssertEqual("日本", displayItems.first!.mainForm.word)
     }
     
     func test_ifWikipediaDefinitionInPartsOfSpeech_omitsFromDisplayItem() {
         let slug = Datum(slug: "日本", japanese: [Japanese(word: nil, reading: "にっぽん")], senses: [Sense(english_definitions: ["Japan"], parts_of_speech: ["Wikipedia definition"], links: [])])
-        
-        let displayItem = sut.makeDisplayItem(from: slug)
-        
-        XCTAssertTrue(displayItem!.definitions.isEmpty)
+        XCTAssertTrue(displayItems(from: [slug]).first!.definitions.isEmpty)
     }
     
     func test_ifLinksPresentInPartsOfSpeech_addedToDisplayItem() {
         let slug = Datum(slug: "日本", japanese: [Japanese(word: nil, reading: "にっぽん")], senses: [Sense(english_definitions: ["Japan"], parts_of_speech: ["Wikipedia definition"], links: [Link(text: "English Wikipedia", url: "https://something")])])
-        
-        let displayItem = sut.makeDisplayItem(from: slug)
-        
-        XCTAssertEqual(1, displayItem?.links.count)
+                
+        XCTAssertEqual(1, displayItems(from: [slug]).first!.links.count)
     }
     
     func test_ifOtherFormsPresent_addedToDisplayItem() {
         let slug = Datum(slug: "日本", japanese: [Japanese(word: "日本", reading: "にほん"), Japanese(word: "日本", reading: "にっぽん")], senses: [])
         
-        let displayItem = sut.makeDisplayItem(from: slug)
+        let displayItems = self.displayItems(from: [slug])
         
-        XCTAssertEqual(1, displayItem?.otherForms.count)
-        XCTAssertEqual("にっぽん", displayItem?.otherForms.first!.reading)
+        XCTAssertEqual(1, displayItems.first!.otherForms.count)
+        XCTAssertEqual("にっぽん", displayItems.first!.otherForms.first!.reading)
     }
     
     func test_ifMoreThan2Definitions_numberIncludedAsNotSurfaced() {
@@ -83,10 +69,8 @@ class SearchPresenterTests: XCTestCase {
                          senses: [Sense(english_definitions: ["A"], parts_of_speech: ["Noun"], links: []),
                                   Sense(english_definitions: ["B"], parts_of_speech: ["Noun"], links: []),
                                   Sense(english_definitions: ["C"], parts_of_speech: ["Noun"], links: [])])
-        
-        let displayItem = sut.makeDisplayItem(from: slug)!
-        
-        XCTAssertEqual(1, displayItem.definitionsNotSurfaced)
+                
+        XCTAssertEqual(1, displayItems(from: [slug]).first!.definitionsNotSurfaced)
     }
     
     func test_if2Definitions_notSurfacedIs0() {
@@ -95,20 +79,16 @@ class SearchPresenterTests: XCTestCase {
                                     Japanese(word: "日本", reading: "にっぽん")],
                          senses: [Sense(english_definitions: ["A"], parts_of_speech: ["Noun"], links: []),
                                   Sense(english_definitions: ["B"], parts_of_speech: ["Noun"], links: [])])
-        
-        let displayItem = sut.makeDisplayItem(from: slug)!
-        
-        XCTAssertEqual(0, displayItem.definitionsNotSurfaced)
+                
+        XCTAssertEqual(0, displayItems(from: [slug]).first!.definitionsNotSurfaced)
     }
     
     func test_ifFewerThan2Definitions_notSurfacedIs0() {
         let slug = Datum(slug: "日本",
                          japanese: [Japanese(word: "日本", reading: "にほん"), Japanese(word: "日本", reading: "にっぽん")],
                          senses: [Sense(english_definitions: ["A"], parts_of_speech: ["Noun"], links: [])])
-        
-        let displayItem = sut.makeDisplayItem(from: slug)!
-        
-        XCTAssertEqual(0, displayItem.definitionsNotSurfaced)
+                
+        XCTAssertEqual(0, displayItems(from: [slug]).first!.definitionsNotSurfaced)
     }
     
     func test_deduplicate_removesDuplicateDisplayItems() {
@@ -117,5 +97,37 @@ class SearchPresenterTests: XCTestCase {
         let deduplicated = sut.deduplicate(displayItems: inputItems)
         
         XCTAssertEqual(1, deduplicated.count)
+    }
+    
+    func test_makeDisplayItems_whenStoredObjectsIdsArePassedWithResponseItems_ifFavouritePresentInSearchResults_marksAFoundFavouriteAsAFavourite() {
+        let realmIds = ["日本にっぽん"]
+        let slug = Datum(slug: "日本",
+                         japanese: [Japanese(word: "日本", reading: "にっぽん"), Japanese(word: "日本", reading: "にほん")],
+                         senses: [Sense(english_definitions: ["A"], parts_of_speech: ["Noun"], links: []),
+                                  Sense(english_definitions: ["B"], parts_of_speech: ["Noun"], links: []),
+                                  Sense(english_definitions: ["C"], parts_of_speech: ["Noun"], links: [])])
+        
+        let displayItems = sut.makeDisplayItems(from: [slug], favouritesIds: realmIds)
+        
+        XCTAssertTrue(displayItems.first!.isFavourite)
+    }
+    
+    func test_makeDisplayItems_whenStoredObjectsIdsArePassedWithResponseItems_ifNoFavouritesPresentInSearchResults_doesNotMarkAsAFavourite() {
+        let realmIds = ["日に"]
+        let slug = Datum(slug: "日本",
+                         japanese: [Japanese(word: "日本", reading: "にっぽん"), Japanese(word: "日本", reading: "にほん")],
+                         senses: [Sense(english_definitions: ["A"], parts_of_speech: ["Noun"], links: []),
+                                  Sense(english_definitions: ["B"], parts_of_speech: ["Noun"], links: []),
+                                  Sense(english_definitions: ["C"], parts_of_speech: ["Noun"], links: [])])
+        
+        let displayItems = sut.makeDisplayItems(from: [slug], favouritesIds: realmIds)
+        
+        XCTAssertFalse(displayItems.first!.isFavourite)
+    }
+}
+
+extension SearchPresenterTests {
+    private func displayItems(from slugs: [Datum]) -> [EntryDisplayItem] {
+        return sut.makeDisplayItems(from: slugs, favouritesIds: [])
     }
 }

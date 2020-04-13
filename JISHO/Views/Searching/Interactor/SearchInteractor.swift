@@ -30,9 +30,11 @@ class SearchInteractor: SearchViewOutput {
     func request(keyword: String) {
         guard let englishUrl = createUrlString(from: keyword, wrapped: true), let japaneseUrl = createUrlString(from: keyword, wrapped: false) else { return }
         
-        let promises: [Promise<SearchResponse?>] = [promiseForRequest(to: englishUrl), promiseForRequest(to: japaneseUrl)]
+        let promises: [Promise<SearchInteractionResult>] = [promiseForRequest(to: englishUrl),
+                                                            promiseForRequest(to: japaneseUrl),
+                                                            promiseForStoredFavouritesIds()]
         
-        when(fulfilled: promises).done { [weak self] (responses) in
+        when(fulfilled: promises).done { [weak self] responses in
             
             /*
              var apiResponses = [SearchResponse?]()
@@ -53,7 +55,19 @@ class SearchInteractor: SearchViewOutput {
              
             */
             
-            guard let firstResponse = responses[0], let secondResponse = responses[1] else {
+            var apiResponses = [SearchResponse?]()
+            var realmIds = [String]()
+            
+            for response in responses {
+                switch response {
+                case .apiResponse(let searchResponse):
+                    apiResponses.append(searchResponse)
+                case .realmResponse(let ids):
+                    realmIds = ids
+                }
+            }
+            
+            guard let firstResponse = apiResponses[0], let secondResponse = apiResponses[1] else {
                 self?.viewInput?.showErrorState(true)
                 return
             }
@@ -81,11 +95,9 @@ class SearchInteractor: SearchViewOutput {
                 }
             }
             
-            let sanitised: [EntryDisplayItem] = allResponseData.compactMap { slug -> EntryDisplayItem? in
-                self?.presenter.makeDisplayItem(from: slug)
-            }
+            let displayItems = self?.presenter.makeDisplayItems(from: allResponseData, favouritesIds: realmIds)
             
-            if let data = self?.presenter.deduplicate(displayItems: sanitised) {
+            if let items = displayItems, let data = self?.presenter.deduplicate(displayItems: items) {
                 self?.viewInput?.data = data
             } else {
                 self?.viewInput?.showErrorState(true)
@@ -96,38 +108,38 @@ class SearchInteractor: SearchViewOutput {
         }
     }
     
-    private func promiseForRequest(to url: String) -> Promise<SearchResponse?> {
+    private func promiseForRequest(to url: String) -> Promise<SearchInteractionResult> {
         return Promise { seal in
             AF.request(url).response { [weak self] response in
                 guard let self = self else {
-                    seal.fulfill(nil)
+                    seal.fulfill(SearchInteractionResult.apiResponse(nil))
                     return
                 }
                 
                 switch response.result {
                 case .failure:
-                    seal.fulfill(nil)
+                    seal.fulfill(SearchInteractionResult.apiResponse(nil))
                 case .success(let data):
                     guard let data = data else {
-                        seal.fulfill(nil)
+                        seal.fulfill(SearchInteractionResult.apiResponse(nil))
                         return
                     }
                     do {
                         let decoded = try self.decoder.decode(SearchResponse.self, from: data)
-                        seal.fulfill(decoded)
+                        seal.fulfill(SearchInteractionResult.apiResponse(decoded))
                     } catch {
-                        seal.fulfill(nil)
+                        seal.fulfill(SearchInteractionResult.apiResponse(nil))
                     }
                 }
             }
         }
     }
     
-    private func promiseForStoredFavouritesIds() -> Promise<[String]> {
+    private func promiseForStoredFavouritesIds() -> Promise<SearchInteractionResult> {
         return Promise { seal in
             let objects = realmInteractor.storedObjects()
             let ids = objects.map { $0.id }
-            seal.fulfill(ids)
+            seal.fulfill(SearchInteractionResult.realmResponse(ids))
         }
     }
     
@@ -145,6 +157,6 @@ class SearchInteractor: SearchViewOutput {
 }
 
 enum SearchInteractionResult {
-    case apiResponse(SearchResponse)
+    case apiResponse(SearchResponse?)
     case realmResponse([String])
 }
