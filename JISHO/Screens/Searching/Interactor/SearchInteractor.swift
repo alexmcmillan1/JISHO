@@ -36,27 +36,7 @@ class SearchInteractor: SearchViewOutput {
                                                             promiseForRequest(to: japaneseUrl),
                                                             promiseForStoredFavouritesIds()]
         
-        when(fulfilled: promises).done { [weak self] responses in
-            
-            /*
-             var apiResponses = [SearchResponse?]()
-             var realmIds = [String]
-             
-             switch on enum type of each response
-             
-             for result in responses {
-                switch result {
-                case .apiResponse(let response):
-                    apiResponses.append(response)
-                case .realmResponse(let ids):
-                    realmIds = ids
-                }
-             }
-             
-             guard let firstResponse = responses[0] ...
-             
-            */
-            
+        when(fulfilled: promises).done { [weak self] responses in            
             var apiResponses = [SearchResponse?]()
             var realmIds = [String]()
             
