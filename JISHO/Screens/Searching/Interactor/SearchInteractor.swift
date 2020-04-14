@@ -80,7 +80,7 @@ class SearchInteractor: SearchViewOutput {
             let displayItems = self?.presenter.makeDisplayItems(from: allResponseData, favouritesIds: realmIds)
             
             if let items = displayItems, let data = self?.presenter.deduplicate(displayItems: items) {
-                self?.viewInput?.data = data
+                self?.viewInput?.reload(withData: data)
             } else {
                 self?.viewInput?.showErrorState(true)
             }

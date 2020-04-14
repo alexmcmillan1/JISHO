@@ -11,20 +11,13 @@ import NVActivityIndicatorView
 import SwiftyGif
 
 protocol SearchViewInput: class {
-    var data: [EntryDisplayItem] { get set }
+    func reload(withData data: [EntryDisplayItem])
     func showErrorState(_ show: Bool)
 }
 
 class SearchViewController: UIViewController, SearchViewInput {
     
-    var data: [EntryDisplayItem] = [] {
-        didSet {
-            tableView.contentOffset = CGPoint(x: 0, y: -64)
-            tableView.reloadData()
-            showEmptyState(data.isEmpty)
-            showLoadingState(false)
-        }
-    }
+    private var data: [EntryDisplayItem] = []
     
     @IBOutlet private weak var promptGifViewA: UIImageView!
     @IBOutlet private weak var promptGifViewB: UIImageView!
@@ -77,6 +70,14 @@ class SearchViewController: UIViewController, SearchViewInput {
         setUpTableView()
         styleActivityIndicator()
         stylePromptViewComponents()
+    }
+    
+    func reload(withData data: [EntryDisplayItem]) {
+        self.data = data
+        tableView.contentOffset = CGPoint(x: 0, y: -64)
+        tableView.reloadData()
+        showEmptyState(data.isEmpty)
+        showLoadingState(false)
     }
     
     private func setUpTableView() {
@@ -174,6 +175,7 @@ extension SearchViewController: UITableViewDelegate {
         let detailInteractor = DetailInteractor(realmInteractor: RealmInteractor(), data: data[indexPath.row])
         let detailViewController = DetailViewController(output: detailInteractor, searchTerm: activeSearchTerm)
         detailInteractor.viewInput = detailViewController
+        detailViewController.delegate = self
         
         navigationController?.pushViewController(detailViewController, animated: true)
     }
@@ -214,10 +216,28 @@ extension SearchViewController: SearchResultTableViewCellFavouriteActionDelegate
     func favourite(atRow index: Int) {
         output.favourite(displayItem: data[index])
         data[index].favouriteButtonState = data[index].favouriteButtonState.oppositeState
+        tableView.reloadData()
     }
     
     func unfavourite(atRow index: Int) {
         output.unfavourite(displayItem: data[index])
         data[index].favouriteButtonState = data[index].favouriteButtonState.oppositeState
+        tableView.reloadData()
+    }
+}
+
+extension SearchViewController: DetailViewDelegate {
+    func favourited(id: String) {
+        let index = data.firstIndex(where: { ($0.mainForm.word + $0.mainForm.reading) == id })
+        guard let intIndex = index?.magnitude else { return }
+        data[Int(intIndex)].favouriteButtonState = .favourited
+        tableView.reloadData()
+    }
+    
+    func unfavourited(id: String) {
+        let index = data.firstIndex(where: { ($0.mainForm.word + $0.mainForm.reading) == id })
+        guard let intIndex = index?.magnitude else { return }
+        data[Int(intIndex)].favouriteButtonState = .unfavourited
+        tableView.reloadData()
     }
 }
