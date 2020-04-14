@@ -17,6 +17,7 @@ class FavouritesListViewController: UIViewController, FavouritesListViewInput {
     private var favourites: [EntryDisplayItem] = []
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var emptyStateOverlay: UILabel!
     
     private var output: FavouritesListViewOutput!
     
@@ -42,6 +43,7 @@ class FavouritesListViewController: UIViewController, FavouritesListViewInput {
     
     func update(favourites: [EntryDisplayItem]) {
         self.favourites = favourites
+        emptyStateOverlay.isHidden = !favourites.isEmpty
         tableView.reloadData()
     }
 
