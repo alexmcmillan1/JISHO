@@ -10,11 +10,18 @@ import UIKit
 import SafariServices
 import NVActivityIndicatorView
 
+protocol DetailViewDelegate: class {
+    func favourited(id: String)
+    func unfavourited(id: String)
+}
+
 protocol DetailViewInput: class {
     var viewModel: DetailViewModel? { get set }
 }
 
 class DetailViewController: UIViewController, DetailViewInput {
+    
+    weak var delegate: DetailViewDelegate?
     
     var viewModel: DetailViewModel? = nil {
         didSet {
@@ -98,10 +105,16 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     @IBAction private func tappedFavourite(_ sender: Any) {
-        guard let viewModel = viewModel else { return }
-        favouriteButton.flipState() == .favourited
-            ? output.favouriteEntry(viewModel)
-            : output.unfavouriteEntry(viewModel)
+        guard let viewModel = viewModel, let id = viewModel.id() else { return }
+        let flippedFaveState = favouriteButton.flipState()
+        
+        if flippedFaveState == .favourited {
+            output.favouriteEntry(viewModel)
+            delegate?.favourited(id: id)
+        } else {
+            output.unfavouriteEntry(viewModel)
+            delegate?.unfavourited(id: id)
+        }
     }
 }
 

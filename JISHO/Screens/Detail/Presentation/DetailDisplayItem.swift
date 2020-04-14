@@ -11,6 +11,15 @@ import Foundation
 struct DetailViewModel {
     let favouriteButtonState: FavouriteButtonState
     let displayItems: [DetailDisplayItem]
+    
+    func id() -> String? {
+        for item in displayItems {
+            if case DetailDisplayItem.summary(let summary) = item {
+                return summary.kanji + summary.kana
+            }
+        }
+        return nil
+    }
 }
 
 enum DetailDisplayItem {

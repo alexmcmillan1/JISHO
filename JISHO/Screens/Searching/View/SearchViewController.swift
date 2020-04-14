@@ -213,9 +213,11 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: SearchResultTableViewCellFavouriteActionDelegate {
     func favourite(atRow index: Int) {
         output.favourite(displayItem: data[index])
+        data[index].favouriteButtonState = data[index].favouriteButtonState.oppositeState
     }
     
     func unfavourite(atRow index: Int) {
         output.unfavourite(displayItem: data[index])
+        data[index].favouriteButtonState = data[index].favouriteButtonState.oppositeState
     }
 }
