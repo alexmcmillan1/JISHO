@@ -46,7 +46,7 @@
                                 <rect key="frame" x="16" y="127" width="256" height="76"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-GO-ZLV" customClass="FaveButton" customModule="Ji_kun" customModuleProvider="target">
-                                <rect key="frame" x="240" y="6" width="44" height="44"/>
+                                <rect key="frame" x="236" y="8" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="vDY-zA-yIu"/>
                                     <constraint firstAttribute="height" constant="44" id="xBb-Sm-hTS"/>
@@ -64,18 +64,18 @@
                             <constraint firstAttribute="bottom" secondItem="wid-4i-sgc" secondAttribute="bottom" constant="16" id="4FT-De-ODu"/>
                             <constraint firstAttribute="trailing" secondItem="ain-rO-U27" secondAttribute="trailing" constant="16" id="ATY-Tf-Aga"/>
                             <constraint firstItem="P0l-yN-9zo" firstAttribute="leading" secondItem="Qel-Ph-ljG" secondAttribute="trailing" constant="8" id="Fdq-3m-Pnh"/>
+                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="8" id="KSs-8P-HSz"/>
                             <constraint firstItem="P0l-yN-9zo" firstAttribute="centerY" secondItem="Qel-Ph-ljG" secondAttribute="centerY" id="NfJ-b8-UDc"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="16" id="P5R-uS-yU8"/>
                             <constraint firstItem="wid-4i-sgc" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="U7t-PF-YKl"/>
                             <constraint firstItem="ain-rO-U27" firstAttribute="top" secondItem="Qel-Ph-ljG" secondAttribute="bottom" constant="8" id="Xeg-sT-zWY"/>
                             <constraint firstItem="ain-rO-U27" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="YRP-Q6-Yay"/>
                             <constraint firstItem="wid-4i-sgc" firstAttribute="top" secondItem="ain-rO-U27" secondAttribute="bottom" constant="8" id="bIW-pT-bwy"/>
-                            <constraint firstAttribute="trailing" secondItem="Xr5-GO-ZLV" secondAttribute="trailing" constant="4" id="bw4-pF-svm"/>
-                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="6" id="gbf-dh-Nz9"/>
+                            <constraint firstAttribute="trailing" secondItem="Xr5-GO-ZLV" secondAttribute="trailing" constant="8" id="gHH-gI-lo0"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.6" id="n6l-sR-WFE"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="oMC-9D-QIJ"/>
                             <constraint firstItem="P0l-yN-9zo" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.4" id="omi-SG-gKi"/>
-                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="8" id="vxk-5l-UhW"/>
+                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="8" id="wdS-L0-bQO"/>
                             <constraint firstAttribute="trailing" secondItem="wid-4i-sgc" secondAttribute="trailing" constant="16" id="yAt-cU-gTU"/>
                         </constraints>
                     </view>

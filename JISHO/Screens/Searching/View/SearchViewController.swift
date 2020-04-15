@@ -72,6 +72,11 @@ class SearchViewController: UIViewController, SearchViewInput {
         stylePromptViewComponents()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     func reload(withData data: [EntryDisplayItem]) {
         self.data = data
         tableView.contentOffset = CGPoint(x: 0, y: -64)
@@ -216,13 +221,11 @@ extension SearchViewController: SearchResultTableViewCellFavouriteActionDelegate
     func favourite(atRow index: Int) {
         output.favourite(displayItem: data[index])
         data[index].favouriteButtonState = data[index].favouriteButtonState.oppositeState
-        tableView.reloadData()
     }
     
     func unfavourite(atRow index: Int) {
         output.unfavourite(displayItem: data[index])
         data[index].favouriteButtonState = data[index].favouriteButtonState.oppositeState
-        tableView.reloadData()
     }
 }
 
@@ -231,13 +234,11 @@ extension SearchViewController: DetailViewDelegate {
         let index = data.firstIndex(where: { ($0.mainForm.word + $0.mainForm.reading) == id })
         guard let intIndex = index?.magnitude else { return }
         data[Int(intIndex)].favouriteButtonState = .favourited
-        tableView.reloadData()
     }
     
     func unfavourited(id: String) {
         let index = data.firstIndex(where: { ($0.mainForm.word + $0.mainForm.reading) == id })
         guard let intIndex = index?.magnitude else { return }
         data[Int(intIndex)].favouriteButtonState = .unfavourited
-        tableView.reloadData()
     }
 }

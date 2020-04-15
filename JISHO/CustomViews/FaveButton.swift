@@ -11,6 +11,8 @@ import UIKit
 
 class FaveButton: UIButton {
     
+    private var feedbackGenerator: UINotificationFeedbackGenerator?
+    
     private var buttonState: FavouriteButtonState = .unfavourited {
         didSet {
             restyle()
@@ -22,8 +24,23 @@ class FaveButton: UIButton {
     }
     
     func flipState() -> FavouriteButtonState {
+        feedbackGenerator = UINotificationFeedbackGenerator()
+        feedbackGenerator?.prepare()
         buttonState = buttonState.oppositeState
+        triggerHapticFeedback()
+        animate()
         return buttonState
+    }
+    
+    private func triggerHapticFeedback() {
+        feedbackGenerator?.notificationOccurred(.success)
+    }
+    
+    private func animate() {
+        transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        UIViewPropertyAnimator(duration: 0.6, dampingRatio: 0.35) {
+            self.transform = .identity
+        }.startAnimation()
     }
     
     private func restyle() {
