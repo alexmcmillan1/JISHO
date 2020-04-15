@@ -150,7 +150,7 @@
 		FADD30582401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWikiExtractTableViewCell.xib; sourceTree = "<group>"; };
 		FADD305B2401DA7E00ADAF99 /* WikipediaExtractResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaExtractResponse.swift; sourceTree = "<group>"; };
 		FAEBE07123ECDA56005CF1C5 /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
-		FAF3BD2623E776ED00B3D707 /* Ji-kun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ji-kun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF3BD2623E776ED00B3D707 /* JISHO Go!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JISHO Go!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF3BD2923E776ED00B3D707 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF3BD2B23E776ED00B3D707 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FAF3BD3023E776ED00B3D707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -443,7 +443,7 @@
 		FAF3BD2723E776ED00B3D707 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FAF3BD2623E776ED00B3D707 /* Ji-kun.app */,
+				FAF3BD2623E776ED00B3D707 /* JISHO Go!.app */,
 				FACA4ECF23EEB68C004E0A3C /* JISHOTests.xctest */,
 			);
 			name = Products;
@@ -555,7 +555,7 @@
 			);
 			name = JISHO;
 			productName = JISHO;
-			productReference = FAF3BD2623E776ED00B3D707 /* Ji-kun.app */;
+			productReference = FAF3BD2623E776ED00B3D707 /* JISHO Go!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -942,7 +942,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.alexmcmillan1.JISHO;
-				PRODUCT_NAME = "Ji-kun";
+				PRODUCT_NAME = "JISHO Go!";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -964,7 +964,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.alexmcmillan1.JISHO;
-				PRODUCT_NAME = "Ji-kun";
+				PRODUCT_NAME = "JISHO Go!";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
