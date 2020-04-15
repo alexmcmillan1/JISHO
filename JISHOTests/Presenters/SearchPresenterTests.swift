@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Ji_kun
+@testable import JISHO_Go_
 
 class SearchPresenterTests: XCTestCase {
     

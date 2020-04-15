@@ -6,7 +6,7 @@
 //  Copyright © 2020 Alex McMillan. All rights reserved.
 //
 
-@testable import Ji_kun
+@testable import JISHO_Go_
 
 class MockRealmInteractor: RealmInterface {
     var askedToSave = false
