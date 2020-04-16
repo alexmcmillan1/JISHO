@@ -10,6 +10,13 @@
 		514685F5644E9B6DEBC2AF89 /* Pods_JISHO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECF41308ED5B92E6485F7DD /* Pods_JISHO.framework */; };
 		FA09BA3C23E77F12005488DB /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09BA3B23E77F12005488DB /* SearchInteractor.swift */; };
 		FA09BA3E23E78163005488DB /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09BA3D23E78163005488DB /* SearchResponse.swift */; };
+		FA0BF46A24410AD500245E64 /* SearchResultEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BF46924410AD500245E64 /* SearchResultEntryModel.swift */; };
+		FA0BF46C2441CAE100245E64 /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BF46B2441CAE100245E64 /* DetailInteractorTests.swift */; };
+		FA0BF4702441F2F800245E64 /* FavouritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BF46E2441F2F800245E64 /* FavouritesListViewController.swift */; };
+		FA0BF4712441F2F800245E64 /* FavouritesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0BF46F2441F2F800245E64 /* FavouritesListViewController.xib */; };
+		FA0BF4762441F3E800245E64 /* FavouriteEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BF4742441F3E800245E64 /* FavouriteEntryTableViewCell.swift */; };
+		FA0BF4772441F3E800245E64 /* FavouriteEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0BF4752441F3E800245E64 /* FavouriteEntryTableViewCell.xib */; };
+		FA0BF4792442187700245E64 /* FavouritesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BF4782442187700245E64 /* FavouritesListInteractor.swift */; };
 		FA11E68F2406DF0E00D60B1D /* Kana.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11E68E2406DF0E00D60B1D /* Kana.swift */; };
 		FA169AF923EA19E1002DC84F /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA169AF723EA19E1002DC84F /* SearchResultTableViewCell.swift */; };
 		FA169AFA23EA19E1002DC84F /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA169AF823EA19E1002DC84F /* SearchResultTableViewCell.xib */; };
@@ -32,6 +39,9 @@
 		FA63CD2A2403199200F45A5F /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63CD292403199200F45A5F /* DetailPresenterTests.swift */; };
 		FA759F3423F9BD480033641D /* DetailSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA759F3223F9BD480033641D /* DetailSummaryTableViewCell.swift */; };
 		FA759F3523F9BD480033641D /* DetailSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA759F3323F9BD480033641D /* DetailSummaryTableViewCell.xib */; };
+		FA9AB82224421A8000F89D94 /* FavouritesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AB82124421A8000F89D94 /* FavouritesListPresenter.swift */; };
+		FAA61C2C2444ED0800A0C8F9 /* MockRealmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA61C2B2444ED0800A0C8F9 /* MockRealmInteractor.swift */; };
+		FAA61C302444F0F200A0C8F9 /* SearchInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA61C2F2444F0F200A0C8F9 /* SearchInteractorTests.swift */; };
 		FAB37EDB23F9BEB600077F79 /* DetailDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDA23F9BEB600077F79 /* DetailDisplayItem.swift */; };
 		FAB37EDD23F9CFB000077F79 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDC23F9CFB000077F79 /* DetailInteractor.swift */; };
 		FAB37EE023F9D50500077F79 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDF23F9D50500077F79 /* DetailPresenter.swift */; };
@@ -41,8 +51,11 @@
 		FAB37EE823F9F5A300077F79 /* DetailLinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB37EE623F9F5A300077F79 /* DetailLinkTableViewCell.xib */; };
 		FAC97BB12402990300D8AF8F /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC97BB02402990300D8AF8F /* StringTests.swift */; };
 		FACA4ED223EEB68C004E0A3C /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */; };
+		FACC807B244227CF00F3CB09 /* FavouritesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC807A244227CF00F3CB09 /* FavouritesListInteractorTests.swift */; };
+		FACC807D2442294C00F3CB09 /* FavouritesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC807C2442294C00F3CB09 /* FavouritesListPresenterTests.swift */; };
 		FAD61DDF23F8A1FB00C37E37 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD61DDD23F8A1FB00C37E37 /* DetailViewController.swift */; };
 		FAD61DE023F8A1FB00C37E37 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD61DDE23F8A1FB00C37E37 /* DetailViewController.xib */; };
+		FAD7F4F22444A49C0075C481 /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7F4F12444A49C0075C481 /* FaveButton.swift */; };
 		FADD30592401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD30572401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift */; };
 		FADD305A2401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADD30582401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib */; };
 		FADD305C2401DA7E00ADAF99 /* WikipediaExtractResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD305B2401DA7E00ADAF99 /* WikipediaExtractResponse.swift */; };
@@ -57,6 +70,7 @@
 		FAF5B79223F493DF008C3C81 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5B79123F493DF008C3C81 /* String.swift */; };
 		FAF68CA4240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF68CA2240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift */; };
 		FAF68CA5240716710067B7A5 /* KanjiSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF68CA3240716710067B7A5 /* KanjiSectionHeaderTableViewCell.xib */; };
+		FAF74F20244109B300A047AB /* RealmInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF74F1F244109B300A047AB /* RealmInteractor.swift */; };
 		FAFE5C05240AA599004DF70F /* KanjiResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C04240AA599004DF70F /* KanjiResponseItem.swift */; };
 		FAFE5C08240AA7F7004DF70F /* KanjiDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C07240AA7F7004DF70F /* KanjiDisplayItem.swift */; };
 		FAFE5C0A240AAAC3004DF70F /* KanjiInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE5C09240AAAC3004DF70F /* KanjiInteractor.swift */; };
@@ -84,6 +98,13 @@
 		58F473E5289D803B89D1580C /* Pods-JISHO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JISHO.release.xcconfig"; path = "Target Support Files/Pods-JISHO/Pods-JISHO.release.xcconfig"; sourceTree = "<group>"; };
 		FA09BA3B23E77F12005488DB /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		FA09BA3D23E78163005488DB /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		FA0BF46924410AD500245E64 /* SearchResultEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultEntryModel.swift; sourceTree = "<group>"; };
+		FA0BF46B2441CAE100245E64 /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
+		FA0BF46E2441F2F800245E64 /* FavouritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListViewController.swift; sourceTree = "<group>"; };
+		FA0BF46F2441F2F800245E64 /* FavouritesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesListViewController.xib; sourceTree = "<group>"; };
+		FA0BF4742441F3E800245E64 /* FavouriteEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEntryTableViewCell.swift; sourceTree = "<group>"; };
+		FA0BF4752441F3E800245E64 /* FavouriteEntryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteEntryTableViewCell.xib; sourceTree = "<group>"; };
+		FA0BF4782442187700245E64 /* FavouritesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListInteractor.swift; sourceTree = "<group>"; };
 		FA11E68E2406DF0E00D60B1D /* Kana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kana.swift; sourceTree = "<group>"; };
 		FA169AF723EA19E1002DC84F /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		FA169AF823EA19E1002DC84F /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -106,6 +127,9 @@
 		FA63CD292403199200F45A5F /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		FA759F3223F9BD480033641D /* DetailSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		FA759F3323F9BD480033641D /* DetailSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		FA9AB82124421A8000F89D94 /* FavouritesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListPresenter.swift; sourceTree = "<group>"; };
+		FAA61C2B2444ED0800A0C8F9 /* MockRealmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRealmInteractor.swift; sourceTree = "<group>"; };
+		FAA61C2F2444F0F200A0C8F9 /* SearchInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorTests.swift; sourceTree = "<group>"; };
 		FAB37EDA23F9BEB600077F79 /* DetailDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDisplayItem.swift; sourceTree = "<group>"; };
 		FAB37EDC23F9CFB000077F79 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		FAB37EDF23F9D50500077F79 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -117,13 +141,16 @@
 		FACA4ECF23EEB68C004E0A3C /* JISHOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JISHOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
 		FACA4ED323EEB68C004E0A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACC807A244227CF00F3CB09 /* FavouritesListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListInteractorTests.swift; sourceTree = "<group>"; };
+		FACC807C2442294C00F3CB09 /* FavouritesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListPresenterTests.swift; sourceTree = "<group>"; };
 		FAD61DDD23F8A1FB00C37E37 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FAD61DDE23F8A1FB00C37E37 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		FAD7F4F12444A49C0075C481 /* FaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveButton.swift; sourceTree = "<group>"; };
 		FADD30572401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWikiExtractTableViewCell.swift; sourceTree = "<group>"; };
 		FADD30582401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWikiExtractTableViewCell.xib; sourceTree = "<group>"; };
 		FADD305B2401DA7E00ADAF99 /* WikipediaExtractResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaExtractResponse.swift; sourceTree = "<group>"; };
 		FAEBE07123ECDA56005CF1C5 /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
-		FAF3BD2623E776ED00B3D707 /* Ji-kun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ji-kun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF3BD2623E776ED00B3D707 /* JISHO Go!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JISHO Go!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF3BD2923E776ED00B3D707 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF3BD2B23E776ED00B3D707 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FAF3BD3023E776ED00B3D707 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +162,7 @@
 		FAF5B79123F493DF008C3C81 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FAF68CA2240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		FAF68CA3240716710067B7A5 /* KanjiSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KanjiSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		FAF74F1F244109B300A047AB /* RealmInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInteractor.swift; sourceTree = "<group>"; };
 		FAFE5C04240AA599004DF70F /* KanjiResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiResponseItem.swift; sourceTree = "<group>"; };
 		FAFE5C07240AA7F7004DF70F /* KanjiDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDisplayItem.swift; sourceTree = "<group>"; };
 		FAFE5C09240AAAC3004DF70F /* KanjiInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiInteractor.swift; sourceTree = "<group>"; };
@@ -180,6 +208,55 @@
 				58F473E5289D803B89D1580C /* Pods-JISHO.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA0BF46824410AAE00245E64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAF74F1F244109B300A047AB /* RealmInteractor.swift */,
+				FA0BF46924410AD500245E64 /* SearchResultEntryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA0BF46D2441F2DB00245E64 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6FDDA23EEB46300CDB5F7 /* Searching */,
+				FAD61DDC23F8A1BD00C37E37 /* Detail */,
+				FAFE5C02240AA457004DF70F /* Kanji */,
+				FA0BF4732441F3C600245E64 /* Favourites */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FA0BF4722441F3BF00245E64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BF46E2441F2F800245E64 /* FavouritesListViewController.swift */,
+				FA0BF46F2441F2F800245E64 /* FavouritesListViewController.xib */,
+				FA0BF4742441F3E800245E64 /* FavouriteEntryTableViewCell.swift */,
+				FA0BF4752441F3E800245E64 /* FavouriteEntryTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA0BF4732441F3C600245E64 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BF4722441F3BF00245E64 /* View */,
+				FA0BF47A2442187E00245E64 /* Interactor */,
+				FA9AB82324421A8200F89D94 /* Presenting */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		FA0BF47A2442187E00245E64 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BF4782442187700245E64 /* FavouritesListInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		FA250E402406B15A00788A1F /* Fonts */ = {
@@ -233,6 +310,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FA9AB82324421A8200F89D94 /* Presenting */ = {
+			isa = PBXGroup;
+			children = (
+				FA9AB82124421A8000F89D94 /* FavouritesListPresenter.swift */,
+			);
+			path = Presenting;
+			sourceTree = "<group>";
+		};
+		FAA61C2D2444F0D200A0C8F9 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BF46B2441CAE100245E64 /* DetailInteractorTests.swift */,
+				FACC807A244227CF00F3CB09 /* FavouritesListInteractorTests.swift */,
+				FAA61C2F2444F0F200A0C8F9 /* SearchInteractorTests.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		FAA61C2E2444F0D900A0C8F9 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */,
+				FA63CD292403199200F45A5F /* DetailPresenterTests.swift */,
+				FAFE5C0D240AB06C004DF70F /* KanjiPresenterTests.swift */,
+				FACC807C2442294C00F3CB09 /* FavouritesListPresenterTests.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		FAB37ED923F9BE9400077F79 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,11 +361,11 @@
 		FACA4ED023EEB68C004E0A3C /* JISHOTests */ = {
 			isa = PBXGroup;
 			children = (
-				FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */,
-				FA63CD292403199200F45A5F /* DetailPresenterTests.swift */,
-				FAFE5C0D240AB06C004DF70F /* KanjiPresenterTests.swift */,
+				FAA61C2E2444F0D900A0C8F9 /* Presenters */,
+				FAA61C2D2444F0D200A0C8F9 /* Interactors */,
 				FAC97BB02402990300D8AF8F /* StringTests.swift */,
 				FACA4ED323EEB68C004E0A3C /* Info.plist */,
+				FAA61C2B2444ED0800A0C8F9 /* MockRealmInteractor.swift */,
 			);
 			path = JISHOTests;
 			sourceTree = "<group>";
@@ -272,6 +378,14 @@
 				FAB37ED923F9BE9400077F79 /* Presentation */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		FAD7F4F02444A37D0075C481 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7F4F12444A49C0075C481 /* FaveButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		FAE6FDD723EEB44300CDB5F7 /* View */ = {
@@ -329,7 +443,7 @@
 		FAF3BD2723E776ED00B3D707 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FAF3BD2623E776ED00B3D707 /* Ji-kun.app */,
+				FAF3BD2623E776ED00B3D707 /* JISHO Go!.app */,
 				FACA4ECF23EEB68C004E0A3C /* JISHOTests.xctest */,
 			);
 			name = Products;
@@ -344,12 +458,12 @@
 				FAF3BD3223E776ED00B3D707 /* Assets.xcassets */,
 				FAF3BD3423E776ED00B3D707 /* LaunchScreen.storyboard */,
 				FAF3BD3723E776ED00B3D707 /* Info.plist */,
+				FA0BF46D2441F2DB00245E64 /* Screens */,
 				FA57A35C241AF3380028AE58 /* Animation */,
-				FAE6FDDA23EEB46300CDB5F7 /* Searching */,
-				FAD61DDC23F8A1BD00C37E37 /* Detail */,
-				FAFE5C02240AA457004DF70F /* Kanji */,
 				FAF5B79023F493CD008C3C81 /* Extensions */,
+				FA0BF46824410AAE00245E64 /* Model */,
 				FA250E402406B15A00788A1F /* Fonts */,
+				FAD7F4F02444A37D0075C481 /* CustomViews */,
 				FA11E68E2406DF0E00D60B1D /* Kana.swift */,
 			);
 			path = JISHO;
@@ -441,7 +555,7 @@
 			);
 			name = JISHO;
 			productName = JISHO;
-			productReference = FAF3BD2623E776ED00B3D707 /* Ji-kun.app */;
+			productReference = FAF3BD2623E776ED00B3D707 /* JISHO Go!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -502,6 +616,7 @@
 				FAD61DE023F8A1FB00C37E37 /* DetailViewController.xib in Resources */,
 				FA169AFA23EA19E1002DC84F /* SearchResultTableViewCell.xib in Resources */,
 				FA250E4C2406B17700788A1F /* MPLUSRounded1c-Black.ttf in Resources */,
+				FA0BF4772441F3E800245E64 /* FavouriteEntryTableViewCell.xib in Resources */,
 				FADD305A2401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.xib in Resources */,
 				FAFE5C17240AEAE3004DF70F /* KanjiAspectTableViewCell.xib in Resources */,
 				FAB37EE423F9E40800077F79 /* DetailDefinitionTableViewCell.xib in Resources */,
@@ -510,6 +625,7 @@
 				FAF3BD3323E776ED00B3D707 /* Assets.xcassets in Resources */,
 				FA250E4A2406B17700788A1F /* MPLUSRounded1c-Thin.ttf in Resources */,
 				FA250E492406B17700788A1F /* MPLUSRounded1c-Regular.ttf in Resources */,
+				FA0BF4712441F2F800245E64 /* FavouritesListViewController.xib in Resources */,
 				FA63CD282403181C00F45A5F /* DetailKanjiCharacterTableViewCell.xib in Resources */,
 				FA759F3523F9BD480033641D /* DetailSummaryTableViewCell.xib in Resources */,
 				FAFE5C12240AB7B1004DF70F /* KanjiViewController.xib in Resources */,
@@ -569,10 +685,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0BF46C2441CAE100245E64 /* DetailInteractorTests.swift in Sources */,
 				FAFE5C0E240AB06C004DF70F /* KanjiPresenterTests.swift in Sources */,
+				FACC807B244227CF00F3CB09 /* FavouritesListInteractorTests.swift in Sources */,
 				FA63CD2A2403199200F45A5F /* DetailPresenterTests.swift in Sources */,
 				FAC97BB12402990300D8AF8F /* StringTests.swift in Sources */,
+				FAA61C302444F0F200A0C8F9 /* SearchInteractorTests.swift in Sources */,
 				FACA4ED223EEB68C004E0A3C /* SearchPresenterTests.swift in Sources */,
+				FACC807D2442294C00F3CB09 /* FavouritesListPresenterTests.swift in Sources */,
+				FAA61C2C2444ED0800A0C8F9 /* MockRealmInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD61DDF23F8A1FB00C37E37 /* DetailViewController.swift in Sources */,
+				FA0BF4762441F3E800245E64 /* FavouriteEntryTableViewCell.swift in Sources */,
 				FA63CD242403169100F45A5F /* KanjiAPIResponse.swift in Sources */,
 				FA169AFC23EB6EEC002DC84F /* EntryDisplayItem.swift in Sources */,
 				FADD30592401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift in Sources */,
@@ -588,17 +710,21 @@
 				FAFE5C05240AA599004DF70F /* KanjiResponseItem.swift in Sources */,
 				FAF3BD3F23E777F600B3D707 /* SearchViewController.swift in Sources */,
 				FA09BA3E23E78163005488DB /* SearchResponse.swift in Sources */,
+				FAD7F4F22444A49C0075C481 /* FaveButton.swift in Sources */,
+				FA0BF4702441F2F800245E64 /* FavouritesListViewController.swift in Sources */,
 				FAFE5C16240AEAE3004DF70F /* KanjiAspectTableViewCell.swift in Sources */,
 				FA169AF923EA19E1002DC84F /* SearchResultTableViewCell.swift in Sources */,
 				FAFE5C0C240AACE6004DF70F /* KanjiPresenter.swift in Sources */,
 				FAF3BD2A23E776ED00B3D707 /* AppDelegate.swift in Sources */,
 				FAF5B79223F493DF008C3C81 /* String.swift in Sources */,
 				FAB37EE723F9F5A300077F79 /* DetailLinkTableViewCell.swift in Sources */,
+				FA0BF4792442187700245E64 /* FavouritesListInteractor.swift in Sources */,
 				FA09BA3C23E77F12005488DB /* SearchInteractor.swift in Sources */,
 				FAFE5C0A240AAAC3004DF70F /* KanjiInteractor.swift in Sources */,
 				FAFE5C11240AB7B1004DF70F /* KanjiViewController.swift in Sources */,
 				FA169B0023EB7447002DC84F /* DefinitionView.swift in Sources */,
 				FAFE5C08240AA7F7004DF70F /* KanjiDisplayItem.swift in Sources */,
+				FA9AB82224421A8000F89D94 /* FavouritesListPresenter.swift in Sources */,
 				FADD305C2401DA7E00ADAF99 /* WikipediaExtractResponse.swift in Sources */,
 				FAF68CA4240716710067B7A5 /* KanjiSectionHeaderTableViewCell.swift in Sources */,
 				FA759F3423F9BD480033641D /* DetailSummaryTableViewCell.swift in Sources */,
@@ -608,9 +734,11 @@
 				FA342811240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift in Sources */,
 				FAB37EDB23F9BEB600077F79 /* DetailDisplayItem.swift in Sources */,
 				FA63CD272403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift in Sources */,
+				FAF74F20244109B300A047AB /* RealmInteractor.swift in Sources */,
 				FAF3BD2C23E776ED00B3D707 /* SceneDelegate.swift in Sources */,
 				FAB37EDD23F9CFB000077F79 /* DetailInteractor.swift in Sources */,
 				FAB37EE023F9D50500077F79 /* DetailPresenter.swift in Sources */,
+				FA0BF46A24410AD500245E64 /* SearchResultEntryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +788,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ji-kun.app/Ji-kun";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JISHO Go!.app/JISHO Go!";
 			};
 			name = Debug;
 		};
@@ -680,7 +808,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ji-kun.app/Ji-kun";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JISHO Go!.app/JISHO Go!";
 			};
 			name = Release;
 		};
@@ -804,7 +932,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = B9NFATBJW3;
 				INFOPLIST_FILE = JISHO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -812,9 +940,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.alexmcmillan1.JISHO;
-				PRODUCT_NAME = "Ji-kun";
+				PRODUCT_NAME = "JISHO Go!";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -826,7 +954,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = B9NFATBJW3;
 				INFOPLIST_FILE = JISHO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -834,9 +962,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.alexmcmillan1.JISHO;
-				PRODUCT_NAME = "Ji-kun";
+				PRODUCT_NAME = "JISHO Go!";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
