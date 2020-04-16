@@ -22,11 +22,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YG-og-Q4E">
-                        <rect key="frame" x="20" y="16" width="280" height="199"/>
+                        <rect key="frame" x="22" y="18" width="276" height="199"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-AF-WUy">
-                        <rect key="frame" x="16" y="12" width="288" height="207"/>
+                        <rect key="frame" x="16" y="12" width="288" height="211"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かな" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qel-Ph-ljG" customClass="InsetLabel" customModule="JISHO_Go_" customModuleProvider="target">
                                 <rect key="frame" x="16" y="16" width="40" height="28"/>
@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wid-4i-sgc">
-                                <rect key="frame" x="16" y="127" width="256" height="64"/>
+                                <rect key="frame" x="16" y="127" width="256" height="68"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-GO-ZLV" customClass="FaveButton" customModule="JISHO_Go_" customModuleProvider="target">
                                 <rect key="frame" x="236" y="8" width="44" height="44"/>
@@ -85,14 +85,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0YG-og-Q4E" firstAttribute="bottom" secondItem="4lg-AF-WUy" secondAttribute="bottom" constant="-4" id="G7k-25-pwx"/>
+                    <constraint firstItem="0YG-og-Q4E" firstAttribute="bottom" secondItem="4lg-AF-WUy" secondAttribute="bottom" constant="-6" id="G7k-25-pwx"/>
                     <constraint firstItem="4lg-AF-WUy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NRj-ZC-EL6"/>
-                    <constraint firstItem="0YG-og-Q4E" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="4" id="WKz-Tv-QWK"/>
-                    <constraint firstItem="0YG-og-Q4E" firstAttribute="trailing" secondItem="4lg-AF-WUy" secondAttribute="trailing" constant="-4" id="WfJ-8A-z4h"/>
+                    <constraint firstItem="0YG-og-Q4E" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="6" id="WKz-Tv-QWK"/>
+                    <constraint firstItem="0YG-og-Q4E" firstAttribute="trailing" secondItem="4lg-AF-WUy" secondAttribute="trailing" constant="-6" id="WfJ-8A-z4h"/>
                     <constraint firstAttribute="trailing" secondItem="4lg-AF-WUy" secondAttribute="trailing" constant="16" id="Xb5-DQ-Yb2"/>
                     <constraint firstItem="4lg-AF-WUy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="mOe-N8-Kdh"/>
-                    <constraint firstItem="0YG-og-Q4E" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="4" id="uhI-rB-3qr"/>
-                    <constraint firstAttribute="bottom" secondItem="4lg-AF-WUy" secondAttribute="bottom" constant="16" id="zCo-hF-1SW"/>
+                    <constraint firstItem="0YG-og-Q4E" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="6" id="uhI-rB-3qr"/>
+                    <constraint firstAttribute="bottom" secondItem="4lg-AF-WUy" secondAttribute="bottom" constant="12" id="zCo-hF-1SW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

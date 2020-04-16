@@ -23,13 +23,13 @@ class SearchResultTableViewCell: UITableViewCell {
             shadowEmittingView.layer.shadowRadius = 8
             shadowEmittingView.layer.shadowOffset = CGSize(width: 2, height: 2)
             shadowEmittingView.layer.shadowColor = UIColor.black.cgColor
-            shadowEmittingView.layer.shadowOpacity = 0.2
+            shadowEmittingView.layer.shadowOpacity = 0.25
         }
     }
     
     @IBOutlet private weak var containerView: UIView! {
         didSet {
-            containerView.layer.cornerRadius = 8
+            containerView.layer.cornerRadius = 12
 //            containerView.backgroundColor = UIColor(named: "SearchResultContainerView")
 //            containerView.layer.borderWidth = 1
 //            containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
