@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Ji_kun" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="JISHO_Go_" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="DVd-Xw-KnZ" id="vxz-n9-Pgz"/>
                 <outlet property="backButton" destination="oyU-cD-9TX" id="Ggm-Uu-6a2"/>
@@ -60,7 +60,7 @@
                         <action selector="tappedBack:" destination="-1" eventType="touchUpInside" id="ptg-Ro-fOc"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF5-vI-use" userLabel="Favourite Button" customClass="FaveButton" customModule="Ji_kun" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vF5-vI-use" userLabel="Favourite Button" customClass="FaveButton" customModule="JISHO_Go_" customModuleProvider="target">
                     <rect key="frame" x="354" y="44" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="MzU-4x-smE"/>

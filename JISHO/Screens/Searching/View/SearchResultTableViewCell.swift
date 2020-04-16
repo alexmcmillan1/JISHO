@@ -18,12 +18,21 @@ class SearchResultTableViewCell: UITableViewCell {
     var index: Int!
     var delegate: SearchResultTableViewCellFavouriteActionDelegate?
     
+    @IBOutlet weak var shadowEmittingView: UIView! {
+        didSet {
+            shadowEmittingView.layer.shadowRadius = 8
+            shadowEmittingView.layer.shadowOffset = CGSize(width: 2, height: 2)
+            shadowEmittingView.layer.shadowColor = UIColor.black.cgColor
+            shadowEmittingView.layer.shadowOpacity = 0.2
+        }
+    }
+    
     @IBOutlet private weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 8
-            containerView.backgroundColor = UIColor(named: "SearchResultContainerView")
-            containerView.layer.borderWidth = 1
-            containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
+//            containerView.backgroundColor = UIColor(named: "SearchResultContainerView")
+//            containerView.layer.borderWidth = 1
+//            containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
         }
     }
     
