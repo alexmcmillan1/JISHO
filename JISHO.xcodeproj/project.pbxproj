@@ -49,6 +49,7 @@
 		FAB37EE423F9E40800077F79 /* DetailDefinitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB37EE223F9E40800077F79 /* DetailDefinitionTableViewCell.xib */; };
 		FAB37EE723F9F5A300077F79 /* DetailLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EE523F9F5A300077F79 /* DetailLinkTableViewCell.swift */; };
 		FAB37EE823F9F5A300077F79 /* DetailLinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB37EE623F9F5A300077F79 /* DetailLinkTableViewCell.xib */; };
+		FAC521F82448F2A3005F1ECE /* SearchFieldTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC521F72448F2A3005F1ECE /* SearchFieldTableHeaderView.swift */; };
 		FAC97BB12402990300D8AF8F /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC97BB02402990300D8AF8F /* StringTests.swift */; };
 		FACA4ED223EEB68C004E0A3C /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */; };
 		FACC807B244227CF00F3CB09 /* FavouritesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC807A244227CF00F3CB09 /* FavouritesListInteractorTests.swift */; };
@@ -137,6 +138,7 @@
 		FAB37EE223F9E40800077F79 /* DetailDefinitionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDefinitionTableViewCell.xib; sourceTree = "<group>"; };
 		FAB37EE523F9F5A300077F79 /* DetailLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLinkTableViewCell.swift; sourceTree = "<group>"; };
 		FAB37EE623F9F5A300077F79 /* DetailLinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailLinkTableViewCell.xib; sourceTree = "<group>"; };
+		FAC521F72448F2A3005F1ECE /* SearchFieldTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldTableHeaderView.swift; sourceTree = "<group>"; };
 		FAC97BB02402990300D8AF8F /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		FACA4ECF23EEB68C004E0A3C /* JISHOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JISHOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				FA169AF823EA19E1002DC84F /* SearchResultTableViewCell.xib */,
 				FA169AFF23EB7447002DC84F /* DefinitionView.swift */,
 				FAEBE07123ECDA56005CF1C5 /* InsetLabel.swift */,
+				FAC521F72448F2A3005F1ECE /* SearchFieldTableHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				FAF3BD2C23E776ED00B3D707 /* SceneDelegate.swift in Sources */,
 				FAB37EDD23F9CFB000077F79 /* DetailInteractor.swift in Sources */,
 				FAB37EE023F9D50500077F79 /* DetailPresenter.swift in Sources */,
+				FAC521F82448F2A3005F1ECE /* SearchFieldTableHeaderView.swift in Sources */,
 				FA0BF46A24410AD500245E64 /* SearchResultEntryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

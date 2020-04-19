@@ -44,12 +44,7 @@ class SearchViewController: UIViewController, SearchViewInput {
     }
     
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var textField: UITextField!
-    
-    private var wasScrollDirectionDown = true
-    private var scrollContentOffsetAccumulator: CGFloat = 0
-    private var previousScrollContentOffset: CGFloat = 0
-    private var isSearchBarHidden = false
+    private var searchFieldContainerView: SearchFieldTableHeaderView?
     
     var output: SearchViewOutput!
     
@@ -64,9 +59,10 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpTableHeaderView()
+
         view.backgroundColor = UIColor(named: "ViewBackground")
         navigationController?.navigationBar.isHidden = true
-        textField.delegate = self
         setUpTableView()
         styleActivityIndicator()
         stylePromptViewComponents()
@@ -79,10 +75,15 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     func reload(withData data: [EntryDisplayItem]) {
         self.data = data
-        tableView.contentOffset = CGPoint(x: 0, y: -64)
         tableView.reloadData()
         showEmptyState(data.isEmpty)
         showLoadingState(false)
+    }
+    
+    private func setUpTableHeaderView() {
+        searchFieldContainerView = SearchFieldTableHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 72))
+        searchFieldContainerView?.delegate = self
+        tableView.tableHeaderView = searchFieldContainerView
     }
     
     private func setUpTableView() {
@@ -92,7 +93,6 @@ class SearchViewController: UIViewController, SearchViewInput {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = UIColor(named: "ViewBackground")
-        tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
     }
     
     private func styleActivityIndicator() {
@@ -124,18 +124,6 @@ class SearchViewController: UIViewController, SearchViewInput {
     func showErrorState(_ show: Bool) {
         showLoadingState(false)
         errorView.isHidden = !show
-    }
-    
-    private func hideSearchBar() {
-        UIViewPropertyAnimator(duration: 0.4, curve: .linear) {
-            self.textField.transform = CGAffineTransform(translationX: 0, y: -100)
-        }.startAnimation()
-    }
-    
-    private func showSearchBar() {
-        UIViewPropertyAnimator(duration: 0.4, curve: .easeOut) {
-            self.textField.transform = .identity
-        }.startAnimation()
     }
 }
 
@@ -174,7 +162,7 @@ extension SearchViewController: UITableViewDataSource {
 
 extension SearchViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let detailInteractor = DetailInteractor(realmInteractor: RealmInteractor(), data: data[indexPath.row])
@@ -183,37 +171,6 @@ extension SearchViewController: UITableViewDelegate {
         detailViewController.delegate = self
         
         navigationController?.pushViewController(detailViewController, animated: true)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y == -64 && previousScrollContentOffset == 0) || scrollView.contentOffset.y < 0 {
-            return
-        }
-        
-        let isScrollDirectionDown = scrollView.contentOffset.y > previousScrollContentOffset
-        
-        if !wasScrollDirectionDown && isScrollDirectionDown {
-            scrollContentOffsetAccumulator = 0
-        } else if wasScrollDirectionDown && !isScrollDirectionDown {
-            scrollContentOffsetAccumulator = 0
-        }
-        
-        if isScrollDirectionDown {
-            scrollContentOffsetAccumulator += scrollView.contentOffset.y - previousScrollContentOffset
-            if scrollContentOffsetAccumulator > 44 && !isSearchBarHidden {
-                isSearchBarHidden = true
-                hideSearchBar()
-            }
-        } else {
-            scrollContentOffsetAccumulator += previousScrollContentOffset - scrollView.contentOffset.y
-            if scrollContentOffsetAccumulator > 44 && isSearchBarHidden {
-                isSearchBarHidden = false
-                showSearchBar()
-            }
-        }
-        
-        previousScrollContentOffset = scrollView.contentOffset.y
-        wasScrollDirectionDown = isScrollDirectionDown
     }
 }
 
