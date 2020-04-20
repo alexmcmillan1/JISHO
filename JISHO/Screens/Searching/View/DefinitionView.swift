@@ -54,7 +54,7 @@ class DefinitionView: UIView {
         partOfSpeechLabel.layer.cornerRadius = 4
         partOfSpeechLabel.layer.masksToBounds = true
         partOfSpeechLabel.textColor = UIColor(named: "PartOfSpeechText")
-        partOfSpeechLabel.font = UIFont(name: "AvenirNext-Bold", size: 12)
+        partOfSpeechLabel.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
         partOfSpeechLabel.backgroundColor = UIColor(named: "PartOfSpeechBackground")
         partOfSpeechLabel.contentInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         partOfSpeechLabel.setContentHuggingPriority(.required, for: .vertical)
@@ -64,7 +64,7 @@ class DefinitionView: UIView {
     private func styleDescriptionLabel() {
         descriptionLabel.numberOfLines = 0
         descriptionLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        descriptionLabel.font = UIFont(name: "AvenirNext-Regular", size: 15)
+        descriptionLabel.font = .systemFont(ofSize: 15, weight: .light)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     

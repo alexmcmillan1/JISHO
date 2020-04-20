@@ -26,6 +26,7 @@ class SearchFieldTableHeaderView: UIView, UITextFieldDelegate {
     
     private func privateInit() {
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.delegate = self
         addSubview(textField)
         NSLayoutConstraint
             .activate([textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -38,6 +39,8 @@ class SearchFieldTableHeaderView: UIView, UITextFieldDelegate {
         textField.layer.borderColor = UIColor(named: "SearchFieldBorder")?.cgColor 
         textField.layer.borderWidth = 1
         textField.textAlignment = .center
+        textField.placeholder = "Search"
+        textField.font = .systemFont(ofSize: 16, weight: .regular)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

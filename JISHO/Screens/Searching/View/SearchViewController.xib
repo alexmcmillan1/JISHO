@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Manrope-Regular.ttf">
+            <string>Manrope-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="JISHO_Go_" customModuleProvider="target">
             <connections>
@@ -36,8 +41,8 @@
                     <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0L-7u-Fzn">
-                            <rect key="frame" x="172.5" y="200" width="69" height="20.5"/>
-                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                            <rect key="frame" x="172.5" y="200" width="69" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -51,8 +56,8 @@
                     <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong. Try your search again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6li-XS-Zo5">
-                            <rect key="frame" x="32" y="200" width="350" height="20.5"/>
-                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                            <rect key="frame" x="32" y="200" width="350" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -84,8 +89,8 @@
                     <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start searching above" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6J-oc-vr8">
-                            <rect key="frame" x="133" y="230" width="148" height="20.5"/>
-                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                            <rect key="frame" x="121" y="230" width="172" height="23.5"/>
+                            <fontDescription key="fontDescription" name="Manrope-Regular" family="Manrope" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openbook" translatesAutoresizingMaskIntoConstraints="NO" id="ede-Di-HIR">
