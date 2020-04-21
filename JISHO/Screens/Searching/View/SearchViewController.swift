@@ -19,10 +19,6 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     private var data: [EntryDisplayItem] = []
     
-    @IBOutlet private weak var promptGifViewA: UIImageView!
-    @IBOutlet private weak var promptGifViewB: UIImageView!
-    @IBOutlet private weak var promptGifViewC: UIImageView!
-    
     @IBOutlet private weak var safeAreaTintView: UIView! {
         didSet {
             safeAreaTintView.backgroundColor = UIColor(named: "ViewBackground")
@@ -35,11 +31,16 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     @IBOutlet private weak var loadingView: UIView!
     @IBOutlet private weak var errorView: UIView!
-    @IBOutlet private weak var emptyView: UIView!
     
-    @IBOutlet private weak var searchPromptView: UIView! {
+    @IBOutlet private weak var emptyView: MessageView! {
         didSet {
-            searchPromptView.backgroundColor = UIColor(named: "ViewBackground")
+            emptyView.setMessage("No results... :(")
+        }
+    }
+    
+    @IBOutlet private weak var promptView: MessageView! {
+        didSet {
+            promptView.setMessage("Let's go!")
         }
     }
     
@@ -65,7 +66,6 @@ class SearchViewController: UIViewController, SearchViewInput {
         navigationController?.navigationBar.isHidden = true
         setUpTableView()
         styleActivityIndicator()
-        stylePromptViewComponents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,18 +101,6 @@ class SearchViewController: UIViewController, SearchViewInput {
         activityIndicator.startAnimating()
     }
     
-    private func stylePromptViewComponents() {
-        do {
-            try promptGifViewA.setGifImage(UIImage(gifName: "promptanimation.gif"))
-            try promptGifViewB.setGifImage(UIImage(gifName: "promptanimation.gif"))
-            try promptGifViewC.setGifImage(UIImage(gifName: "promptanimation.gif"))
-        } catch {
-            print("Couldn't load gif")
-        }
-        promptGifViewB.transform = CGAffineTransform(rotationAngle: 0.6)
-        promptGifViewC.transform = CGAffineTransform(rotationAngle: -0.6)
-    }
-    
     private func showLoadingState(_ show: Bool) {
         loadingView.isHidden = !show
     }
@@ -131,7 +119,7 @@ extension SearchViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
-            searchPromptView.isHidden = true
+            promptView.isHidden = true
             showEmptyState(false)
             showErrorState(false)
             showLoadingState(true)

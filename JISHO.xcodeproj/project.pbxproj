@@ -50,6 +50,7 @@
 		FAA681C1244DF49300BEC049 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA681B7244DF48B00BEC049 /* Manrope-Regular.ttf */; };
 		FAA681C2244DF49300BEC049 /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA681B5244DF48B00BEC049 /* Manrope-SemiBold.ttf */; };
 		FAA681C4244DF52500BEC049 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA681C3244DF52500BEC049 /* UIFont.swift */; };
+		FAA681C6244DFD3F00BEC049 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA681C5244DFD3F00BEC049 /* MessageView.swift */; };
 		FAB37EDB23F9BEB600077F79 /* DetailDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDA23F9BEB600077F79 /* DetailDisplayItem.swift */; };
 		FAB37EDD23F9CFB000077F79 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDC23F9CFB000077F79 /* DetailInteractor.swift */; };
 		FAB37EE023F9D50500077F79 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB37EDF23F9D50500077F79 /* DetailPresenter.swift */; };
@@ -147,6 +148,7 @@
 		FAA681BA244DF48B00BEC049 /* Manrope-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-ExtraBold.ttf"; sourceTree = "<group>"; };
 		FAA681BB244DF48B00BEC049 /* Manrope-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Light.ttf"; sourceTree = "<group>"; };
 		FAA681C3244DF52500BEC049 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		FAA681C5244DFD3F00BEC049 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		FAB37EDA23F9BEB600077F79 /* DetailDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDisplayItem.swift; sourceTree = "<group>"; };
 		FAB37EDC23F9CFB000077F79 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		FAB37EDF23F9D50500077F79 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD7F4F12444A49C0075C481 /* FaveButton.swift */,
+				FAA681C5244DFD3F00BEC049 /* MessageView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				FAD7F4F22444A49C0075C481 /* FaveButton.swift in Sources */,
 				FA0BF4702441F2F800245E64 /* FavouritesListViewController.swift in Sources */,
 				FAFE5C16240AEAE3004DF70F /* KanjiAspectTableViewCell.swift in Sources */,
+				FAA681C6244DFD3F00BEC049 /* MessageView.swift in Sources */,
 				FA169AF923EA19E1002DC84F /* SearchResultTableViewCell.swift in Sources */,
 				FAFE5C0C240AACE6004DF70F /* KanjiPresenter.swift in Sources */,
 				FAF3BD2A23E776ED00B3D707 /* AppDelegate.swift in Sources */,
