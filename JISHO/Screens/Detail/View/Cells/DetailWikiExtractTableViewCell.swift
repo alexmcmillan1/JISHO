@@ -10,7 +10,7 @@ import UIKit
 
 class DetailWikiExtractTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var extractLabel: UILabel!
+    @IBOutlet private weak var extractLabel: WikiExtractLabelView!
     
     func setUp(displayItem: DetailWikiExtractDisplayItem) {
         extractLabel.text = displayItem.extract

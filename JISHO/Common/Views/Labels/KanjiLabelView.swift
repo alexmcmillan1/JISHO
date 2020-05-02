@@ -54,3 +54,12 @@ class DetailKanjiLabelView: KanjiLabelView {
         numberOfLines = 3
     }
 }
+
+class FavouritedKanjiLabelView: KanjiLabelView {
+    
+    override func selfInit() {
+        super.selfInit()
+        font = font.withSize(32.0)
+        numberOfLines = 1
+    }
+}

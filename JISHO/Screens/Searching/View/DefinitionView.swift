@@ -10,8 +10,8 @@ import UIKit
 
 class DefinitionView: UIView {
     
-    private let partOfSpeechLabel = PartOfSpeechLabel()
-    private let descriptionLabel = DefinitionDescriptionLabel()
+    private let partOfSpeechLabel = PartOfSpeechLabelView()
+    private let descriptionLabel = DefinitionDescriptionLabelView()
     private var labelsGapConstraint: NSLayoutConstraint?
     
     convenience init(definition: Definition) {

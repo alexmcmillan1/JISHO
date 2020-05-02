@@ -85,7 +85,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     private func addMoreDefinitionsLabel(numItems: Int) {
-        let label = MoreDefinitionsLabel()
+        let label = MoreDefinitionsLabelView()
         label.setText(forNumberOfItems: numItems)
         definitionsStackView.addArrangedSubview(label)
     }

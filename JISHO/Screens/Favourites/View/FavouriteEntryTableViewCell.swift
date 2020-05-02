@@ -11,32 +11,24 @@ import UIKit
 class FavouriteEntryTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var containerView: UIView!
-    @IBOutlet private weak var wordLabel: UILabel!
-    @IBOutlet private weak var firstDefinitionLabel: UILabel!
-    @IBOutlet private weak var moreDefinitionsLabel: UILabel!
+    @IBOutlet private weak var wordLabel: FavouritedKanjiLabelView!
+    @IBOutlet private weak var firstDefinitionLabel: DefinitionDescriptionLabelView!
+    @IBOutlet private weak var moreDefinitionsLabel: MoreDefinitionsLabelView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         styleContainerView()
-        styleWordLabel()
     }
     
     func setUp(_ displayItem: EntryDisplayItem) {
         wordLabel.text = displayItem.mainForm.word
         firstDefinitionLabel.text = displayItem.definitions.first?.description ?? ""
-        moreDefinitionsLabel.text = displayItem.definitionsNotSurfaced == 0 ? "" : "and \(displayItem.definitionsNotSurfaced) more"
+        moreDefinitionsLabel.setText(forNumberOfItems: displayItem.definitionsNotSurfaced)
     }
     
     private func styleContainerView() {
         containerView.layer.cornerRadius = 8
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
-    }
-    
-    private func styleWordLabel() {
-        wordLabel.layer.shadowColor = UIColor(named: "FavouriteShadow")?.cgColor
-        wordLabel.layer.shadowRadius = 0
-        wordLabel.layer.shadowOffset = CGSize(width: 3, height: 2)
-        wordLabel.layer.shadowOpacity = 1
     }
 }

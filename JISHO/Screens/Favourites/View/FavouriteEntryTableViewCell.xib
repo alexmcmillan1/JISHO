@@ -25,23 +25,23 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-R5-0DI">
                         <rect key="frame" x="16" y="4" width="288" height="80"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Ehe-pe-thV" userLabel="Word">
-                                <rect key="frame" x="8" y="21.5" width="64" height="37.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Ehe-pe-thV" userLabel="Word" customClass="FavouritedKanjiLabelView" customModule="JISHO_Go_" customModuleProvider="target">
+                                <rect key="frame" x="8" y="17.5" width="64" height="45"/>
                                 <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="32"/>
                                 <color key="textColor" name="SearchResultKanji"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Jrj-Ic-7Wv">
-                                <rect key="frame" x="80" y="24" width="170" height="32.5"/>
+                                <rect key="frame" x="80" y="13.5" width="170" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-iI-GA0">
-                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-iI-GA0" customClass="DefinitionDescriptionLabelView" customModule="JISHO_Go_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="75.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqc-Wb-wfs">
-                                        <rect key="frame" x="0.0" y="18" width="32.5" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqc-Wb-wfs" customClass="MoreDefinitionsLabelView" customModule="JISHO_Go_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="38.5" width="32.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

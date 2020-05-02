@@ -1,5 +1,5 @@
 //
-//  MoreDefinitionsLabel.swift
+//  SearchTextField.swift
 //  JISHO
 //
 //  Created by Alex on 02/05/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MoreDefinitionsLabel: UILabel {
+class SearchTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,10 +22,12 @@ class MoreDefinitionsLabel: UILabel {
     }
     
     fileprivate func selfInit() {
-        font = .semiBold(size: 12)
-    }
-    
-    func setText(forNumberOfItems n: Int) {
-        text = "and \(n) more"
+        borderStyle = .none
+        layer.cornerRadius = 8
+        layer.borderColor = UIColor(named: "SearchFieldBorder")?.cgColor
+        layer.borderWidth = 1
+        textAlignment = .center
+        placeholder = "Search"
+        font = .regular(size: 16)
     }
 }

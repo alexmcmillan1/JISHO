@@ -1,5 +1,5 @@
 //
-//  DefinitionDescriptionLabel.swift
+//  WikiExtractLabelView.swift
 //  JISHO
 //
 //  Created by Alex on 02/05/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DefinitionDescriptionLabel: UILabel {
+class WikiExtractLabelView: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,8 +22,7 @@ class DefinitionDescriptionLabel: UILabel {
     }
     
     fileprivate func selfInit() {
+        font = .regular(size: 14)
         numberOfLines = 0
-        setContentHuggingPriority(.defaultHigh, for: .vertical)
-        font = .light(size: 15)
     }
 }

@@ -10,16 +10,8 @@ import UIKit
 
 class KanjiSummaryTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var charLabel: UILabel! {
-        didSet {
-            charLabel.layer.cornerRadius = 8
-            charLabel.layer.masksToBounds = true
-            charLabel.layer.borderWidth = 1
-            charLabel.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
-        }
-    }
-    
-    @IBOutlet private weak var meaningsLabel: UILabel!
+    @IBOutlet private weak var charLabel: SearchKanjiLabelView!
+    @IBOutlet private weak var meaningsLabel: KanjiMeaningsLabelView!
  
     func setUp(_ displayItem: KanjiSummaryDisplayItem) {
         charLabel.text = displayItem.character

@@ -19,8 +19,8 @@ class DetailKanjiCharacterTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet private weak var characterLabel: UILabel!
-    @IBOutlet private weak var meaningLabel: UILabel!
+    @IBOutlet private weak var characterLabel: SearchKanjiLabelView!
+    @IBOutlet private weak var meaningLabel: KanjiMeaningsLabelView!
     
     func setUp(displayItem: DetailKanjiCharacterDisplayItem) {
         characterLabel.text = displayItem.character
