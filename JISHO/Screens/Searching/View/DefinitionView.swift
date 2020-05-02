@@ -10,8 +10,8 @@ import UIKit
 
 class DefinitionView: UIView {
     
-    private let partOfSpeechLabel = InsetLabel()
-    private let descriptionLabel = UILabel()
+    private let partOfSpeechLabel = PartOfSpeechLabel()
+    private let descriptionLabel = DefinitionDescriptionLabel()
     private var labelsGapConstraint: NSLayoutConstraint?
     
     convenience init(definition: Definition) {
@@ -41,34 +41,15 @@ class DefinitionView: UIView {
     }
     
     private func layOut() {
-        stylePartOfSpeechLabel()
-        styleDescriptionLabel()
         addSubview(partOfSpeechLabel)
         addSubview(descriptionLabel)
         activateConstraints()
     }
-    
-    private func stylePartOfSpeechLabel() {
-        partOfSpeechLabel.minimumScaleFactor = 0.5
-        partOfSpeechLabel.adjustsFontSizeToFitWidth = true
-        partOfSpeechLabel.layer.cornerRadius = 4
-        partOfSpeechLabel.layer.masksToBounds = true
-        partOfSpeechLabel.textColor = UIColor(named: "PartOfSpeechText")
-        partOfSpeechLabel.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
-        partOfSpeechLabel.backgroundColor = UIColor(named: "PartOfSpeechBackground")
-        partOfSpeechLabel.contentInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-        partOfSpeechLabel.setContentHuggingPriority(.required, for: .vertical)
-        partOfSpeechLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private func styleDescriptionLabel() {
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        descriptionLabel.font = .systemFont(ofSize: 15, weight: .light)
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
+
     private func activateConstraints() {
+        partOfSpeechLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         labelsGapConstraint = descriptionLabel.topAnchor.constraint(equalTo: partOfSpeechLabel.bottomAnchor, constant: 8)
 
         NSLayoutConstraint.activate([partOfSpeechLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
