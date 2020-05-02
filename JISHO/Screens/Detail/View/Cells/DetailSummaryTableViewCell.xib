@@ -21,13 +21,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="318"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="日本" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="PSE-zj-2PJ" customClass="LargeKanjiLabelView" customModule="JISHO_Go_" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="日本" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="PSE-zj-2PJ" customClass="DetailKanjiLabelView" customModule="JISHO_Go_" customModuleProvider="target">
                         <rect key="frame" x="16" y="24" width="288" height="214.5"/>
                         <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="72"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="72"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lines">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="にっぽん" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-oA-XK9" customClass="InsetLabel" customModule="JISHO_Go_" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="にっぽん" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-oA-XK9" customClass="DetailKanaLabelView" customModule="JISHO_Go_" customModuleProvider="target">
                         <rect key="frame" x="120" y="246.5" width="80" height="28"/>
                         <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="20"/>
                         <nil key="textColor"/>

@@ -36,15 +36,7 @@ class SearchResultTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet private weak var readingLabel: InsetLabel! {
-        didSet {
-            readingLabel.textColor = UIColor(named: "SearchResultKana")
-            readingLabel.contentInsets = UIEdgeInsets(top: 4, left: 4, bottom: 3, right: 4)
-            readingLabel.backgroundColor = UIColor(named: "SearchResultModifier")
-            readingLabel.layer.cornerRadius = 8
-            readingLabel.layer.masksToBounds = true
-        }
-    }
+    @IBOutlet private weak var readingLabel: SearchKanaLabelView!
     
     @IBOutlet private weak var romajiLabel: InsetLabel! {
         didSet {
@@ -52,7 +44,7 @@ class SearchResultTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet private weak var wordLabel: KanjiLabelView!
+    @IBOutlet private weak var wordLabel: SearchKanjiLabelView!
     
     @IBOutlet private weak var definitionsStackView: UIStackView!
     @IBOutlet private weak var favouriteButton: FaveButton!

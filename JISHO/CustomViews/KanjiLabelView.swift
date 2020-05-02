@@ -22,7 +22,7 @@ class KanjiLabelView: UILabel {
     }
     
     fileprivate func selfInit() {
-        font = .jpMedium(size: 48.0)
+        font = .jpMedium(size: 17.0)
         textColor = UIColor(named: "SearchResultKanjiColor")
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.8
@@ -37,10 +37,20 @@ class KanjiLabelView: UILabel {
     }
 }
 
-class LargeKanjiLabelView: KanjiLabelView {
+class SearchKanjiLabelView: KanjiLabelView {
+    
+    override func selfInit() {
+        super.selfInit()
+        font = font.withSize(48.0)
+        numberOfLines = 0
+    }
+}
+
+class DetailKanjiLabelView: KanjiLabelView {
     
     override func selfInit() {
         super.selfInit()
         font = font.withSize(72.0)
+        numberOfLines = 3
     }
 }

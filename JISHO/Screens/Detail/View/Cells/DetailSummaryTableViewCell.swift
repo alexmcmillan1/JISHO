@@ -10,18 +10,8 @@ import UIKit
 
 class DetailSummaryTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var kanjiLabel: LargeKanjiLabelView!
-    
-    @IBOutlet private weak var kanaLabel: InsetLabel! {
-        didSet {
-            kanaLabel.textColor = UIColor(named: "SearchResultKana")
-            kanaLabel.contentInsets = UIEdgeInsets(top: 4, left: 4, bottom: 3, right: 4)
-            kanaLabel.backgroundColor = UIColor(named: "SearchResultModifier")
-            kanaLabel.layer.cornerRadius = 8
-            kanaLabel.layer.masksToBounds = true
-        }
-    }
-    
+    @IBOutlet private weak var kanjiLabel: DetailKanjiLabelView!
+    @IBOutlet private weak var kanaLabel: DetailKanaLabelView!
     @IBOutlet private weak var romajiLabel: UILabel!
     
     func setUp(displayItem: DetailSummaryDisplayItem) {
