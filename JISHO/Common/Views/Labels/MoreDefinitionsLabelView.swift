@@ -22,7 +22,7 @@ class MoreDefinitionsLabelView: UILabel {
     }
     
     fileprivate func selfInit() {
-        font = .semiBold(size: 12)
+        font = .semiBold(size: 11)
     }
     
     func setText(forNumberOfItems n: Int) {

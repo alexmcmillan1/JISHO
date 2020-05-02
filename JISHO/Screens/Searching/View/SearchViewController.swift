@@ -21,7 +21,7 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     @IBOutlet private weak var safeAreaTintView: UIView! {
         didSet {
-            safeAreaTintView.backgroundColor = UIColor(named: "ViewBackground")
+            safeAreaTintView.backgroundColor = .background
         }
     }
     
@@ -60,7 +60,7 @@ class SearchViewController: UIViewController, SearchViewInput {
         super.viewDidLoad()
         setUpTableHeaderView()
 
-        view.backgroundColor = UIColor(named: "ViewBackground")
+        view.backgroundColor = .background
         navigationController?.navigationBar.isHidden = true
         setUpTableView()
     }
@@ -89,7 +89,7 @@ class SearchViewController: UIViewController, SearchViewInput {
         tableView.register(UINib(nibName: "SearchResultTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "SearchResultTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = UIColor(named: "ViewBackground")
+        tableView.backgroundColor = .background
     }
     
     private func showLoadingState(_ show: Bool) {

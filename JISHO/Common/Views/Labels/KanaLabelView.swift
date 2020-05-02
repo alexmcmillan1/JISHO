@@ -22,10 +22,10 @@ class KanaLabelView: InsetLabel {
     }
     
     fileprivate func selfInit() {
-        font = .jpMedium(size: 20.0)
-        textColor = UIColor(named: "SearchResultKana")
+        font = .jpMedium(size: 17.0)
+        textColor = .text
         contentInsets = UIEdgeInsets(top: 4, left: 4, bottom: 3, right: 4)
-        backgroundColor = UIColor(named: "SearchResultModifier")
+        backgroundColor = .primaryAccent
         numberOfLines = 1
         setUpLayer()
     }

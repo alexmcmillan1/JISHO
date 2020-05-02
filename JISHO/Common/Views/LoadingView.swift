@@ -22,7 +22,7 @@ class LoadingView: UIView {
     }
     
     private func privateInit() {
-        backgroundColor = UIColor(named: "ViewBackground")
+        backgroundColor = .background
         let indicator = UIActivityIndicatorView(style: .medium)
         indicator.startAnimating()
         indicator.translatesAutoresizingMaskIntoConstraints = false

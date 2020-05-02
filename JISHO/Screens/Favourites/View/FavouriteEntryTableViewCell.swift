@@ -28,7 +28,5 @@ class FavouriteEntryTableViewCell: UITableViewCell {
     
     private func styleContainerView() {
         containerView.layer.cornerRadius = 8
-        containerView.layer.borderWidth = 1
-        containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
     }
 }

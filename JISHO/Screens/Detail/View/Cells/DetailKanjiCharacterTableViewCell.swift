@@ -13,9 +13,6 @@ class DetailKanjiCharacterTableViewCell: UITableViewCell {
     @IBOutlet private weak var parentView: UIView! {
         didSet {
             parentView.layer.cornerRadius = 8
-            parentView.backgroundColor = UIColor(named: "SearchResultContainerView")
-            parentView.layer.borderWidth = 1
-            parentView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
         }
     }
     

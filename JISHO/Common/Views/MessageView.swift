@@ -24,7 +24,7 @@ class MessageView: UIView {
     }
     
     private func privateInit() {
-        backgroundColor = UIColor(named: "ViewBackground")
+        backgroundColor = .background
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         NSLayoutConstraint.activate([label.centerXAnchor.constraint(equalTo: centerXAnchor),

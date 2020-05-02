@@ -26,9 +26,9 @@
                         <rect key="frame" x="16" y="4" width="288" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Ehe-pe-thV" userLabel="Word" customClass="FavouritedKanjiLabelView" customModule="JISHO_Go_" customModuleProvider="target">
-                                <rect key="frame" x="8" y="17.5" width="64" height="45"/>
+                                <rect key="frame" x="8" y="21.5" width="64" height="37.5"/>
                                 <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="32"/>
-                                <color key="textColor" name="SearchResultKanji"/>
+                                <color key="textColor" name="Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Jrj-Ic-7Wv">
@@ -56,7 +56,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="SearchResultContainerView"/>
+                        <color key="backgroundColor" name="BackgroundContrast"/>
                         <constraints>
                             <constraint firstItem="Tcz-PD-mhh" firstAttribute="leading" secondItem="Jrj-Ic-7Wv" secondAttribute="trailing" constant="8" id="7sJ-YF-YTv"/>
                             <constraint firstItem="Jrj-Ic-7Wv" firstAttribute="centerY" secondItem="Ehe-pe-thV" secondAttribute="centerY" id="L84-Qa-K2K"/>
@@ -89,10 +89,10 @@
     </objects>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <namedColor name="SearchResultContainerView">
-            <color red="0.95999997854232788" green="0.95999997854232788" blue="0.95999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundContrast">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="SearchResultKanji">
+        <namedColor name="Text">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

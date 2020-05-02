@@ -24,6 +24,6 @@ class DefinitionDescriptionLabelView: UILabel {
     fileprivate func selfInit() {
         numberOfLines = 0
         setContentHuggingPriority(.defaultHigh, for: .vertical)
-        font = .light(size: 15)
+        font = .regular(size: 13)
     }
 }

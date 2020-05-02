@@ -24,6 +24,5 @@ class DetailSummaryTableViewCell: UITableViewCell {
     
     private func adjustContentInsets() {
         kanaLabel.contentInsets = kanaLabel.text?.isEmpty == true ? .zero : UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-
     }
 }

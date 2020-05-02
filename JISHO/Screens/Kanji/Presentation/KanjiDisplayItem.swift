@@ -34,9 +34,9 @@ enum ReadingType: String {
     
     var color: UIColor {
         switch self {
-        case .kun: return UIColor(named: "ReadingKun")!
-        case .on: return UIColor(named: "ReadingOn")!
-        case .name: return UIColor(named: "ReadingName")!
+        case .kun: return UIColor.kunReading!
+        case .on: return UIColor.onReading!
+        case .name: return UIColor.nameReading!
         }
     }
 }

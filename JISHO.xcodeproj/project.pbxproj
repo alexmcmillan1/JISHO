@@ -30,6 +30,8 @@
 		FA250E4C2406B17700788A1F /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA250E452406B17700788A1F /* MPLUSRounded1c-Black.ttf */; };
 		FA250E4D2406B17700788A1F /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA250E462406B17700788A1F /* MPLUSRounded1c-Bold.ttf */; };
 		FA250E4E2406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA250E472406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf */; };
+		FA3133F3245DE69900E7A9A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3133F2245DE69900E7A9A3 /* UIColor.swift */; };
+		FA3133F5245DF32000E7A9A3 /* RomajiLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3133F4245DF32000E7A9A3 /* RomajiLabelView.swift */; };
 		FA342811240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34280F240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift */; };
 		FA342812240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA342810240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib */; };
 		FA43431E245D947B00FDFB95 /* KanjiLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43431D245D947B00FDFB95 /* KanjiLabelView.swift */; };
@@ -139,6 +141,8 @@
 		FA250E452406B17700788A1F /* MPLUSRounded1c-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Black.ttf"; sourceTree = "<group>"; };
 		FA250E462406B17700788A1F /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; };
 		FA250E472406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FA3133F2245DE69900E7A9A3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FA3133F4245DF32000E7A9A3 /* RomajiLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomajiLabelView.swift; sourceTree = "<group>"; };
 		FA34280F240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		FA342810240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KanjiSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		FA43431D245D947B00FDFB95 /* KanjiLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiLabelView.swift; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 				FAEBE07123ECDA56005CF1C5 /* InsetLabel.swift */,
 				FA43431D245D947B00FDFB95 /* KanjiLabelView.swift */,
 				FA43431F245D9A5900FDFB95 /* KanaLabelView.swift */,
+				FA3133F4245DF32000E7A9A3 /* RomajiLabelView.swift */,
 				FA434321245DA09500FDFB95 /* PartOfSpeechLabelView.swift */,
 				FA982854245DAF9300D2FA7D /* DefinitionDescriptionLabelView.swift */,
 				FA982852245DACF400D2FA7D /* MoreDefinitionsLabelView.swift */,
@@ -552,6 +557,7 @@
 			children = (
 				FAF5B79123F493DF008C3C81 /* String.swift */,
 				FAA681C3244DF52500BEC049 /* UIFont.swift */,
+				FA3133F2245DE69900E7A9A3 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -804,6 +810,7 @@
 				FAD7F4F22444A49C0075C481 /* FaveButton.swift in Sources */,
 				FA0BF4702441F2F800245E64 /* FavouritesListViewController.swift in Sources */,
 				FAFE5C16240AEAE3004DF70F /* KanjiAspectTableViewCell.swift in Sources */,
+				FA3133F3245DE69900E7A9A3 /* UIColor.swift in Sources */,
 				FAA681C6244DFD3F00BEC049 /* MessageView.swift in Sources */,
 				FA169AF923EA19E1002DC84F /* SearchResultTableViewCell.swift in Sources */,
 				FAFE5C0C240AACE6004DF70F /* KanjiPresenter.swift in Sources */,
@@ -815,6 +822,7 @@
 				FA09BA3C23E77F12005488DB /* SearchInteractor.swift in Sources */,
 				FA43431E245D947B00FDFB95 /* KanjiLabelView.swift in Sources */,
 				FAFE5C0A240AAAC3004DF70F /* KanjiInteractor.swift in Sources */,
+				FA3133F5245DF32000E7A9A3 /* RomajiLabelView.swift in Sources */,
 				FAFE5C11240AB7B1004DF70F /* KanjiViewController.swift in Sources */,
 				FA169B0023EB7447002DC84F /* DefinitionView.swift in Sources */,
 				FA982855245DAF9300D2FA7D /* DefinitionDescriptionLabelView.swift in Sources */,

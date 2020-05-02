@@ -23,8 +23,8 @@ class SearchTextField: UITextField {
     
     fileprivate func selfInit() {
         borderStyle = .none
+        layer.borderColor = UIColor.backgroundContrast2?.cgColor
         layer.cornerRadius = 8
-        layer.borderColor = UIColor(named: "SearchFieldBorder")?.cgColor
         layer.borderWidth = 1
         textAlignment = .center
         placeholder = "Search"

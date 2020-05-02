@@ -26,22 +26,22 @@
                         <rect key="frame" x="16" y="8" width="288" height="84"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjF-dx-Fqf" customClass="SearchKanjiLabelView" customModule="JISHO_Go_" customModuleProvider="target">
-                                <rect key="frame" x="16" y="16" width="40" height="52"/>
+                                <rect key="frame" x="16" y="16" width="52" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="PKU-Oh-IW9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="PKU-Oh-IW9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="48"/>
-                                <color key="textColor" name="KanjiDetailText"/>
+                                <color key="textColor" name="Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meaning; meaning; meaning; meaning" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lq-hj-z3k" customClass="KanjiMeaningsLabelView" customModule="JISHO_Go_" customModuleProvider="target">
-                                <rect key="frame" x="72" y="16" width="200" height="52"/>
+                                <rect key="frame" x="84" y="16" width="188" height="52"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" name="KanjiDetailText"/>
+                                <color key="textColor" name="Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="KanjiDetailBackground"/>
+                        <color key="backgroundColor" name="BackgroundContrast"/>
                         <constraints>
                             <constraint firstItem="fjF-dx-Fqf" firstAttribute="leading" secondItem="f8h-Y5-HVr" secondAttribute="leading" constant="16" id="AQt-us-cCc"/>
                             <constraint firstItem="fjF-dx-Fqf" firstAttribute="top" secondItem="f8h-Y5-HVr" secondAttribute="top" constant="16" id="AUx-Tn-uTF"/>
@@ -70,10 +70,10 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="KanjiDetailBackground">
-            <color red="0.93000000715255737" green="0.93000000715255737" blue="0.93000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundContrast">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="KanjiDetailText">
+        <namedColor name="Text">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

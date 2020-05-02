@@ -53,7 +53,7 @@ class DetailViewController: UIViewController, DetailViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(named: "ViewBackground")
+        view.backgroundColor = .background
         setUpTableView()
         styleBackButton()
         styleActivityIndicator()
@@ -80,7 +80,7 @@ class DetailViewController: UIViewController, DetailViewInput {
     }
     
     private func styleActivityIndicator() {
-        activityIndicator.color = UIColor(named: "SearchResultOutline")!
+        activityIndicator.color = .systemGray
         activityIndicator.type = .ballPulse
         activityIndicator.startAnimating()
     }

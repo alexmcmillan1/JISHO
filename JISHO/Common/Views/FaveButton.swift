@@ -64,8 +64,8 @@ enum FavouriteButtonState {
     
     var color: UIColor {
         switch self {
-        case .unfavourited: return UIColor(named: "DetailUnfavourited")!
-        case .favourited: return UIColor(named: "DetailFavourited")!
+        case .unfavourited: return UIColor.notFavourite!
+        case .favourited: return UIColor.favourite!
         }
     }
     

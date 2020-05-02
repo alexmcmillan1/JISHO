@@ -30,17 +30,14 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 12
-//            containerView.backgroundColor = UIColor(named: "SearchResultContainerView")
-//            containerView.layer.borderWidth = 1
-//            containerView.layer.borderColor = UIColor(named: "SearchResultOutline")?.cgColor
         }
     }
     
     @IBOutlet private weak var readingLabel: SearchKanaLabelView!
     
-    @IBOutlet private weak var romajiLabel: InsetLabel! {
+    @IBOutlet private weak var romajiLabel: RomajiLabelView! {
         didSet {
-            romajiLabel.textColor = UIColor(named: "SearchResultKana")
+            romajiLabel.textColor = .text
         }
     }
     
@@ -81,7 +78,6 @@ class SearchResultTableViewCell: UITableViewCell {
     
     private func adjustContentInsets() {
         readingLabel.contentInsets = readingLabel.text?.isEmpty == true ? .zero : UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-        romajiLabel.contentInsets = romajiLabel.text?.isEmpty == true ? .zero : UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     }
     
     private func addMoreDefinitionsLabel(numItems: Int) {

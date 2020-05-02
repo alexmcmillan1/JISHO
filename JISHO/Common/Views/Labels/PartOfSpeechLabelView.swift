@@ -24,9 +24,9 @@ class PartOfSpeechLabelView: InsetLabel {
     fileprivate func selfInit() {
         minimumScaleFactor = 0.5
         adjustsFontSizeToFitWidth = true
-        textColor = UIColor(named: "PartOfSpeechText")
+        textColor = .invertedText
         font = .extraBold(size: 12)
-        backgroundColor = UIColor(named: "PartOfSpeechBackground")
+        backgroundColor = .secondaryAccent
         contentInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         setContentHuggingPriority(.required, for: .vertical)
         setUpLayer()

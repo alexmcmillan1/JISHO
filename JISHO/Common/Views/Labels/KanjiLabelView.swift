@@ -23,14 +23,14 @@ class KanjiLabelView: UILabel {
     
     fileprivate func selfInit() {
         font = .jpMedium(size: 17.0)
-        textColor = UIColor(named: "SearchResultKanjiColor")
+        textColor = .text
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.8
         setUpLayer()
     }
     
     private func setUpLayer() {
-        layer.shadowColor = UIColor(named: "SearchResultModifier")?.cgColor
+        layer.shadowColor = UIColor.primaryAccent?.cgColor
         layer.shadowRadius = 0
         layer.shadowOffset = CGSize(width: 3, height: 2)
         layer.shadowOpacity = 1
@@ -41,7 +41,7 @@ class SearchKanjiLabelView: KanjiLabelView {
     
     override func selfInit() {
         super.selfInit()
-        font = font.withSize(48.0)
+        font = font.withSize(44.0)
         numberOfLines = 0
     }
 }
@@ -50,7 +50,7 @@ class DetailKanjiLabelView: KanjiLabelView {
     
     override func selfInit() {
         super.selfInit()
-        font = font.withSize(72.0)
+        font = font.withSize(64.0)
         numberOfLines = 3
     }
 }

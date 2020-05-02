@@ -1,5 +1,5 @@
 //
-//  KanjiMeaningsLabelView.swift
+//  RomajiLabelView.swift
 //  JISHO
 //
 //  Created by Alex on 02/05/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class KanjiMeaningsLabelView: UILabel {
+class RomajiLabelView: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,8 +22,7 @@ class KanjiMeaningsLabelView: UILabel {
     }
     
     fileprivate func selfInit() {
-        font = .regular(size: 13)
-        numberOfLines = 0
+        font = .regular(size: 14)
         textColor = .text
     }
 }
