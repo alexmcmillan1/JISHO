@@ -38,7 +38,7 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     @IBOutlet private weak var promptView: MessageView! {
         didSet {
-            promptView.setMessage("Let's go!")
+            promptView.setMessage("")
         }
     }
     
@@ -68,6 +68,11 @@ class SearchViewController: UIViewController, SearchViewInput {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        (tableView.tableHeaderView as? SearchFieldTableHeaderView)?.becomeFirstResponder()
     }
     
     func reload(withData data: [EntryDisplayItem]) {
@@ -150,6 +155,10 @@ extension SearchViewController: UITableViewDelegate {
         detailViewController.delegate = self
         
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        (tableView.tableHeaderView as? SearchFieldTableHeaderView)?.resignFirstResponder()
     }
 }
 

@@ -39,4 +39,12 @@ class SearchFieldTableHeaderView: UIView, UITextFieldDelegate {
         guard let delegate = self.delegate else { return false }
         return delegate.textFieldShouldReturn?(textField) ?? false
     }
+    
+    override func becomeFirstResponder() -> Bool {
+        textField.becomeFirstResponder()
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        textField.resignFirstResponder()
+    }
 }

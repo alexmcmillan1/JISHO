@@ -26,8 +26,14 @@ class SearchTextField: UITextField {
         layer.borderColor = UIColor.backgroundContrast2?.cgColor
         layer.cornerRadius = 8
         layer.borderWidth = 1
+        keyboardType = .alphabet
+        returnKeyType = .search
+        autocorrectionType = .no
+        autocapitalizationType = .none
+        spellCheckingType = .no
         textAlignment = .center
+        clearButtonMode = .whileEditing
         placeholder = "Search"
-        font = .regular(size: 16)
+        font = .regular(size: 14)
     }
 }
