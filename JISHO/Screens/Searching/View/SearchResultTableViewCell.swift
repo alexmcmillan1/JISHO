@@ -52,15 +52,7 @@ class SearchResultTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet private weak var wordLabel: UILabel! {
-        didSet {
-            wordLabel.textColor = UIColor(named: "SearchResultKanjiColor")
-            wordLabel.layer.shadowColor = UIColor(named: "SearchResultModifier")?.cgColor
-            wordLabel.layer.shadowRadius = 0
-            wordLabel.layer.shadowOffset = CGSize(width: 3, height: 2)
-            wordLabel.layer.shadowOpacity = 1
-        }
-    }
+    @IBOutlet private weak var wordLabel: KanjiLabelView!
     
     @IBOutlet private weak var definitionsStackView: UIStackView!
     @IBOutlet private weak var favouriteButton: FaveButton!

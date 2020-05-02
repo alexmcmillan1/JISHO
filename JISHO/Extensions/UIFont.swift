@@ -10,6 +10,7 @@ import UIKit
 
 extension UIFont {
     static let customFontName = "Manrope"
+    static let jpFontName = "RoundedMplus1c"
     
     static func extraLight(size: CGFloat) -> UIFont {
         return UIFont(name: "\(UIFont.customFontName)-ExtraLight", size: size)!
@@ -37,5 +38,9 @@ extension UIFont {
     
     static func extraBold(size: CGFloat) -> UIFont {
         return UIFont(name: "\(UIFont.customFontName)-ExtraBold", size: size)!
+    }
+    
+    static func jpMedium(size: CGFloat) -> UIFont {
+        return UIFont(name: "\(UIFont.jpFontName)-Medium", size: size)!
     }
 }

@@ -10,15 +10,7 @@ import UIKit
 
 class DetailSummaryTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var kanjiLabel: UILabel! {
-        didSet {
-            kanjiLabel.textColor = UIColor(named: "SearchResultKanjiColor")
-            kanjiLabel.layer.shadowColor = UIColor(named: "SearchResultModifier")?.cgColor
-            kanjiLabel.layer.shadowRadius = 0
-            kanjiLabel.layer.shadowOffset = CGSize(width: 3, height: 2)
-            kanjiLabel.layer.shadowOpacity = 1
-        }
-    }
+    @IBOutlet private weak var kanjiLabel: LargeKanjiLabelView!
     
     @IBOutlet private weak var kanaLabel: InsetLabel! {
         didSet {

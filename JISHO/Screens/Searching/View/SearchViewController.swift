@@ -26,10 +26,8 @@ class SearchViewController: UIViewController, SearchViewInput {
     }
     
     private var activeSearchTerm: String?
-    
-    @IBOutlet private weak var activityIndicator: NVActivityIndicatorView!
-    
-    @IBOutlet private weak var loadingView: UIView!
+        
+    @IBOutlet private weak var loadingView: LoadingView!
     @IBOutlet private weak var errorView: UIView!
     
     @IBOutlet private weak var emptyView: MessageView! {
@@ -65,7 +63,6 @@ class SearchViewController: UIViewController, SearchViewInput {
         view.backgroundColor = UIColor(named: "ViewBackground")
         navigationController?.navigationBar.isHidden = true
         setUpTableView()
-        styleActivityIndicator()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,12 +90,6 @@ class SearchViewController: UIViewController, SearchViewInput {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = UIColor(named: "ViewBackground")
-    }
-    
-    private func styleActivityIndicator() {
-        activityIndicator.color = UIColor(named: "SearchResultOutline")!
-        activityIndicator.type = .ballPulse
-        activityIndicator.startAnimating()
     }
     
     private func showLoadingState(_ show: Bool) {

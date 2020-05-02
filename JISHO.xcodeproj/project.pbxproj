@@ -32,6 +32,7 @@
 		FA250E4E2406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA250E472406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf */; };
 		FA342811240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34280F240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift */; };
 		FA342812240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA342810240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib */; };
+		FA43431E245D947B00FDFB95 /* KanjiLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43431D245D947B00FDFB95 /* KanjiLabelView.swift */; };
 		FA57A35F241AF39F0028AE58 /* promptanimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA57A35E241AF39F0028AE58 /* promptanimation.gif */; };
 		FA63CD242403169100F45A5F /* KanjiAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63CD232403169100F45A5F /* KanjiAPIResponse.swift */; };
 		FA63CD272403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63CD252403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift */; };
@@ -61,6 +62,7 @@
 		FAC521F82448F2A3005F1ECE /* SearchFieldTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC521F72448F2A3005F1ECE /* SearchFieldTableHeaderView.swift */; };
 		FAC97BB12402990300D8AF8F /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC97BB02402990300D8AF8F /* StringTests.swift */; };
 		FACA4ED223EEB68C004E0A3C /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */; };
+		FACBE05D2450C5C600EF8FBF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBE05C2450C5C600EF8FBF /* LoadingView.swift */; };
 		FACC807B244227CF00F3CB09 /* FavouritesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC807A244227CF00F3CB09 /* FavouritesListInteractorTests.swift */; };
 		FACC807D2442294C00F3CB09 /* FavouritesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC807C2442294C00F3CB09 /* FavouritesListPresenterTests.swift */; };
 		FAD61DDF23F8A1FB00C37E37 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD61DDD23F8A1FB00C37E37 /* DetailViewController.swift */; };
@@ -130,6 +132,7 @@
 		FA250E472406B17700788A1F /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; };
 		FA34280F240BE785006AA5F9 /* KanjiSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		FA342810240BE785006AA5F9 /* KanjiSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KanjiSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		FA43431D245D947B00FDFB95 /* KanjiLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiLabelView.swift; sourceTree = "<group>"; };
 		FA57A35E241AF39F0028AE58 /* promptanimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = promptanimation.gif; sourceTree = "<group>"; };
 		FA63CD232403169100F45A5F /* KanjiAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiAPIResponse.swift; sourceTree = "<group>"; };
 		FA63CD252403181C00F45A5F /* DetailKanjiCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailKanjiCharacterTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 		FACA4ECF23EEB68C004E0A3C /* JISHOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JISHOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA4ED123EEB68C004E0A3C /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
 		FACA4ED323EEB68C004E0A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACBE05C2450C5C600EF8FBF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FACC807A244227CF00F3CB09 /* FavouritesListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListInteractorTests.swift; sourceTree = "<group>"; };
 		FACC807C2442294C00F3CB09 /* FavouritesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListPresenterTests.swift; sourceTree = "<group>"; };
 		FAD61DDD23F8A1FB00C37E37 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -412,6 +416,8 @@
 			children = (
 				FAD7F4F12444A49C0075C481 /* FaveButton.swift */,
 				FAA681C5244DFD3F00BEC049 /* MessageView.swift */,
+				FACBE05C2450C5C600EF8FBF /* LoadingView.swift */,
+				FA43431D245D947B00FDFB95 /* KanjiLabelView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				FA63CD242403169100F45A5F /* KanjiAPIResponse.swift in Sources */,
 				FA169AFC23EB6EEC002DC84F /* EntryDisplayItem.swift in Sources */,
 				FADD30592401CE4A00ADAF99 /* DetailWikiExtractTableViewCell.swift in Sources */,
+				FACBE05D2450C5C600EF8FBF /* LoadingView.swift in Sources */,
 				FA11E68F2406DF0E00D60B1D /* Kana.swift in Sources */,
 				FAFE5C05240AA599004DF70F /* KanjiResponseItem.swift in Sources */,
 				FAF3BD3F23E777F600B3D707 /* SearchViewController.swift in Sources */,
@@ -758,6 +765,7 @@
 				FAB37EE723F9F5A300077F79 /* DetailLinkTableViewCell.swift in Sources */,
 				FA0BF4792442187700245E64 /* FavouritesListInteractor.swift in Sources */,
 				FA09BA3C23E77F12005488DB /* SearchInteractor.swift in Sources */,
+				FA43431E245D947B00FDFB95 /* KanjiLabelView.swift in Sources */,
 				FAFE5C0A240AAAC3004DF70F /* KanjiInteractor.swift in Sources */,
 				FAFE5C11240AB7B1004DF70F /* KanjiViewController.swift in Sources */,
 				FA169B0023EB7447002DC84F /* DefinitionView.swift in Sources */,

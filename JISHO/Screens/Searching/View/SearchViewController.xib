@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="JISHO_Go_" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicator" destination="6v2-89-LsS" id="I2j-5K-5a3"/>
                 <outlet property="emptyView" destination="2Dl-Yu-Iov" id="5SD-Yq-iZg"/>
                 <outlet property="errorView" destination="ytV-3p-CnI" id="IqZ-RT-xBX"/>
                 <outlet property="loadingView" destination="irm-cn-hqb" id="9Qb-in-Nqz"/>
@@ -49,22 +48,9 @@
                         <constraint firstItem="6li-XS-Zo5" firstAttribute="leading" secondItem="ytV-3p-CnI" secondAttribute="leading" constant="32" id="x2Q-Z7-tvX"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irm-cn-hqb" userLabel="Loading View">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irm-cn-hqb" userLabel="Loading View" customClass="LoadingView" customModule="JISHO_Go_" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="116" width="414" height="746"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="88" translatesAutoresizingMaskIntoConstraints="NO" id="6v2-89-LsS" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                            <rect key="frame" x="185" y="329" width="44" height="88"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="44" id="J7s-Ts-2zB"/>
-                            </constraints>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" name="ViewBackground"/>
-                    <constraints>
-                        <constraint firstItem="6v2-89-LsS" firstAttribute="centerY" secondItem="irm-cn-hqb" secondAttribute="centerY" id="Y4L-05-hxo"/>
-                        <constraint firstItem="6v2-89-LsS" firstAttribute="centerX" secondItem="irm-cn-hqb" secondAttribute="centerX" id="klN-mP-yoN"/>
-                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZM-OH-fVI" userLabel="Safe Area Tint View">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
