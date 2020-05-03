@@ -31,7 +31,7 @@ class DefinitionView: UIView {
     
     func setUp(definition: Definition) {
         partOfSpeechLabel.text = definition.partsOfSpeech
-        descriptionLabel.text = definition.description
+        descriptionLabel.text = "- " + definition.description
         
         if definition.partsOfSpeech.isEmpty {
             partOfSpeechLabel.contentInsets = .zero
@@ -56,7 +56,7 @@ class DefinitionView: UIView {
                                      partOfSpeechLabel.topAnchor.constraint(equalTo: topAnchor),
         partOfSpeechLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor)])
         
-        NSLayoutConstraint.activate([descriptionLabel.leadingAnchor.constraint(equalTo: partOfSpeechLabel.leadingAnchor),
+        NSLayoutConstraint.activate([descriptionLabel.leadingAnchor.constraint(equalTo: partOfSpeechLabel.leadingAnchor, constant: 2),
                                      descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
                                      labelsGapConstraint!,
                                      descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor)])

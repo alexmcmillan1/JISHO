@@ -29,20 +29,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-AF-WUy">
                         <rect key="frame" x="16" y="12" width="288" height="211"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かな" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qel-Ph-ljG" customClass="SearchKanaLabelView" customModule="JISHO_Go_" customModuleProvider="target">
-                                <rect key="frame" x="16" y="16" width="40" height="28"/>
-                                <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="20"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="romaji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0l-yN-9zo" customClass="RomajiLabelView" customModule="JISHO_Go_" customModuleProvider="target">
-                                <rect key="frame" x="64" y="21" width="42" height="18"/>
+                                <rect key="frame" x="20" y="16" width="42" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かな" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qel-Ph-ljG" customClass="SearchKanaLabelView" customModule="JISHO_Go_" customModuleProvider="target">
+                                <rect key="frame" x="16" y="42" width="40" height="23.5"/>
+                                <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日本" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ain-rO-U27" userLabel="Word" customClass="SearchKanjiLabelView" customModule="JISHO_Go_" customModuleProvider="target">
-                                <rect key="frame" x="16" y="52" width="256" height="67"/>
+                                <rect key="frame" x="16" y="73.5" width="256" height="56"/>
                                 <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wid-4i-sgc">
-                                <rect key="frame" x="16" y="127" width="256" height="68"/>
+                                <rect key="frame" x="16" y="137.5" width="256" height="57.5"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-GO-ZLV" customClass="FaveButton" customModule="JISHO_Go_" customModuleProvider="target">
                                 <rect key="frame" x="236" y="8" width="44" height="44"/>
@@ -76,18 +76,17 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="wid-4i-sgc" secondAttribute="bottom" constant="16" id="4FT-De-ODu"/>
                             <constraint firstAttribute="trailing" secondItem="ain-rO-U27" secondAttribute="trailing" constant="16" id="ATY-Tf-Aga"/>
-                            <constraint firstItem="P0l-yN-9zo" firstAttribute="leading" secondItem="Qel-Ph-ljG" secondAttribute="trailing" constant="8" id="Fdq-3m-Pnh"/>
-                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="8" id="KSs-8P-HSz"/>
-                            <constraint firstItem="P0l-yN-9zo" firstAttribute="centerY" secondItem="Qel-Ph-ljG" secondAttribute="centerY" id="NfJ-b8-UDc"/>
-                            <constraint firstItem="Qel-Ph-ljG" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="16" id="P5R-uS-yU8"/>
+                            <constraint firstItem="P0l-yN-9zo" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="16" id="DJE-fd-Z6w"/>
+                            <constraint firstItem="P0l-yN-9zo" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="20" id="HZW-hD-h6q"/>
+                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P0l-yN-9zo" secondAttribute="trailing" constant="8" id="Qqq-6y-2wp"/>
                             <constraint firstItem="wid-4i-sgc" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="U7t-PF-YKl"/>
+                            <constraint firstItem="Qel-Ph-ljG" firstAttribute="top" secondItem="P0l-yN-9zo" secondAttribute="bottom" constant="8" id="Wkb-2F-9IO"/>
                             <constraint firstItem="ain-rO-U27" firstAttribute="top" secondItem="Qel-Ph-ljG" secondAttribute="bottom" constant="8" id="Xeg-sT-zWY"/>
                             <constraint firstItem="ain-rO-U27" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="YRP-Q6-Yay"/>
                             <constraint firstItem="wid-4i-sgc" firstAttribute="top" secondItem="ain-rO-U27" secondAttribute="bottom" constant="8" id="bIW-pT-bwy"/>
+                            <constraint firstItem="Xr5-GO-ZLV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qel-Ph-ljG" secondAttribute="trailing" constant="8" id="brj-Gc-3qN"/>
                             <constraint firstAttribute="trailing" secondItem="Xr5-GO-ZLV" secondAttribute="trailing" constant="8" id="gHH-gI-lo0"/>
-                            <constraint firstItem="Qel-Ph-ljG" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.6" id="n6l-sR-WFE"/>
                             <constraint firstItem="Qel-Ph-ljG" firstAttribute="leading" secondItem="4lg-AF-WUy" secondAttribute="leading" constant="16" id="oMC-9D-QIJ"/>
-                            <constraint firstItem="P0l-yN-9zo" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lg-AF-WUy" secondAttribute="width" multiplier="0.4" id="omi-SG-gKi"/>
                             <constraint firstItem="Xr5-GO-ZLV" firstAttribute="top" secondItem="4lg-AF-WUy" secondAttribute="top" constant="8" id="wdS-L0-bQO"/>
                             <constraint firstAttribute="trailing" secondItem="wid-4i-sgc" secondAttribute="trailing" constant="16" id="yAt-cU-gTU"/>
                         </constraints>
