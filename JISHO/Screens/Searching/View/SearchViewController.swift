@@ -38,7 +38,7 @@ class SearchViewController: UIViewController, SearchViewInput {
     
     @IBOutlet private weak var promptView: MessageView! {
         didSet {
-            promptView.setMessage("")
+            promptView.setMessage("You can search for words and phrases in English or Japanese (kanji, kana, or romaji).")
         }
     }
     
@@ -70,11 +70,6 @@ class SearchViewController: UIViewController, SearchViewInput {
         tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        (tableView.tableHeaderView as? SearchFieldTableHeaderView)?.becomeFirstResponder()
-    }
-    
     func reload(withData data: [EntryDisplayItem]) {
         self.data = data
         tableView.reloadData()
@@ -86,6 +81,7 @@ class SearchViewController: UIViewController, SearchViewInput {
         searchFieldContainerView = SearchFieldTableHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 72))
         searchFieldContainerView?.delegate = self
         tableView.tableHeaderView = searchFieldContainerView
+        // let _ = searchFieldContainerView?.becomeFirstResponder()
     }
     
     private func setUpTableView() {
@@ -122,7 +118,6 @@ extension SearchViewController: UITextFieldDelegate {
             output.request(keyword: text)
             activeSearchTerm = textField.text
             textField.resignFirstResponder()
-            tableView.setContentOffset(.zero, animated: false)
         }
         
         return true
@@ -154,11 +149,13 @@ extension SearchViewController: UITableViewDelegate {
         detailInteractor.viewInput = detailViewController
         detailViewController.delegate = self
         
+        let _ = (tableView.tableHeaderView as? SearchFieldTableHeaderView)?.resignFirstResponder()
+        
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        (tableView.tableHeaderView as? SearchFieldTableHeaderView)?.resignFirstResponder()
+        let _ = (tableView.tableHeaderView as? SearchFieldTableHeaderView)?.resignFirstResponder()
     }
 }
 

@@ -75,6 +75,7 @@ extension FavouritesListViewController: UITableViewDelegate {
         output.delete(favourites[indexPath.row])
         favourites.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
+        emptyStateOverlay.isHidden = !favourites.isEmpty
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -28,7 +28,9 @@ class MessageView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         NSLayoutConstraint.activate([label.centerXAnchor.constraint(equalTo: centerXAnchor),
-                                     label.centerYAnchor.constraint(equalTo: centerYAnchor)])
+                                     label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -44),
+                                     label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                                     label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)])
         
     }
     
@@ -50,8 +52,9 @@ class GenericViewMessageLabel: UILabel {
     
     private func customise() {
         text = "!not set"
-        font = .regular(size: 16)
-        textColor = UIColor.label.withAlphaComponent(0.5)
+        font = .regular(size: 13)
+        numberOfLines = 0
+        textColor = .systemGray2
         textAlignment = .center
     }
 }
